@@ -1,0 +1,246 @@
+---
+title: "Cod pentru lucrare de licență"
+subtitle: "Arta preciziei: o explorare matematică a unui set de cale plan paralele"
+abstract: "O incursiune matematică în fascinanta lume a preciziei și metrologiei. Pornind de la aspectele combinatorice ale unui set de cale plan paralele, această lucrare studiază intervalul de măsuri realizabile, numărul lor și criteriile obținerii unei combinații optime. Subliniază importanța selectării clasei de precizie adecvate pentru a asigura acuratețea optimă a măsurătorilor și aduce în discuție echilibrul complicat de planeitate, paralelism și exactitate pe care o cale plan paralela trebuie să-l îndeplinească. Pe lângă eleganța și simplitatea matematică a acestor instrumente, lucrarea evidențiază rolul critic pe care acestea îl au (și l-au avut) în menținerea avansării tehnologiei."
+
+editor: visual
+author: "Vlad Marianciuc"
+date: "16 June 2024"
+theme: flatly
+smooth-scroll: true
+code-fold: show
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{r}
+s1 <- seq(.1001, .1009, .0001)
+s2 <- seq(.101, .1491, .001)
+s3 <- seq(.050, .9501, .050)
+s4 <- seq(1, 4)
+s <- c(s1,s2,s3,s4)
+```
+
+```{r}
+nums <- sort(c(.05, sum(s), sum(s)-.05, .05+s1, s1, sum(s)-s1, sum(s)-(.05+s1), seq(.1, .2, .001), seq(.2001, sum(s)-.2001, .0001), seq(sum(s)-.2, sum(s)-.1, .001)))
+```
+
+```{r}
+
+data <- data.frame(
+  numar = nums
+)
+data$combinatii <- NA
+data$nr_comb <- NA
+data$ok <- NA
+```
+
+```{r}
+# 
+# write.csv(data, "date_02.csv")
+```
+
+```{r}
+# data$combinatii[1]<-0
+# which(data$numar==.1000)
+```
+
+```{r}
+gauge <- function(nr){
+  comb <- vector()
+
+  n1 <- round(nr*10000)%%10
+
+  if(n1!=0){
+    nr <- nr-s1[n1]
+    comb <- c(comb, s1[n1])
+    s1 <- s1[-n1]
+  }
+  
+  n2 <- round(nr*1000)%%50
+  if(n2!=0){
+    nr <- nr-s2[round(n2)]
+    comb <- c(comb, s2[n2])
+    s2 <- s2[-n2]
+  }
+
+  n3 <- round((round(nr*100)%%100)/5)
+
+  
+  if(n3!=0 && n3<20){
+    nr <- nr-s3[n3]
+    comb<-c(comb, s3[n3])
+    s3 <- s3[-n3]
+  }
+  
+  if(nr>=10 | 10-nr<10^(-5)){
+    comb <- c(comb,s4)
+    nr <- nr-10
+  } else {
+    
+    for (i in seq(1,4)){
+      if(nr>=s4[5-i] | s4[5-i]-nr<10^(-5)){
+        nr <- nr-s4[5-i]
+        comb <- c(comb, s4[5-i])
+      }
+    }
+  }
+
+  if(round(nr, digits=5)==0){
+    return(comb)
+  }
+  
+  if(nr>=sum(s3) | sum(s3)-nr<10^(-5)){
+    comb <- c(comb,s3)
+    nr <- nr-sum(s3)
+  } else {
+    while(nr>10^(-5) && length(s3)!=0){
+      m3 <- max(which(s3<=nr+10^(-5)))
+      nr <- nr-s3[m3]
+      if(nr<s3[1] && nr>10^(-5)){
+        nr <- nr+s3[m3]
+        m3 <- m3-1
+        nr <- nr-s3[m3]
+      }
+      comb <- c(comb,s3[m3])
+      s3 <- s3[-m3]
+    }
+  }
+  # if(round(nr, digits=5)==0){
+  #   return(comb)
+  # }
+  # # print(nr)
+  # if(nr<.4){
+  #   k = round(.4-nr, digits=5)
+  #   nr <- nr+k
+  #   comb <- comb[-which(comb==k)]
+  #   while(nr>10^(-5) && length(s2)!=0){
+  #     m2 <- max(which(s2<=nr+10^(-5)))
+  #     # print(m2)
+  #     nr <- nr-s2[m2]
+  #     # print(nr)
+  #     if(any(abs(comb-nr)<10^(-5))){
+  #       # print('d')
+  #       nr <- nr+s2[m2]
+  #       m2 <- m2-1
+  #       nr <- nr-s2[m2]
+  #     }
+  #     if(nr<s2[1] && nr>10^(-5)){
+  #       nr <- nr+s2[m2]
+  #       m2 <- min(which(s2<=nr+10^(-5)))
+  #       nr <- nr-s2[m2]
+  #     }
+  #     # print(nr)
+  #     comb <- c(comb,s2[m2])
+  #     s2 <- s2[-m2]
+  #   }
+  # } else {
+  #   while(nr>10^(-5) && length(s2)!=0){
+  #     m2 <- max(which(s2<=nr+10^(-5)))
+  #     # print(m2)
+  #     nr <- nr-s2[m2]
+  #     # print(nr)
+  #     if(nr<s2[1] && nr>10^(-5)){
+  #       nr <- nr+s2[m2]
+  #       m2 <- min(which(s2<=nr+10^(-5)))
+  #       nr <- nr-s2[m2]
+  #     }
+  #     # print(nr)
+  #     comb <- c(comb,s2[m2])
+  #     s2 <- s2[-m2]
+  #   }
+  # }
+    
+  # print(nr)
+  
+  if(round(nr, digits=5)==0){
+    return(comb)
+  }
+  
+  # for (i in seq(1,19)){
+  #   if((nr>=s3[20-i] | s3[20-i]-nr<10^(-5)) && any(s3[20-i]==comb)==FALSE){
+  #     nr <- nr-s3[20-i]
+  #     comb <- c(comb, s3[20-i])
+  #   }
+  # }
+  # for (i in seq(1,24)){
+  #   if(round(nr, digits=2)>=.25 && (any(s2[i]==comb)==FALSE && any(s2[50-i]==comb)==FALSE)){
+  #     nr <- nr-.25
+  #     comb <- c(comb, s2[i], s2[50-i])
+  #   } else if(nr>0 && nr<=.25){
+  #     comb <- comb[!comb==round(.25-nr, digits=2)]
+  #     nr <- .25
+  #   }
+  # }
+  return(comb)
+}
+```
+
+```{r}
+# p <- sort(date2$numar)
+# rownames(date2) <- NULL
+```
+
+```{r}
+# p <- sort(date2$numar)
+# rownames(date2) <- NULL
+```
+
+```{r}
+date <- read.csv("date_01.csv")
+date$ok <- as.factor(date$ok)
+```
+
+```{r}
+# date2 <- date[which(date$ok!=0),]
+```
+
+```{r}
+# test <- data[1:20000,]
+# for(i in seq(1, length(date3$numar))){
+#   g = gauge(date3[i,2])
+#   date3$combinatii[i] <- list(g)
+#   date3$nr_combinatii[i] <- length(g)
+#   date3[i, 4] <- round(date3[i, 2]-sum(g), digits=4)
+# }
+```
+
+```{r}
+# date2$ok <- as.factor(date2$ok)
+# date3 <- date2[which(date2$ok!=0),]
+# rownames(date3) <- NULL
+```
+
+```{r}
+# data_str <- apply(data,2,as.character)
+# write.csv(data_str, "date_01.csv")
+```
+
+```{r}
+library(tidyverse)
+
+```
+
+```{r}
+
+ggplot(date, aes(x = numar, y = nr_combinatii, col = ok)) + 
+         geom_point(size=.1) +
+         labs(title = "Nr si cate cale e nevoie \n - colorare după precizie -",
+              x = "Nr",
+              y = "Nr cale")
+```
+
+```{r}
+date_t <- date
+date_t$ok[as.numeric(as.character(date_t$ok))>10^(-5)] <- as.factor(1)
+
+ggplot(date_t, aes(x = numar, y = nr_combinatii, col = ok)) + 
+         geom_point(size=.1) +
+         labs(title = "Vizualizarea numărului necesar de cale pentru fiecare mărime \n - colorare după precizie -",
+              x = "Mărimea pe care vrem să o construim",
+              y = "Nr. de cale necesar") +
+        scale_x_continuous(breaks = round(seq(min(date_t$numar), max(date_t$numar), by = 2),10)) +
+        scale_y_continuous(breaks = round(seq(min(date_t$nr_combinatii), max(date_t$nr_combinatii), by = 5),1))
+```
