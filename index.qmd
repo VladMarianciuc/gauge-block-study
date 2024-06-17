@@ -2,18 +2,9 @@
 title: "Cod pentru lucrare de licență"
 subtitle: "Arta preciziei: o explorare matematică a unui set de cale plan paralele"
 abstract: "O incursiune matematică în fascinanta lume a preciziei și metrologiei. Pornind de la aspectele combinatorice ale unui set de cale plan paralele, această lucrare studiază intervalul de măsuri realizabile, numărul lor și criteriile obținerii unei combinații optime. Subliniază importanța selectării clasei de precizie adecvate pentru a asigura acuratețea optimă a măsurătorilor și aduce în discuție echilibrul complicat de planeitate, paralelism și exactitate pe care o cale plan paralela trebuie să-l îndeplinească. Pe lângă eleganța și simplitatea matematică a acestor instrumente, lucrarea evidențiază rolul critic pe care acestea îl au (și l-au avut) în menținerea avansării tehnologiei."
-
-editor: visual
-author: "Vlad Marianciuc"
-date: "16 June 2024"
-theme: flatly
-smooth-scroll: true
-code-fold: show
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Work in progress!
 
 ```{r}
 s1 <- seq(.1001, .1009, .0001)
@@ -243,4 +234,138 @@ ggplot(date_t, aes(x = numar, y = nr_combinatii, col = ok)) +
               y = "Nr. de cale necesar") +
         scale_x_continuous(breaks = round(seq(min(date_t$numar), max(date_t$numar), by = 2),10)) +
         scale_y_continuous(breaks = round(seq(min(date_t$nr_combinatii), max(date_t$nr_combinatii), by = 5),1))
+```
+
+```{r}
+
+p <- rnorm(10^4, 0, 0.5)
+
+
+for(i in seq(20)){
+  q <- rnorm(10^4, 0, 0.5)
+  p <- p+q
+}
+
+hist(p)
+```
+
+```{r}
+datc <- read.csv("data_complet!.csv")
+datc$ok[datc$ok>0] <- 1
+datc$ok[datc$ok<0] <- -1
+datc$ok <- as.factor(datc$ok)
+
+datc1 <- datc[which(datc$ok!=0),]
+
+```
+
+```{r}
+ggplot(datc, aes(x = numar, y = nr_comb, col = ok)) + 
+         geom_point(size=.1) +
+         labs(title = "Vizualizarea numărului necesar de cale pentru fiecare mărime \n - colorare după precizie -",
+              x = "Mărimea pe care vrem să o construim",
+              y = "Nr. de cale necesar") +
+        scale_x_continuous(breaks = round(seq(min(date_t$numar), max(date_t$numar), by = 2),10)) +
+        scale_y_continuous(breaks = round(seq(min(date_t$nr_comb), max(date_t$nr_comb), by = 5),1))
+```
+
+```{r}
+options(scipen=999)
+```
+
+hist(p)
+
+```{r}
+g1 <- numeric(10^5)
+g2 <- numeric(10^5)
+g3 <- numeric(10^5)
+
+comb <- c(0.128, 0.103, 0.129, 0.104, 1.0, 0.13, 0.105, 0.95, 0.131, 2.0, 0.106, 0.132, 0.9, 0.107, 3.0, 0.133, 0.85, 0.108, 0.134, 4.0, 0.8, 0.109, 0.135, 0.11, 0.75, 0.136, 0.111, 0.7, 0.137, 0.112, 0.138, 0.65, 0.113, 0.139, 0.6, 0.14, 0.55, 0.141, 0.5, 0.142, 0.45, 0.143, 0.144, 0.4, 0.119, 0.145, 0.35, 0.146, 0.3, 0.121, 0.147, 0.122, 0.25, 0.148, 0.123, 0.2, 0.149, 0.124, 0.15, 0.125, 0.1, 0.1001, 0.1002, 0.1003, 0.126, 0.1004, 0.1006, 0.1007, 0.1008, 0.1009, 0.101, 0.05, 0.127, 0.102)
+comb1 <- c(0.1001, 0.144, 0.25, 4, 1)
+
+g1 <- numeric(10^5)
+
+for(i in seq(length(comb))){
+  if(comb[i]<1+10^(-5)){
+    g1 <- g1 + rnorm(10^5, 0, 10^(-6))
+  } 
+  if(abs(round(comb[i]-2))<10^(-5)){
+    g1 <- g1 + rnorm(10^5, 0, 2*10^(-6))
+  }
+  if(abs(round(comb[i]-3))<10^(-5)){
+    g1 <- g1 + rnorm(10^5, 0, (2.5)*10^(-6))
+  }
+  if(abs(round(comb[i]-4))<10^(-5)){
+    g1 <- g1 + rnorm(10^5, 0, 3*10^(-6))
+  }
+}
+
+g2 <- numeric(10^5)
+
+for(i in seq(length(comb))){
+  if(comb[i]<1+10^(-5)){
+    g2 <- g2 + rnorm(10^5, 0.000001, 1.5*10^(-6))
+  } 
+  if(abs(round(comb[i]-2))<10^(-5)){
+    g2 <- g2 + rnorm(10^5, 0.000002, 3*10^(-6))
+  }
+  if(abs(round(comb[i]-3))<10^(-5)){
+    g2 <- g2 + rnorm(10^5, 0.0000025, (3.75)*10^(-6))
+  }
+  if(abs(round(comb[i]-4))<10^(-5)){
+    g2 <- g2 + rnorm(10^5, 0.000003, (4.5)*10^(-6))
+  }
+}
+
+g3 <- numeric(10^5)
+
+for(i in seq(length(comb))){
+  if(comb[i]<1+10^(-5)){
+    g3 <- g3 + rnorm(10^5, 0.000002, 3*10^(-6))
+  } 
+  if(abs(round(comb[i]-2))<10^(-5)){
+    g3 <- g3 + rnorm(10^5, 0.000004, 6*10^(-6))
+  }
+  if(abs(round(comb[i]-3))<10^(-5)){
+    g3 <- g3 + rnorm(10^5, 0.000005, (7.5)*10^(-6))
+  }
+  if(abs(round(comb[i]-4))<10^(-5)){
+    g3 <- g3 + rnorm(10^5, 0.000006, (9)*10^(-6))
+  }
+}
+
+cat("\n")
+hist(g1, xlab = "Abatere față de valoarea nominală", main="Distribuția incertitudinii pentru cale de Grad 1", breaks=100)
+sd_g1 = sd(g1)
+cat("Media combinației folosind g1 este 0 iar deviația standard este ", round(sd_g1, digits=7),".\n")
+cat("Combinația cu calele g1 oferă cu 95% încredere toleranța [",round(-2*sd_g1, digits=6), ", ", round(2*sd_g1, digits=6),"]\n")
+
+cat("\n")
+hist(g2, xlab = "Abatere față de valoarea nominală", main="Distribuția incertitudinii pentru cale de Grad 2",  breaks=100)
+sd_g2 = sd(g2)
+mean_g2 = mean(g2)
+cat("Media combinației folosind g2 este ",round(mean_g2, digits=7), " iar deviația standard este ", round(sd_g2, digits=7),".\n")
+cat("Combinația cu calele g2 oferă cu 95% încredere toleranța [",round(mean_g2-2*sd_g2, digits=6), ", ", round(mean_g2+2*sd_g2, digits=6), "]\n")
+
+cat("\n")
+hist(g3, xlab = "Abatere față de valoarea nominală", main="Distribuția incertitudinii pentru cale de Grad 3", breaks=100)
+sd_g3 = sd(g3)
+mean_g3 = mean(g3)
+cat("Media combinației folosind g3 este ",round(mean_g3, digits=7), " iar deviația standard este ", round(sd_g3, digits=7),".\n")
+cat("Combinația cu calele g3 oferă cu 95% încredere toleranța [",round(mean_g3-2*sd_g3, digits=6), ", ", round(mean_g3+2*sd_g3, digits=6), "]\n")
+
+```
+
+```{r}
+for(i in seq(length(comb1))){
+  if(comb1[i]<1){
+    p <- c(p, rnorm(10^5, 0, 1/2))
+  } else{
+    p <- c(p, rnorm(10^5, 0, comb1[i]/2))
+  }
+}
+
+
+hist(p, freq = TRUE, breaks=150)
+print(sd(p))
 ```
