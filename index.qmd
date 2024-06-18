@@ -2,6 +2,13 @@
 title: "Cod pentru lucrare de licență"
 subtitle: "Arta preciziei: o explorare matematică a unui set de cale plan paralele"
 abstract: "O incursiune matematică în fascinanta lume a preciziei și metrologiei. Pornind de la aspectele combinatorice ale unui set de cale plan paralele, această lucrare studiază intervalul de măsuri realizabile, numărul lor și criteriile obținerii unei combinații optime. Subliniază importanța selectării clasei de precizie adecvate pentru a asigura acuratețea optimă a măsurătorilor și aduce în discuție echilibrul complicat de planeitate, paralelism și exactitate pe care o cale plan paralela trebuie să-l îndeplinească. Pe lângă eleganța și simplitatea matematică a acestor instrumente, lucrarea evidențiază rolul critic pe care acestea îl au (și l-au avut) în menținerea avansării tehnologiei."
+
+editor: visual
+author: "Vlad Marianciuc"
+date: "16 June 2024"
+theme: flatly
+smooth-scroll: true
+code-fold: show
 ---
 
 Work in progress!
@@ -250,23 +257,23 @@ hist(p)
 ```
 
 ```{r}
-datc <- read.csv("data_complet!.csv")
-datc$ok[datc$ok>0] <- 1
-datc$ok[datc$ok<0] <- -1
-datc$ok <- as.factor(datc$ok)
-
-datc1 <- datc[which(datc$ok!=0),]
+# datc <- read.csv("data_complet!.csv")
+# datc$ok[datc$ok>0] <- 1
+# datc$ok[datc$ok<0] <- -1
+# datc$ok <- as.factor(datc$ok)
+# 
+# datc1 <- datc[which(datc$ok!=0),]
 
 ```
 
 ```{r}
-ggplot(datc, aes(x = numar, y = nr_comb, col = ok)) + 
-         geom_point(size=.1) +
-         labs(title = "Vizualizarea numărului necesar de cale pentru fiecare mărime \n - colorare după precizie -",
-              x = "Mărimea pe care vrem să o construim",
-              y = "Nr. de cale necesar") +
-        scale_x_continuous(breaks = round(seq(min(date_t$numar), max(date_t$numar), by = 2),10)) +
-        scale_y_continuous(breaks = round(seq(min(date_t$nr_comb), max(date_t$nr_comb), by = 5),1))
+# ggplot(datc, aes(x = numar, y = nr_comb, col = ok)) + 
+#          geom_point(size=.1) +
+#          labs(title = "Vizualizarea numărului necesar de cale pentru fiecare mărime \n - colorare după precizie -",
+#               x = "Mărimea pe care vrem să o construim",
+#               y = "Nr. de cale necesar") +
+#         scale_x_continuous(breaks = round(seq(min(date_t$numar), max(date_t$numar), by = 2),10)) +
+#         scale_y_continuous(breaks = round(seq(min(date_t$nr_comb), max(date_t$nr_comb), by = 5),1))
 ```
 
 ```{r}
