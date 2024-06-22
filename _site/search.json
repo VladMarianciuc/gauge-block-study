@@ -9,8 +9,15 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "GaugeBlock Finder",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Enter a number and see if you can obtain it with gauges from an 81 Ford-Johansson gauge block set.\nPlease take into consideration the following:\n\nNumbers from 0.1 - 26.4295 range can be obtained\nFrom 0.1 - 0.2 numbers can be obtained with increment of 0.001\nFrom 0.2 - 26.3295 numbers can be obtained with increment of 0.0001\nFrom 26.3295 - 26.4295 numbers can be obtained with increment of 0.001\nBesides that, you can obtain 0 by not using anything, 26.5295 by using all the blocks and 0.05 by using the block 0.05\n\n#| standalone: true\n#| viewerHeight: 600\nlibrary(shiny)\nlibrary(bslib)\n\ndata &lt;- read.csv(\"https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/cleaned2.csv\")\n\n# Define UI\nui &lt;- fluidPage(\n  titlePanel(\"Gauge Block Combination Calculator\"),\n  sidebarLayout(\n    sidebarPanel(\n      textInput(\"numar_input\", \"Enter a floating number (up to 4 decimals):\", value = \"0.0000\"),\n      actionButton(\"submit\", \"Submit\")\n    ),\n    mainPanel(\n      textOutput(\"result_text\"),\n      textOutput(\"result_combination\"),\n      htmlOutput(\"result_gauge_blocks\")  # Use htmlOutput instead of textOutput\n    )\n  )\n)\n\n# Define server logic\nserver &lt;- function(input, output) {\n  filteredData &lt;- eventReactive(input$submit, {\n    numar &lt;- as.numeric(input$numar_input)\n    df &lt;- data[data$numar == numar, c(\"combinatii\", \"nr_comb\")]\n    if (nrow(df) == 0) {\n      return(NULL)\n    } else {\n      return(df)\n    }\n  })\n  \n  output$result_text &lt;- renderText({\n    if (input$submit &gt; 0) {\n      if (is.null(filteredData())) {\n        return(\"Number is not in the obtainable range\")\n      } else {\n        return(\"The number can be obtained with the following combination of gauge blocks:\")\n      }\n    }\n  })\n  \n  output$result_combination &lt;- renderText({\n    if (input$submit &gt; 0 && !is.null(filteredData())) {\n      paste(filteredData()$combinatii[1])\n    }\n  })\n  \n  output$result_gauge_blocks &lt;- renderUI({\n    if (input$submit &gt; 0 && !is.null(filteredData())) {\n      HTML(paste(\"&lt;br&gt;The above combination uses &lt;strong&gt;\", filteredData()$nr_comb[1], \"&lt;/strong&gt; gauge blocks\"))\n    }\n  })\n}\n\n# Run the application \nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "about.ro.html",
+    "href": "about.ro.html",
+    "title": "Aplic",
+    "section": "",
+    "text": "Despre acest site\n\n1+1\n\n[1] 2"
   }
 ]
