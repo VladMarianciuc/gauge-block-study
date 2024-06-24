@@ -1,0 +1,210 @@
+---
+title: "GaugeBlock Finder"
+format:
+  html:
+    grid: 
+      body-width: 1400px
+    resources: 
+      - shinylive-sw.js
+filters: 
+  - shinylive
+editor: visual
+theme: flatly
+smooth-scroll: true
+code-fold: show
+---
+
+Enter a number and chose a tolerance grade and see if you can obtain it with gauges from an 81 Ford-Johansson gauge block set. You will also get the tolerance interval of the specific combination that matches your chosen number.
+
+Please take into consideration the following:
+
+-   Numbers from 0.1 - 26.4295 range can be obtained
+
+-   From 0.1 - 0.2 numbers can be obtained with increment of 0.001
+
+-   From 0.2 - 26.3295 numbers can be obtained with increment of 0.0001
+
+-   From 26.3295 - 26.4295 numbers can be obtained with increment of 0.001
+
+-   Besides that, you can obtain 0 by not using anything, 26.5295 by using all the blocks and 0.05 by using the block 0.05
+
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 600
+library(shiny)
+library(bslib)
+library(DT)
+options(scipen=999)
+
+data <- read.csv("https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/cleaned2.csv")
+
+
+
+# Define the table data
+table_data <- data.frame(
+  Nominal = c("<1 inch", "2", "3", "4"),
+  Grade_0.5 = c("+1, -1", "+2, -2", "+3, -3", "+4, -4"),
+  Grade_1 = c("+2, -2", "+4, -4", "+5, -5", "+6, -6"),
+  Grade_2 = c("+4, -2", "+8, -4", "+10, -5", "+12, -6"),
+  Grade_3 = c("+8, -4", "+16, -8", "+20, -10", "+24, -12")
+)
+
+# Define UI
+ui <- fluidPage(
+  titlePanel("GaugeBlock Finder"),
+  HTML('<p>Tolerance Grades for Inch Blocks (in µin ). (<a href="https://www.nist.gov/system/files/documents/calibrations/mono180.pdf" target="_blank">source</a>)</p>'),
+  DTOutput("grade_table"),  # Add a DT output for the table
+  br(),  # Add an empty row after the table
+  sidebarLayout(
+    sidebarPanel(
+      textInput("numar_input", "Enter a floating number (up to 4 decimals):", value = "0.0000"),
+      selectInput("grade", "Select a tolerance grade:", choices = c("0.5", "1", "2", "3")),
+      actionButton("submit", "Submit")
+    ),
+    mainPanel(
+      textOutput("result_text"),
+      textOutput("result_combination"),
+      htmlOutput("result_gauge_blocks"),
+      plotOutput("histogram"),  # Add a plot output for the histogram
+      br(),  # Add an empty row after the histogram
+      textOutput("result_stats")  # Add a text output for the statistics
+    )
+  )
+)
+
+# Define server logic
+server <- function(input, output) {
+  submit_data <- eventReactive(input$submit, {
+    numar <- as.numeric(input$numar_input)
+    grade <- input$grade
+    list(numar = numar, grade = grade)
+  })
+  
+  filteredData <- reactive({
+    req(submit_data())
+    numar <- submit_data()$numar
+    df <- data[data$numar == numar, c("combinatii", "nr_comb")]
+    if (nrow(df) == 0) {
+      return(NULL)
+    } else {
+      return(df)
+    }
+  })
+  
+  output$grade_table <- renderDT({
+    datatable(table_data, options = list(dom = 't', paging = FALSE, searching = FALSE), rownames = FALSE)
+  })
+  
+  output$result_text <- renderText({
+    req(submit_data())
+    if (is.null(filteredData())) {
+      return("Number is not in the obtainable range")
+    } else {
+      return("The number can be obtained with the following combination of gauge blocks")
+    }
+  })
+  
+  output$result_combination <- renderText({
+    req(submit_data(), filteredData())
+    combinatii_str <- gsub("\\[|\\]", "", filteredData()$combinatii[1])
+    combinatii_vec <- sort(as.numeric(unlist(strsplit(combinatii_str, ", "))))
+    paste(combinatii_vec, collapse = ", ")
+  })
+  
+  output$result_gauge_blocks <- renderUI({
+    req(submit_data(), filteredData())
+    HTML(paste("<br>The above combination uses <strong>", filteredData()$nr_comb[1], "</strong> gauge blocks"))
+  })
+  
+  g1_data <- reactive({
+    req(filteredData())
+    combinatii_str <- gsub("\\[|\\]", "", filteredData()$combinatii[1])
+    combinatii_vec <- as.numeric(unlist(strsplit(combinatii_str, ", ")))
+    g1 <- numeric(10^5)
+    
+    if(submit_data()$grade == "0.5"){
+      for(item in combinatii_vec){
+        if(item<1+10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0, 0.5*10^(-6))
+        } 
+        if(abs(round(item-2))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0, 10^(-6))
+        }
+        if(abs(round(item-3))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0, (1.5)*10^(-6))
+        }
+        if(abs(round(item-4))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0, 2*10^(-6))
+        }
+      }
+    }
+    if(submit_data()$grade == "1"){
+      for(item in combinatii_vec){
+        if(item<1+10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0, 10^(-6))
+        } 
+        if(abs(round(item-2))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0, 2*10^(-6))
+        }
+        if(abs(round(item-3))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0, (2.5)*10^(-6))
+        }
+        if(abs(round(item-4))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0, 3*10^(-6))
+        }
+      }
+    }
+    if(submit_data()$grade == "2"){
+      for(item in combinatii_vec){
+        if(item<1+10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0.000001, 1.5*10^(-6))
+        } 
+        if(abs(round(item-2))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0.000002, 3*10^(-6))
+        }
+        if(abs(round(item-3))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0.0000025, (3.75)*10^(-6))
+        }
+        if(abs(round(item-4))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0.000003, (4.5)*10^(-6))
+        }
+      }
+    }
+    if(submit_data()$grade == "3"){
+      for(item in combinatii_vec){
+        if(item<1+10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0.000002, 3*10^(-6))
+        } 
+        if(abs(round(item-2))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0.000004, 6*10^(-6))
+        }
+        if(abs(round(item-3))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0.000005, (7.5)*10^(-6))
+        }
+        if(abs(round(item-4))<10^(-5)){
+          g1 <- g1 + rnorm(10^5, 0.000006, (9)*10^(-6))
+        }
+      }
+    }
+    g1
+  })
+  
+  output$histogram <- renderPlot({
+    g1 <- g1_data()
+    hist(g1, xlab = "Deviation from nominal value (in inches)", main = "Deviation distribution for this combination", breaks = 100)
+  })
+  
+  output$result_stats <- renderText({
+    g1 <- g1_data()
+    mean_g1 <- mean(g1)
+    sd_g1 <- sd(g1)
+    conf_tol <- round(mean_g1 + 2 * sd_g1, digits = 6)
+    conf_tol_neg <- round(mean_g1 - 2 * sd_g1, digits = 6)
+    
+    paste("The tolerance of this combination is with 95% confidence +", conf_tol*10^6, " / ", conf_tol_neg*10^6, " µin  (or ", conf_tol, " / ", conf_tol_neg, " inches).")
+  })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+```
