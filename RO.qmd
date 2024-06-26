@@ -1,0 +1,461 @@
+---
+title: "Arta preciziei: o explorare matematică a unui set de cale plan paralele"
+subtitle: "Lucrare de licență - Facultatea de Matematică și Informatică, Universitatea București"
+abstract: "O incursiune matematică în fascinanta lume a preciziei și metrologiei. Pornind de la aspectele combinatorice ale unui set de cale plan paralele, această lucrare studiază intervalul de măsuri realizabile, numărul lor și criteriile obținerii unei combinații optime. Subliniază importanța selectării clasei de precizie adecvate pentru a asigura acuratețea optimă a măsurătorilor și aduce în discuție echilibrul complicat de planeitate, paralelism și exactitate pe care o cale plan paralela trebuie să-l îndeplinească. Pe lângă eleganța și simplitatea matematică a acestor instrumente, lucrarea evidențiază rolul critic pe care acestea îl au (și l-au avut) în menținerea avansării tehnologiei."
+
+editor: visual
+author: "Vlad Marianciuc"
+date: "16 June 2024"
+theme: flatly
+smooth-scroll: true
+code-fold: show
+lightbox: true
+---
+
+# 1. Introducere
+
+## 1.1 Alegerea temei {#1.1}
+
+Tema lucrării a fost aleasă în urma vizionării videoclipului „Origins of precision”[^1] al utilizatorului Machine Thinking de pe platforma YouTube. Videoclipul respectiv prezintă sumar dezvoltarea si creșterea preciziei de măsurare de-a lungul istoriei. El se termină cu o problemă deschisă generată de câteva afirmații care sunt prezente pe foaia de prezentare al unui set de cale plan paralele Ford-Johansson.
+
+[^1]: Francis, W. (2017, Noiembrie 22). *Origins of precision*. Machine Thinking.<br> <https://www.youtube.com/watch?v=gNRnrn5DE58>
+
+[![Fig.1 Foaia de prezentare al unui set cu 81 de cale plan paralele din 1944](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2001.png){.lightbox}](https://youtu.be/gNRnrn5DE58?feature=shared&t=1018)
+
+Mai exact, este vorba despre 2 afirmații făcute aici:
+
+-   a\) „ Folosind piesele acestui set, se pot obține măsuri între 0.1″ și 0.2″ cu pas de 0.001″ și între 0.2″ și 10″ cu pas de 0.0001″ ” (traducere personală din Fig 2.)
+
+-   b\) „ Mai mult de 100 000 de combinații sunt posibile folosind acest set cu 81 de piese ” (traducere personală din Fig 2.)
+
+![Fig.2 Afirmațiile de la care a pornit lucrarea (zoom Fig.1)](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2002.png){.lightbox}
+
+## 1.2 Natura temei alese
+
+Topicurile discutate în lucrarea de față se încadrează în 2 domenii matematice:
+
+-   a\) Combinatorică: Probleme de numărare și optimizare
+
+-   b\) Statistică: Evaluarea incertitudinii de măsurare
+
+Pe lângă aceste 2 domenii, lucrarea conține comentarii și precizări de natură istorică și practică.
+
+## 1.3 Prezentarea generală a temei
+
+### 1.3.1 Definirea datelor problemei
+
+<br>
+
+-   <u>a) Calele plan paralele</u>
+
+    Pentru a înțelege tema, este necesară o scurtă descriere a calelor plan paralele, ce sunt, la ce sunt folosite și cum funcționează ele.
+
+    Conform NIST (National Institute of Standards and Technology)[^2], o cală plan paralelă este o piesă folosită ca standard de lungime ce are 2 laturi opuse plane și paralele.
+
+    Calele plan paralele au valori nominale în sistem metric (mm) și în sistem imperial (1 inch = 25.4 mm).
+
+    Ele sunt folosite pentru a produce diverse dimensiuni foarte precise care sunt folosite la calibrarea utilajelor industriale sau pentru verificarea instrumentelor de precizie.
+
+    Modul prin care aceste dimensiuni sunt obținute se numește „calare” și este una din proprietățile de bază, definitorie a acestor instrumente.
+
+[^2]: Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN), National Institute of Standards and Technology, Gaithersburg, MD, \[online\], p.10<br> <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735>
+
+[![Fig.3 Cale plan paralele (sistem metric)](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2003.png){.lightbox}](https://www.elastocon.com/learn-more/about-calibration/gauge-blocks-the-foundation-to-all-modern-industrial-production)
+
+<br>
+
+-   <u>b) Calarea calelor plan paralele</u>
+
+    Modul în care diverse dimensiuni pot fi obținute cu aceste cale se numește „calare” și poate fi definit ca procesul prin care două suprafețe aderă strâns una de cealaltă în absența mijloacelor externe (nu sunt magnetizate sau lipite împreună cu un adeziv).
+
+    Datorită fețelor lor extrem de plane, când două cale sunt calate, ele se „lipesc”.
+
+    [![Fig.4 Procedeul de calare a 2 cale](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2004.png){.lightbox}](http://www.starrett-webber.com/gb46.html)
+
+    Repetând acest proces, pot fi calate consecutiv mai multe cale, obținând diverse dimensiuni.
+
+    De exemplu, dacă vrem să obținem dimensiunea de 1.8324″, putem cala împreună următoarele cale:
+
+    1.8324 = .1004 + .132 + .6 + 1 (obținem 1.8324 prin calarea a 4 cale)
+
+    [![Fig.5 Mai multe cale sunt calate pentru a obține o dimensiune. Se observă cum ele rămân lipite sub acțiunea gravitației.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2005.png){.lightbox}](https://en.wikipedia.org/wiki/Gauge_block#/media/File:Gauge_block_adhesion.jpg)
+
+    Motivul pentru care acest fenomen are loc nu este pe deplin înțeles, câteva ipoteze fiind[^3]:
+
+    1.  Presiunea aerului din mediul înconjurător, deoarece aerul este presat atunci când blocurile sunt calate împreună.
+
+    2.  Tensiunea superficială a uleiului sau a vaporilor de apă din aer acționează ca un lipici pentru a le ține împreună.
+
+    3.  Când două suprafețe foarte plane sunt aduse în contact atât de strâns una cu cealaltă, acest lucru permite un schimb de electroni între atomii lor, ceea ce creează o forță moleculară atractivă (această forță va rămâne chiar și în vid sau dacă nu este prezent ulei sau apă pe suprafețe).
+
+[^3]: Webber, S. (2003, November 21). *Wringing Gage Blocks. Starret-Webber*.<br> <http://www.starrett-webber.com/gb46.html>
+
+<br>
+
+-   <u>c) Setul Ford-Johansson cu 81 de piese</u>
+
+    Setul analizat în această lucrare este compus din 81 de piese, aranjate în 4 clase (serii) de mărimi. Componența este următoarea (toate dimensiunile sunt în inch, voi face abstracție de semnul ″):
+
+    <br>
+
+    <b>Seria 1 (9 cale):</b>
+
+    .1001, .1002, .1003, .1004, .1005, .1006, .1007, .1008, .1009
+
+    <br> <b>Seria 2 (49 cale):</b>
+
+    .101, .102, .103, .104, .105, .106, .107, .108, .109, .110, .111, .112, .113, .114, .115, .116, .117, .118, .119, .120, .121, .122, .123, .124, .125, .126, .127, .128, .129, .130, .131, .132, .133, .134, .135, .136, .137, .138, .139, .140, .141, .142, .143, .144, .145, .146, .147, .148, .149
+
+    <br> <b>Seria 3 (19 cale):</b>
+
+    .050, .100, .150, .200, .250, .300, .350, .400, .450, .500, .550, .600, .650, .700, .750, .800, .850, .900, .950
+
+    <br> <b>Seria 4 (4 cale):</b>
+
+    1, 2, 3, 4
+
+    <br> În total sunt 81 de piese, iar dacă le calăm pe toate împreună obținem (nominal) dimensiunea de <b>26.5295″</b>. <i>Această informație va fi importantă în această lucrare.</i>
+
+![Fig.6 Setul de 81 de piese realizat de C.E. Johansson pentru fabricile Ford pe care Ford însuși l-a făcut cadou bunului său prieten, Thomas Edison. Acum acest set se află la Muzeul Preciziei din Windsor, Vermont, Statele Unite ale Americii.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2006.jpg){.lightbox}
+
+<br>
+
+### 1.3.2 Enunțarea problemei
+
+Pornind de la afirmațiile prezentate la punctul [1.1](#1.1) (1.1.a și 1.1.b), punem următoarele întrebări:
+
+-   a\) Având în vedere concluzia punctului 1.3.1.c (anume că dacă vom cala toate cele 81 de cale vom obține, nominal, dimensiunea de 26.5295″), <b>cum va arăta distribuția dimensiunilor pe care le putem obține în intervalul 0 – 26.5295?</b>
+
+    Vom putea obține, cu aceeași rezoluție (aici rezoluție = pas) de 10^-4^, dimensiuni după ce vom trece de 10″ ?
+
+    De exemplu, între 11″ și 20″ putem obține toate numerele mergând cu un pas de 0.0001″ (10^-4^)? Dar între 20″ și 24″ ? Există vreo dimensiune pe care nu o putem obține?
+
+-   b\) Afirmația 1.1.b ne spune că pot fi obținute peste 100 000 de dimensiuni folosind piesele acestui set.
+
+    <b>Care este numărul precis de dimensiuni pe care le putem obține folosind piesele acestui set ?</b>
+
+<br>
+
+### 1.3.3 Intuiție inițială {#1.3.3}
+
+Pentru a răspunde la întrebările pe care ni le punem este important să avem un punct de plecare, o intuiție inițială. Iar pornind de la aceasta, să demonstrăm riguros veridicitatea sau neveridicitatea ei.
+
+Referitor la întrebarea 1.3.2.a, așteptarea este ca granulația (de 10^-4^ inch) cu care obținem dimensiuni în intervalul .2″ - 10″ (conform afirmației 1.1.a) să nu se păstreze până la maximul intervalului (26.5295″).
+
+Avem un număr finit (81) de cale iar măsurile pe care le construim sunt din ce în ce mai mari, ceea ce înseamnă că vom folosi din ce în ce mai multe cale. Intuim că la un moment dat nu vom avea destule pentru a putea reprezenta cu aceeași granulație (sau finețe) numerele în intervale mai ridicate (de exemplu 16″ - 22″). Altfel spus, ne așteptăm să existe salturi între anumite numere și o descreștere a distribuției lor.
+
+![Fig. 7 Descriere schematică a intuiției prezentate mai sus. Dreptunghiurile reprezintă cantitatea de numere ce pot fi obținute în intervalul respectiv.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2007.jpg){#fig7 .lightbox}
+
+<br>
+
+### 1.3.4 Considerente pragmatice
+
+După satisfacerea curiozităților de natură combinatorică care au pornit de la aceste instrumente, lucrarea își propune să trateze modul în care ele sunt folosite în practică.
+
+Vom intra pe tărâmul metrologiei și vom vedea cum instrumente statistice precum gradul de încredere, distribuția toleranței unei măsurători și a.m.d. sunt folosite pentru a determina precizia unei măsurători.
+
+De asemenea, vom aduce în discuție gradele de precizie și cum putem alege instrumentele potrivite în funcție de precizia măsurătorilor pe care le facem în mod uzual.
+
+[![Fig.8 Toate măsurătorile au un grad de incertitudine iar cu cât marja de toleranță este mai mare, cu atât crește încrederea că măsurătoarea respectivă se încadrează în acea marjă de toleranță.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2008.png){.lightbox}](https://www.muelaner.com/metrology/#uncertainty)
+
+Un lucru foarte important pe care acest instrumente l-au asigurat și încă îl asigura este trasabilitatea unei măsurători.
+
+La fel cum în matematică este important să construim demonstrații care au la bază axiomele unui sistem algebric, în metrologie este important să putem să trasăm parcursul unei măsurători până la laboratorul sau cala de precizie cu care a fost realizată.
+
+O măsurătoare trasabilă este una care are un lanț neîntrerupt de etalonări care revin la standardul de referință primar, cu incertitudini calculate pentru fiecare calibrare. Incertitudinea de măsurare este moștenită de-a lungul lanțului de etalonări, astfel încât incertitudinea crește cu cât ne depărtăm de standardul de referință primar. Trasabilitatea de la referința primară, prin laboratoare de metrologie acreditate și până la departamentele de metrologie industrială asigură că toată lumea lucrează la standarde comune și cunoaște aceeași incertitudine a unei măsurători[^4].
+
+[^4]: Muelaner, J. (2017a, November 1). *Key principles in metrology and Measurement Systems Analysis (MSA).*<br> <https://www.muelaner.com/metrology/>
+
+<br>
+
+### 1.3.5 Considerente istorice
+
+Până la sfârșitul secolului al XIX-lea, ideea pieselor interschimbabile începută de Eli Whitney[^5] a fost acceptată de națiunile industriale ca model pentru producția industrială.
+
+[^5]: A&E Television Networks. (n.d.). *Interchangeable parts*. History.com.<br> <https://www.history.com/topics/inventions/interchangeable-parts>
+
+Unul dintre dezavantajele acestui nou sistem era că necesită un control strict al dimensiunii foarte multor piese diferite. Pentru fiecare erau nevoie de numeroase calibre cu care erau verificate și calibrate diferitele piese din producția industrială. Numărul de astfel de calibre a devenit foarte mare. Natura complexă de producere a lor precum și costurile de întreținere au adus cheltuieli semnificative industriașilor. Pasul major spre simplificarea acestei situații a fost făcut de C.E. Johannson, un mașinist suedez.
+
+Ideea lui Johannson, formulată pentru prima dată în 1896, a fost să facă un set mic de calibre care ar putea fi combinate pentru a forma calibre compozite mai mari și de dimensiuni diverse astfel încât să reducă numărul de calibre necesare. De exemplu, dacă patru calibre de dimensiuni de 1 mm, 2 mm, 4 mm și 8 mm pot fi combinate în orice combinație, toate dimensiunile milimetrice de la 1 mm la 15 mm ar putea fi făcute numai din aceste patru calibre. Johannson a mai descoperit că, dacă două fețe opuse ale unei piese de oțel sunt foarte plane și paralele, acestea s-ar lipi împreună atunci când erau alunecate împreună (eventual ajutate de o cantitate foarte mică de ulei)[^6]. Din această cauză aceste calibre, în România, sunt numite Cale Plan Paralele (în țările vorbitoare de limba engleză ele se numesc Gauge Blocks). În Statele Unite, ideea a fost adoptată cu entuziasm de Henry Ford. Atât de utile au fost pentru fabricile Ford aceste instrumente întrucât, când s-a ivit oportunitatea, Henry Ford a cumpărat fabrica lui C.E. Johansson în care acesta realiza Seturile de Cale Plan Paralele. Ford și Johansson au avut o colaborare reușită iar stima pe care marele industriaș i-o purta inventatorul suedez poate fi înțeleasă astfel: în biroul personal al lui Ford puteau să intre fără programare doar 2 oameni: fiul său și C.E. Johansson. Prin influența pe care Ford o avea, a popularizat utilizarea calelor plan paralele iar, în cele din urmă, acestea au fost adoptate ca standard de transfer pentru lungime în industrie.
+
+[^6]: Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN), National Institute of Standards and Technology, Gaithersburg, MD, \[online\], p.8<br> <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735>
+
+![Fig.8a C.E. Johansson ținând în mână un „baton” de cale](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2008a.png){.lightbox}
+
+<br>
+
+Fun fact: La vremea la care le-a creat, erau multe definiții diferite pentru 1 inch și nu era un consens universal. Era inch-ul tâmplarului, cizmarului, bucătarului. Fiind subdiviziunea unei dimensiuni definită după corpul uman (1 foot), este normal ca ea să difere de la loc la loc. Totuși, Johansson a fost primul[^7] care a stabilit (prin calele sale plan paralele) ca dimensiunea unui inch să fie exact 25.4 mm. Și nu a spus nimănui asta. Ani mai târziu, probabil într-o mare parte datorită calelor plan parelele Johansson, în urma întâlnirilor realizate între 1950 – 1959, laboratoarele de metrologie din Statele Unite, Canada, Anglia, Australia și Africa de Sud au convenit să definească inch-ul ca 25.4 mm.
+
+[^7]: *The history of gauge blocks.* (n.d.), p.8.<br><https://www.mitutoyo.com/webfoo/wp-content/uploads/E12016-Historyof-The-Gage-Block.pdf>
+
+<br>
+
+<br>
+
+# 2. Problema de numărare
+
+Pus în termeni simpli, ceea ce vrem să știm este:
+
+Toate numerele, cu până la 4 zecimale, din intervalul \[0.2, 26.3295\] pot fi reprezentate folosind piese din setul Ford-Johansson cu 81 de cale plan paralele?
+
+<u>Observație:</u> Capetele de început și final, anume \[0, 0.2\] și \[26.3295, 26.5295\] le vom trata separat la final deoarece, conform 1.1.a, acolo avem o granulație mai mică.
+
+<br>
+
+## 2.1 Abordarea naivă
+
+În orice problemă, este important să începem de undeva cu pași oricât de mici.
+
+Să luăm un număr x din intervalul \[0.2, 26.3295\], de exemplu **8.2349**. Vrem să calibrăm cuțitul de tăiere al unui utilaj astfel încât să rașcheteze precis la distanța de 8.2349 inch față de o placă suport.
+
+Vrem să scădem din acestă dimensiune mărimi din cele enumerate la punctul 1.3.1.c și să ajungem la 0.
+
+Un mod de a face acest lucru este:
+
+1.  Să plecăm de la mic la mare. Scăpăm de zecimale, scăpăm de ultima zecimală și tot așa, iterativ. Practic, facem 0 cifra din dreapta.
+
+    | Scăpăm de partea fracționară |     |          |
+    |------------------------------|-----|----------|
+    | 8.2349                       | \|  | \- .1009 |
+    | 8.134                        | \|  | \- .134  |
+    | 8                            |     |          |
+
+2.  Odată ce nu mai avem zecimale, vom avea un număr natural și putem începe să scădem numerele mari în ordine descrescătoare (începând cu cele din Seria 4 de la punctul 1.3.1.c, apoi Seria 3 și tot așa).
+
+    | Scăpăm de partea întreagă |     |      |
+    |---------------------------|-----|------|
+    | 8                         | \|  | \- 4 |
+    | 4                         | \|  | \- 3 |
+    | 1                         | \|  | \- 1 |
+    | 0                         |     |      |
+
+Gata. Acum putem lua calele care corespund mărimilor de mai sus, să le calăm și să obținem dimensiunea 8.2349.
+
+4 + 3 + 1 + .1009 + .134 = 8.2349
+
+Am găsit mulțimea {.1009, .134, 1, 3, 4} a cărei sumă face 8.2349
+
+::: {#0 .callout-note appearance="minimal"}
+## (0)
+
+Dar în \[0.2, 26.3295\] sunt 261 296 numere (mergând cu pasul de 0.0001)
+:::
+
+Ar dura prea mult să verificăm toate numerele manual. Neștiind dacă toate aceste numere pot fi obținute din cele 81 de piese, chiar și un script rulat pe calculator va avea probleme – ar putea rula la nesfârșit sau ar putea dura foarte mult până ce găsește combinația potrivită. Să luăm ca exemplu un număr ceva mai mare, **19.3657**.
+
+Vrem să verificăm dacă o piesă pe care urmează să o folosim într-un mecanism de mare finețe are lungimea unei laturi precis de 19.3657 inch. Ruleta ne arată 19.4 inch, șublerul ne zice 19.366 (cu toleranță de +/- 0.001 inch), dar noi vrem să fim mai preciși. Când depășim anumite limite de precizie, măsurarea directă nu mai este de mare folos. Asta se întâmplă din cauza toleranțelor implicite pe care instrumentele de măsură (rulete, șublere, micrometre) le au. În acestă situație vom recurge la măsurarea prin comparație. Prin urmare vom folosi un instrument care detectează schimbări cuprinse între 0 și 0.0004 inch (ceas comparator), vom construi dimensiunea respectivă cu cale plan paralele și o vom compara cu piesa noastră (prin glisare pe o suprafață plană).
+
+Pentru a obține numărul, vom folosi aceeași metodă ca mai sus:
+
+1.  
+
+    | Scăpăm de partea fracționară |     |          |
+    |------------------------------|-----|----------|
+    | 19.3657                      | \|  | \- .1007 |
+    | 19.265                       | \|  | \- .115  |
+    | 19.15                        | \|  | \- .15   |
+    | 19                           |     |          |
+
+2.  
+
+    | Scăpăm de partea întreagă |     |        |
+    |---------------------------|-----|:------:|
+    | 19                        | \|  |  \- 4  |
+    | 15                        | \|  |  \- 3  |
+    | 12                        | \|  |  \- 2  |
+    | 10                        | \|  |  \- 1  |
+    | 9                         | \|  | \- .95 |
+    | 8.05                      | \|  | \- .9  |
+    | 7.15                      | \|  | \- .85 |
+    | 6.3                       | \|  | \- .8  |
+    | 5.5                       | \|  | \- .75 |
+    | 4.75                      | \|  | \- .7  |
+    | 4.05                      | \|  | \- .65 |
+    | 3.4                       | \|  | \- .6  |
+    | 2.8                       | \|  | \- .55 |
+    | 2.25                      | \|  | \- .5  |
+    | 1.75                      | \|  | \- .45 |
+    | 1.3                       | \|  | \- .4  |
+    | 0.9                       | \|  | \- .35 |
+    | 0.55                      | \|  | \- .3  |
+    | 0.25                      | \|  | \- .25 |
+    | 0                         |     |        |
+
+<br>
+
+Vedem că în acest caz am fost norocoși iar calele s-au aliniat bine, chiar în ordine descrescătoare. Față de primul exemplu unde am folosit 5 cale pentru a obține dimensiunea dorită, aici am avut nevoie să folosim **22** de cale!
+
+::: {#1 .callout-note appearance="minimal"}
+Remarcăm și reținem: Dacă am folosit **n** cale ca să obținem un număr **x**, atunci calele rămase vor suma la numărul 26.5295 – **x** . $$  $$ {#eq-b}
+:::
+
+Această simetrie va fi importantă în continuare.
+
+<br>
+
+## 2.2 Formulare matematică
+
+Definim seriile de mărimi Si conform celor de la punctul 1.3.1.c.
+
+$$Fie\ \mathcal{S}_\mathcal{i},\ i=\overline{1,4},\ multimi\ discrete\ definite\ astfel:$$ $$\qquad\mathcal{S}_1=\overline{1,9}\cdot\left(0.0001\right)+\left(0.1\right),\ |\mathcal{S}_1|=9$$\
+$$\qquad\mathcal{S}_2=\overline{1,49}\cdot\left(0.001\right)+\left(0.1\right),\ |\mathcal{S}_2|=49$$\
+$$\qquad\mathcal{S}_3=\overline{1,19}\cdot\left(0.05\right),\ |\mathcal{S}_3|=19$$\
+$$\qquad\mathcal{S}_4=\overline{1,4},\ |\mathcal{S}_4|=4$$<br>
+
+$$Fie\ \mathcal{S}=\bigcup_{i=1}^{4}S_i,\ |\mathcal{S}|=81,\ \ \ \ \ \ \ \ \ Observatie:\sum\mathcal{S}=\sum_{x\in\mathcal{S}}x=26.5295$$
+
+$$Clarificare: Multimea\ \mathcal{S}\ este\ reprezentarea\ setului\ Ford-Johansson\ cu\ 81\ de\ piese$$<br>
+
+$$Fie\ \mathrm{\mathrm{X}}=\{x:x\in\left[0.2,\ 26.3295\right],\ x\cdot{10}^4\in\mathbb{N}\}$$ {#eq-2}
+
+$$Aratati\ ca\ \forall\ {x}\in\mathrm{X},\ \exists\ \mathrm{S}_x=\{s_1, s_2,...,s_n\}\subseteq\mathcal{S},\ 0\leq{n}\leq81,\ a.i. $$ $$\sum\mathrm{S}_x=\sum_{i=1}^{n}s_i=x$$
+
+<br>
+
+## 2.3 Reducere
+
+Din [(1)](#1) avem că:
+
+$$\displaylines{\forall\ {x}\in\mathrm{X},\ daca\ \exists\ \mathrm{S}_x\subseteq\mathcal{S}\ a.i. \sum\mathrm{S}_x=x\ si\ y:=26.5295-x, \\ atunci\ \exists\ \mathrm{S}_{y}=\mathcal{S}\setminus\mathrm{S}_x\ \ a.i.\ \sum\mathrm{S}_{y}=26.5295-x=y}$$ {#eq-3}
+
+Exemplu:
+
+$$x=4.5,\ \mathrm{S}_x=\{4, .5\},\ \sum\mathrm{S}_x=4.5=x$$
+
+$$y=26.5295-x=26.5295-4.5=22.0295$$
+
+$$\mathrm{S}_{y}=\mathcal{S}\setminus\mathrm{S}_x,\  \sum\mathrm{S}_{y}=\sum\mathcal{S}-\sum\mathrm{S}_x=26.5295-4.5=22.0295=y$$
+
+Asta înseamnă că putem folosi simetria pentru a reduce la jumătate problema. Această simetrie poate fi văzută ca simetria dintre adunare și scădere. Pentru a obține o dimensiune din prima jumătate a intervalului, pornim de la 0 (nu avem nici o cală) și adunăm cale, iar pentru a obține simetricul acelei dimensiuni, pornim de la maxim (avem toate calele lipite) și scădem aceleași cale pe care le adunasem inițial.
+
+![Fig.8a C.E. Johansson ținând în mână un „baton” de cale](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2009.jpg){.lightbox}
+
+<br>
+
+## 2.4 Ajustarea intuiției inițiale
+
+Reamintindu-ne intuiția inițială (punctul [1.3.3](#1.3.3)) și descrierea realizată în [Fig.7](#fig7), ne dăm seama că acum, cu informația de la punctul anterior, lucrurile vor sta altfel.
+
+Prin urmare, îmbogățim și ajustăm intuiția astfel: poate că după 10″ distribuția dimensiunilor va scădea (trebuie demonstrat acest lucru), dar cu siguranță structura distribuției, per ansamblu, este simetrică față de mijlocul intervalului \[0, 26.5295\].
+
+![Fig.8a C.E. Johansson ținând în mână un „baton” de cale](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2010.jpg){.lightbox}
+
+Acest lucru ne ușurează sarcina. Considerând adevărată afirmația din alegerea temei (1.1.a), ne rămâne să extindem afirmația 1.1.a de la 10″ până la 13.2647″ și, prin simetrie, va rezulta că toate numerele cu până la 4 zecimale din intervalul \[0.2, 26.3295\] pot fi obținute cu piese din acest set.
+
+<br>
+
+## 2.5 Reformulare și rezolvare
+
+[(2)](#eq-2) devine:
+
+$$Fie\ \hat{\mathrm{X}}=\{x:x\in\left[0.2,\ 13.2647\right],\ x\cdot{10}^4\in\mathbb{N}\}$$
+
+$$\displaylines{Aratati\ ca\ \forall\ {x}\in\hat{\mathrm{X}},\ \exists\ \mathrm{S}_x=\{s_1, s_2,...,s_n\}\subseteq\mathcal{S},\ 0\leq{n}\leq81,\ a.i. \\ \sum\mathrm{S}_x=\sum_{i=1}^{n}s_i=x}$$ {#eq-4}
+
+[**Rezolvare:**]{.underline}
+
+Idee:
+
+i.  Arătăm că putem obține un inch complet (aici prin „complet”
+    înțelegem că putem merge „continuu” cu pas de 0.0001).Vom arăta acest lucru
+    pentru intervalul \[0.2, 1.1999\].
+
+ii. Arătăm că putem obține orice număr natural între 1 și 13 folosind
+    piesele rămase după ce am scos cele pe care le-am folosit la punctul i).
+
+Din i) și ii) rezultă că putem acoperi tot intervalul **X**.
+
+<br>
+
+i\.
+
+$a)\ Aratam\ ca\ (4)\ este\ valabil\ pentru\ intervalul\ [0.2, 0.9999]:$<br><br>
+
+$$Fie\ x:=\overline{0.abcd},\ b,c,d\in\overline{0,9},\ a\in\overline{2,9}$$<br>
+
+$\qquad a.1)\ daca\ d=0,\ continua\ la\ pasul\ a.2),\ altfel:$
+
+$$\forall\ d\in\overline{1,9},\ \exists\ s_1\in\mathcal{S}_1\ a.i.$$
+
+$$ x_1:=x-s_1=\overline{0.(a-1)bc},\ (a-1)\in\overline{1,8}$$
+
+$\qquad a.2)\ daca\ \overline{bc}\equiv0\ (mod\ 50),\ continua\ la\ pasul\ a.3),\ altfel:$
+
+$$\forall\ \overline{bc}\in\overline{1,49},\ \exists\ s_2\in\mathcal{S}_2\ a.i.$$
+
+$$x_2:=x_1-s_2=\begin{cases} \overline{0.(a-2)5}\quad \\ \quad sau \\ \overline{0.(a-2)} \end{cases},\ (a-2)\in\overline{0,7}$$
+
+$\qquad a.3)\ daca\ x_2=0,\ gata, altfel:$
+
+$$\forall\ (a-2)\in\overline{0,7},\ \exists\ s_3\in \mathcal{S}_3\ a.i.$$ $$x_2-s_3=0$$
+
+$\qquad Prin\ urmare,\ putem\ construi\ \mathrm{S}_x=\{s_1\in\mathcal{S}_1, s_2\in\mathcal{S}_2, s_3\in\mathcal{S}_3\}\ a.i.$<br><br> $$ \sum\mathrm{S}_x=x,\ \forall\ x\in[0.2, 0.9999]$$ <br>
+
+$\qquad\underline{Observatie}:\ \mathrm{S}_x\ are\ cel\ mult\ 3\ elemente,\ cate\ unul\ din\ \mathcal{S}_1,\ \mathcal{S}_2\ respectiv\ \mathcal{S}_3.$
+
+<br>
+
+$b)\ Aratam\ ca\ (4)\ este\ valabil\ pentru\ intervalul\ [1, 1.199]:$<br><br>
+
+$$Fie\ x:=\overline{1.abcd},\ b,c,d\in\overline{0,9},\ a\in\{0,1\}$$<br>
+
+$\qquad b.1)\ daca\ d=0,\ continua\ la\ pasul\ b.2),\ altfel:$
+
+$$\forall\ d\in\overline{1,9},\ \exists\ s_1\in\mathcal{S}_1\ a.i.$$
+
+$$ x_1:=x-s_1=\begin{cases} \overline{0.9bc}\\ \ sau\\ \overline{1.0bc}\end{cases}$$
+
+$\qquad b.2)\ daca\ \overline{bc}\equiv0\ (mod\ 50),\ continua\ la\ pasul\ b.3),\ altfel:$
+
+$$\forall\ \overline{bc}\in\overline{1,49},\ \exists\ s_2\in\mathcal{S}_2\ a.i.$$
+
+$$x_2:=x_1-s_2=\begin{cases} \begin{cases}0.85\\sau\\0.8\end{cases}\quad \\ \quad sau \\\begin{cases}0.95\\sau\\0.9\end{cases}\end{cases}$$
+
+$\qquad b.3)\ \exists\ s_3\in\{.8, .85, .9, .95, 1\}\ a.i.\ x_2-s_3=0$<br><br>
+
+$\qquad Prin\ urmare,\ putem\ construi\ \mathrm{S}_x=\{s_1, s_2, s_3\}\ a.i.$<br><br> $$\sum\mathrm{S}_x=x,\ \forall\ x\in[1, 1.1999]$$
+
+Din a) și b) rezultă că putem construi fiecare număr cu până la 4 zecimale în intervalul \[0.2, 1.1999\].
+<br><br>
+
+ii\.
+
+Pentru punctul i) folosim cel mult 3 cale, câte una din Seria 1, Seria 2 sau Seria 3. Asta înseamnă că putem folosi complet Seria 4 = {1, 2, 3, 4} cu care putem genera numerele naturale de la 1 la 10 inclusiv.
+
+Vrem să generăm pe 11, 12 și 13. Facem observația că din Seria 3 folosim doar 1 singură cală la punctul i), prin urmare ne rămân 18 cale în Seria 3 pe care le putem folosi. Remarcăm că putem aranja calele din Seria 3 astfel:
+
+| Gruparea calelor din Seria 3  |              |                |             |
+|-------------------------------|--------------|----------------|-------------|
+| .05 + .95 = 1                 | .1 + .9 = 1  | .15 + .85 = 1  | .2 + .8 = 1 |
+| .25 + .75 = 1                 | .3 + .7 = 1  | .35 + .65 = 1  | .4 + .6 = 1 |
+| .45 + .55 = 1                 | .5           |                |             |
+
+Prin urmare, vom putea oricând lua 3 astfel de perechi pe care să le adunăm la calele din Seria 4 astfel încât să generăm toate numerele naturale de la 1 la 13.
+
+Acum vom spune că:
+
+$$\ \forall\ x\in\hat{\mathrm{X}}=\{x:x\in\left[0.2,\ 13.2647\right],\ x\cdot{10}^4\in\mathbb{N}\},$$
+
+$$\exists!\ (a,b)\ cu\ a\in\overline{1,13}\ \cup \{0\}\ si\ b\in\{x:x\in[0.2, 1.1999],\ x\cdot10^4\in\mathbb{N}\}\ a.i.$$
+
+$$\begin{cases}a+b=x \\ din\ i):\quad \forall\ b,\ \exists\ \mathrm{S}_b\subseteq\mathcal{S}\ a.i.\ \sum\mathrm{S}_b=b \\ din\ ii):\quad \forall\ a,\ \exists\ \mathrm{S}_a\subseteq\mathcal{S},\ \mathrm{S}_a\cap\mathrm{S}_b=∅\ a.i.\ \sum\mathrm{S}_a=a \end{cases}\quad \Rightarrow$$
+
+<br>
+
+$$⇒\ \forall\ x\in\hat{\mathrm{X}},\ \exists\ \mathrm{S}_x=(\mathrm{S}_a\cup\mathrm{S}_b)\subseteq\mathcal{S},\ a.i. \\ $$ $$\sum\mathrm{S}_x=\sum\mathrm{S}_a+\sum\mathrm{S}_b=a+b=x$$ {#eq-5}
+
+<br>
+
+Final:
+
+$$\forall\ x\in\hat{\mathrm{X}},\ putem\ construi\ y:=26.5295-x,\ y\in\mathrm{Y}=26.5295-\mathrm{X},$$
+
+$$\mathrm{Y}=\{y:y\in\left[13.2648,\ 26.3295\right],\ y\cdot{10}^4\in\mathbb{N}\}.$$
+
+$$din\ (3):\ \forall\ y\in\mathrm{Y},\ \exists\ \mathrm{S}_y\subseteq\mathcal{S},\ a.i.\ \sum\mathrm{S}_y=y.$$ {#eq-6}
+
+$$Observam\ ca\ \ \mathrm{Y}\ \cup\ \hat{\mathrm{X}}=\mathrm{X}.$$<br>
+
+$$\displaylines{Din\ (5),\ (6),\ (7)\ ⇒ \forall\ {x}\in\mathrm{X}=\{x:\ x\in[0.2, 26.3295],\ x\cdot10^4\in\mathbb{N}\},\\ \exists\ \mathrm{S}_x=\{s_1, s_2,...,s_n\}\subseteq\mathcal{S},\ 0\leq{n}\leq81,\ a.i. }$$ $$\sum\mathrm{S}_x=\sum_{i=1}^{n}s_i=x$$
+
+Ceea ce trebuia demonstrat.
