@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Vlad Marianciuc">
+<meta name="dcterms.date" content="2024-06-16">
+
+<title>gauge-block-study - Arta preciziei: o explorare matematică a unui set de cale plan paralele</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">gauge-block-study</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./RO.html" rel="" target="" aria-current="page">
+ <span class="menu-text">RO</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./gaugefinder.html" rel="" target="">
+ <span class="menu-text">GaugeBlock Finder</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introducere" id="toc-introducere" class="nav-link active" data-scroll-target="#introducere">1. Introducere</a>
+  <ul class="collapse">
+  <li><a href="#1.1" id="toc-1.1" class="nav-link" data-scroll-target="#1.1">1.1 Alegerea temei</a></li>
+  <li><a href="#natura-temei-alese" id="toc-natura-temei-alese" class="nav-link" data-scroll-target="#natura-temei-alese">1.2 Natura temei alese</a></li>
+  <li><a href="#prezentarea-generală-a-temei" id="toc-prezentarea-generală-a-temei" class="nav-link" data-scroll-target="#prezentarea-generală-a-temei">1.3 Prezentarea generală a temei</a>
+  <ul class="collapse">
+  <li><a href="#definirea-datelor-problemei" id="toc-definirea-datelor-problemei" class="nav-link" data-scroll-target="#definirea-datelor-problemei">1.3.1 Definirea datelor problemei</a></li>
+  <li><a href="#enunțarea-problemei" id="toc-enunțarea-problemei" class="nav-link" data-scroll-target="#enunțarea-problemei">1.3.2 Enunțarea problemei</a></li>
+  <li><a href="#1.3.3" id="toc-1.3.3" class="nav-link" data-scroll-target="#1.3.3">1.3.3 Intuiție inițială</a></li>
+  <li><a href="#considerente-pragmatice" id="toc-considerente-pragmatice" class="nav-link" data-scroll-target="#considerente-pragmatice">1.3.4 Considerente pragmatice</a></li>
+  <li><a href="#considerente-istorice" id="toc-considerente-istorice" class="nav-link" data-scroll-target="#considerente-istorice">1.3.5 Considerente istorice</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#problema-de-numărare" id="toc-problema-de-numărare" class="nav-link" data-scroll-target="#problema-de-numărare">2. Problema de numărare</a>
+  <ul class="collapse">
+  <li><a href="#abordarea-naivă" id="toc-abordarea-naivă" class="nav-link" data-scroll-target="#abordarea-naivă">2.1 Abordarea naivă</a></li>
+  <li><a href="#formulare-matematică" id="toc-formulare-matematică" class="nav-link" data-scroll-target="#formulare-matematică">2.2 Formulare matematică</a></li>
+  <li><a href="#reducere" id="toc-reducere" class="nav-link" data-scroll-target="#reducere">2.3 Reducere</a></li>
+  <li><a href="#ajustarea-intuiției-inițiale" id="toc-ajustarea-intuiției-inițiale" class="nav-link" data-scroll-target="#ajustarea-intuiției-inițiale">2.4 Ajustarea intuiției inițiale</a></li>
+  <li><a href="#reformulare-și-rezolvare" id="toc-reformulare-și-rezolvare" class="nav-link" data-scroll-target="#reformulare-și-rezolvare">2.5 Reformulare și rezolvare</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Arta preciziei: o explorare matematică a unui set de cale plan paralele</h1>
+<p class="subtitle lead">Lucrare de licență - Facultatea de Matematică și Informatică, Universitatea București</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Vlad Marianciuc </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 16, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    O incursiune matematică în fascinanta lume a preciziei și metrologiei. Pornind de la aspectele combinatorice ale unui set de cale plan paralele, această lucrare studiază intervalul de măsuri realizabile, numărul lor și criteriile obținerii unei combinații optime. Subliniază importanța selectării clasei de precizie adecvate pentru a asigura acuratețea optimă a măsurătorilor și aduce în discuție echilibrul complicat de planeitate, paralelism și exactitate pe care o cale plan paralela trebuie să-l îndeplinească. Pe lângă eleganța și simplitatea matematică a acestor instrumente, lucrarea evidențiază rolul critic pe care acestea îl au (și l-au avut) în menținerea avansării tehnologiei.
+  </div>
+</div>
+
+</header>
+
+<section id="introducere" class="level1">
+<h1>1. Introducere</h1>
+<section id="1.1" class="level2">
+<h2 class="anchored" data-anchor-id="1.1">1.1 Alegerea temei</h2>
+<p>Tema lucrării a fost aleasă în urma vizionării videoclipului „Origins of precision”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> al utilizatorului Machine Thinking de pe platforma YouTube. Videoclipul respectiv prezintă sumar dezvoltarea si creșterea preciziei de măsurare de-a lungul istoriei. El se termină cu o problemă deschisă generată de câteva afirmații care sunt prezente pe foaia de prezentare al unui set de cale plan paralele Ford-Johansson.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://youtu.be/gNRnrn5DE58?feature=shared&amp;t=1018"><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2001.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig.1 Foaia de prezentare al unui set cu 81 de cale plan paralele din 1944</figcaption>
+</figure>
+</div>
+<p>Mai exact, este vorba despre 2 afirmații făcute aici:</p>
+<ul>
+<li><p>a) „ Folosind piesele acestui set, se pot obține măsuri între 0.1″ și 0.2″ cu pas de 0.001″ și între 0.2″ și 10″ cu pas de 0.0001″ ” (traducere personală din Fig 2.)</p></li>
+<li><p>b) „ Mai mult de 100 000 de combinații sunt posibile folosind acest set cu 81 de piese ” (traducere personală din Fig 2.)</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2002.png" class="lightbox img-fluid figure-img"></p>
+<figcaption class="figure-caption">Fig.2 Afirmațiile de la care a pornit lucrarea (zoom Fig.1)</figcaption>
+</figure>
+</div>
+</section>
+<section id="natura-temei-alese" class="level2">
+<h2 class="anchored" data-anchor-id="natura-temei-alese">1.2 Natura temei alese</h2>
+<p>Topicurile discutate în lucrarea de față se încadrează în 2 domenii matematice:</p>
+<ul>
+<li><p>a) Combinatorică: Probleme de numărare și optimizare</p></li>
+<li><p>b) Statistică: Evaluarea incertitudinii de măsurare</p></li>
+</ul>
+<p>Pe lângă aceste 2 domenii, lucrarea conține comentarii și precizări de natură istorică și practică.</p>
+</section>
+<section id="prezentarea-generală-a-temei" class="level2">
+<h2 class="anchored" data-anchor-id="prezentarea-generală-a-temei">1.3 Prezentarea generală a temei</h2>
+<section id="definirea-datelor-problemei" class="level3">
+<h3 class="anchored" data-anchor-id="definirea-datelor-problemei">1.3.1 Definirea datelor problemei</h3>
+<p><br></p>
+<ul>
+<li><p><u>a) Calele plan paralele</u></p>
+<p>Pentru a înțelege tema, este necesară o scurtă descriere a calelor plan paralele, ce sunt, la ce sunt folosite și cum funcționează ele.</p>
+<p>Conform NIST (National Institute of Standards and Technology)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, o cală plan paralelă este o piesă folosită ca standard de lungime ce are 2 laturi opuse plane și paralele.</p>
+<p>Calele plan paralele au valori nominale în sistem metric (mm) și în sistem imperial (1 inch = 25.4 mm).</p>
+<p>Ele sunt folosite pentru a produce diverse dimensiuni foarte precise care sunt folosite la calibrarea utilajelor industriale sau pentru verificarea instrumentelor de precizie.</p>
+<p>Modul prin care aceste dimensiuni sunt obținute se numește „calare” și este una din proprietățile de bază, definitorie a acestor instrumente.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.elastocon.com/learn-more/about-calibration/gauge-blocks-the-foundation-to-all-modern-industrial-production"><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2003.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig.3 Cale plan paralele (sistem metric)</figcaption>
+</figure>
+</div>
+<p><br></p>
+<ul>
+<li><p><u>b) Calarea calelor plan paralele</u></p>
+<p>Modul în care diverse dimensiuni pot fi obținute cu aceste cale se numește „calare” și poate fi definit ca procesul prin care două suprafețe aderă strâns una de cealaltă în absența mijloacelor externe (nu sunt magnetizate sau lipite împreună cu un adeziv).</p>
+<p>Datorită fețelor lor extrem de plane, când două cale sunt calate, ele se „lipesc”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="http://www.starrett-webber.com/gb46.html"><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2004.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig.4 Procedeul de calare a 2 cale</figcaption>
+</figure>
+</div>
+<p>Repetând acest proces, pot fi calate consecutiv mai multe cale, obținând diverse dimensiuni.</p>
+<p>De exemplu, dacă vrem să obținem dimensiunea de 1.8324″, putem cala împreună următoarele cale:</p>
+<p>1.8324 = .1004 + .132 + .6 + 1 (obținem 1.8324 prin calarea a 4 cale)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://en.wikipedia.org/wiki/Gauge_block#/media/File:Gauge_block_adhesion.jpg"><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2005.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig.5 Mai multe cale sunt calate pentru a obține o dimensiune. Se observă cum ele rămân lipite sub acțiunea gravitației.</figcaption>
+</figure>
+</div>
+<p>Motivul pentru care acest fenomen are loc nu este pe deplin înțeles, câteva ipoteze fiind<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
+<ol type="1">
+<li><p>Presiunea aerului din mediul înconjurător, deoarece aerul este presat atunci când blocurile sunt calate împreună.</p></li>
+<li><p>Tensiunea superficială a uleiului sau a vaporilor de apă din aer acționează ca un lipici pentru a le ține împreună.</p></li>
+<li><p>Când două suprafețe foarte plane sunt aduse în contact atât de strâns una cu cealaltă, acest lucru permite un schimb de electroni între atomii lor, ceea ce creează o forță moleculară atractivă (această forță va rămâne chiar și în vid sau dacă nu este prezent ulei sau apă pe suprafețe).</p></li>
+</ol></li>
+</ul>
+<p><br></p>
+<ul>
+<li><p><u>c) Setul Ford-Johansson cu 81 de piese</u></p>
+<p>Setul analizat în această lucrare este compus din 81 de piese, aranjate în 4 clase (serii) de mărimi. Componența este următoarea (toate dimensiunile sunt în inch, voi face abstracție de semnul ″):</p>
+<p><br></p>
+<p><b>Seria 1 (9 cale):</b></p>
+<p>.1001, .1002, .1003, .1004, .1005, .1006, .1007, .1008, .1009</p>
+<p><br> <b>Seria 2 (49 cale):</b></p>
+<p>.101, .102, .103, .104, .105, .106, .107, .108, .109, .110, .111, .112, .113, .114, .115, .116, .117, .118, .119, .120, .121, .122, .123, .124, .125, .126, .127, .128, .129, .130, .131, .132, .133, .134, .135, .136, .137, .138, .139, .140, .141, .142, .143, .144, .145, .146, .147, .148, .149</p>
+<p><br> <b>Seria 3 (19 cale):</b></p>
+<p>.050, .100, .150, .200, .250, .300, .350, .400, .450, .500, .550, .600, .650, .700, .750, .800, .850, .900, .950</p>
+<p><br> <b>Seria 4 (4 cale):</b></p>
+<p>1, 2, 3, 4</p>
+<p><br> În total sunt 81 de piese, iar dacă le calăm pe toate împreună obținem (nominal) dimensiunea de <b>26.5295″</b>. <i>Această informație va fi importantă în această lucrare.</i></p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2006.jpg" class="lightbox img-fluid figure-img"></p>
+<figcaption class="figure-caption">Fig.6 Setul de 81 de piese realizat de C.E. Johansson pentru fabricile Ford pe care Ford însuși l-a făcut cadou bunului său prieten, Thomas Edison. Acum acest set se află la Muzeul Preciziei din Windsor, Vermont, Statele Unite ale Americii.</figcaption>
+</figure>
+</div>
+<p><br></p>
+</section>
+<section id="enunțarea-problemei" class="level3">
+<h3 class="anchored" data-anchor-id="enunțarea-problemei">1.3.2 Enunțarea problemei</h3>
+<p>Pornind de la afirmațiile prezentate la punctul <a href="#1.1">1.1</a> (1.1.a și 1.1.b), punem următoarele întrebări:</p>
+<ul>
+<li><p>a) Având în vedere concluzia punctului 1.3.1.c (anume că dacă vom cala toate cele 81 de cale vom obține, nominal, dimensiunea de 26.5295″), <b>cum va arăta distribuția dimensiunilor pe care le putem obține în intervalul 0 – 26.5295?</b></p>
+<p>Vom putea obține, cu aceeași rezoluție (aici rezoluție = pas) de 10<sup>-4</sup>, dimensiuni după ce vom trece de 10″ ?</p>
+<p>De exemplu, între 11″ și 20″ putem obține toate numerele mergând cu un pas de 0.0001″ (10<sup>-4</sup>)? Dar între 20″ și 24″ ? Există vreo dimensiune pe care nu o putem obține?</p></li>
+<li><p>b) Afirmația 1.1.b ne spune că pot fi obținute peste 100 000 de dimensiuni folosind piesele acestui set.</p>
+<p><b>Care este numărul precis de dimensiuni pe care le putem obține folosind piesele acestui set ?</b></p></li>
+</ul>
+<p><br></p>
+</section>
+<section id="1.3.3" class="level3">
+<h3 class="anchored" data-anchor-id="1.3.3">1.3.3 Intuiție inițială</h3>
+<p>Pentru a răspunde la întrebările pe care ni le punem este important să avem un punct de plecare, o intuiție inițială. Iar pornind de la aceasta, să demonstrăm riguros veridicitatea sau neveridicitatea ei.</p>
+<p>Referitor la întrebarea 1.3.2.a, așteptarea este ca granulația (de 10<sup>-4</sup> inch) cu care obținem dimensiuni în intervalul .2″ - 10″ (conform afirmației 1.1.a) să nu se păstreze până la maximul intervalului (26.5295″).</p>
+<p>Avem un număr finit (81) de cale iar măsurile pe care le construim sunt din ce în ce mai mari, ceea ce înseamnă că vom folosi din ce în ce mai multe cale. Intuim că la un moment dat nu vom avea destule pentru a putea reprezenta cu aceeași granulație (sau finețe) numerele în intervale mai ridicate (de exemplu 16″ - 22″). Altfel spus, ne așteptăm să existe salturi între anumite numere și o descreștere a distribuției lor.</p>
+<div id="fig7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2007.jpg" class="lightbox img-fluid figure-img"></p>
+<figcaption class="figure-caption">Fig. 7 Descriere schematică a intuiției prezentate mai sus. Dreptunghiurile reprezintă cantitatea de numere ce pot fi obținute în intervalul respectiv.</figcaption>
+</figure>
+</div>
+<p><br></p>
+</section>
+<section id="considerente-pragmatice" class="level3">
+<h3 class="anchored" data-anchor-id="considerente-pragmatice">1.3.4 Considerente pragmatice</h3>
+<p>După satisfacerea curiozităților de natură combinatorică care au pornit de la aceste instrumente, lucrarea își propune să trateze modul în care ele sunt folosite în practică.</p>
+<p>Vom intra pe tărâmul metrologiei și vom vedea cum instrumente statistice precum gradul de încredere, distribuția toleranței unei măsurători și a.m.d. sunt folosite pentru a determina precizia unei măsurători.</p>
+<p>De asemenea, vom aduce în discuție gradele de precizie și cum putem alege instrumentele potrivite în funcție de precizia măsurătorilor pe care le facem în mod uzual.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.muelaner.com/metrology/#uncertainty"><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2008.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig.8 Toate măsurătorile au un grad de incertitudine iar cu cât marja de toleranță este mai mare, cu atât crește încrederea că măsurătoarea respectivă se încadrează în acea marjă de toleranță.</figcaption>
+</figure>
+</div>
+<p>Un lucru foarte important pe care acest instrumente l-au asigurat și încă îl asigura este trasabilitatea unei măsurători.</p>
+<p>La fel cum în matematică este important să construim demonstrații care au la bază axiomele unui sistem algebric, în metrologie este important să putem să trasăm parcursul unei măsurători până la laboratorul sau cala de precizie cu care a fost realizată.</p>
+<p>O măsurătoare trasabilă este una care are un lanț neîntrerupt de etalonări care revin la standardul de referință primar, cu incertitudini calculate pentru fiecare calibrare. Incertitudinea de măsurare este moștenită de-a lungul lanțului de etalonări, astfel încât incertitudinea crește cu cât ne depărtăm de standardul de referință primar. Trasabilitatea de la referința primară, prin laboratoare de metrologie acreditate și până la departamentele de metrologie industrială asigură că toată lumea lucrează la standarde comune și cunoaște aceeași incertitudine a unei măsurători<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<p><br></p>
+</section>
+<section id="considerente-istorice" class="level3">
+<h3 class="anchored" data-anchor-id="considerente-istorice">1.3.5 Considerente istorice</h3>
+<p>Până la sfârșitul secolului al XIX-lea, ideea pieselor interschimbabile începută de Eli Whitney<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> a fost acceptată de națiunile industriale ca model pentru producția industrială.</p>
+<p>Unul dintre dezavantajele acestui nou sistem era că necesită un control strict al dimensiunii foarte multor piese diferite. Pentru fiecare erau nevoie de numeroase calibre cu care erau verificate și calibrate diferitele piese din producția industrială. Numărul de astfel de calibre a devenit foarte mare. Natura complexă de producere a lor precum și costurile de întreținere au adus cheltuieli semnificative industriașilor. Pasul major spre simplificarea acestei situații a fost făcut de C.E. Johannson, un mașinist suedez.</p>
+<p>Ideea lui Johannson, formulată pentru prima dată în 1896, a fost să facă un set mic de calibre care ar putea fi combinate pentru a forma calibre compozite mai mari și de dimensiuni diverse astfel încât să reducă numărul de calibre necesare. De exemplu, dacă patru calibre de dimensiuni de 1 mm, 2 mm, 4 mm și 8 mm pot fi combinate în orice combinație, toate dimensiunile milimetrice de la 1 mm la 15 mm ar putea fi făcute numai din aceste patru calibre. Johannson a mai descoperit că, dacă două fețe opuse ale unei piese de oțel sunt foarte plane și paralele, acestea s-ar lipi împreună atunci când erau alunecate împreună (eventual ajutate de o cantitate foarte mică de ulei)<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Din această cauză aceste calibre, în România, sunt numite Cale Plan Paralele (în țările vorbitoare de limba engleză ele se numesc Gauge Blocks). În Statele Unite, ideea a fost adoptată cu entuziasm de Henry Ford. Atât de utile au fost pentru fabricile Ford aceste instrumente întrucât, când s-a ivit oportunitatea, Henry Ford a cumpărat fabrica lui C.E. Johansson în care acesta realiza Seturile de Cale Plan Paralele. Ford și Johansson au avut o colaborare reușită iar stima pe care marele industriaș i-o purta inventatorul suedez poate fi înțeleasă astfel: în biroul personal al lui Ford puteau să intre fără programare doar 2 oameni: fiul său și C.E. Johansson. Prin influența pe care Ford o avea, a popularizat utilizarea calelor plan paralele iar, în cele din urmă, acestea au fost adoptate ca standard de transfer pentru lungime în industrie.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2008a.png" class="lightbox img-fluid figure-img"></p>
+<figcaption class="figure-caption">Fig.8a C.E. Johansson ținând în mână un „baton” de cale</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p>Fun fact: La vremea la care le-a creat, erau multe definiții diferite pentru 1 inch și nu era un consens universal. Era inch-ul tâmplarului, cizmarului, bucătarului. Fiind subdiviziunea unei dimensiuni definită după corpul uman (1 foot), este normal ca ea să difere de la loc la loc. Totuși, Johansson a fost primul<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> care a stabilit (prin calele sale plan paralele) ca dimensiunea unui inch să fie exact 25.4 mm. Și nu a spus nimănui asta. Ani mai târziu, probabil într-o mare parte datorită calelor plan parelele Johansson, în urma întâlnirilor realizate între 1950 – 1959, laboratoarele de metrologie din Statele Unite, Canada, Anglia, Australia și Africa de Sud au convenit să definească inch-ul ca 25.4 mm.</p>
+<p><br></p>
+<p><br></p>
+</section>
+</section>
+</section>
+<section id="problema-de-numărare" class="level1">
+<h1>2. Problema de numărare</h1>
+<p>Pus în termeni simpli, ceea ce vrem să știm este:</p>
+<p>Toate numerele, cu până la 4 zecimale, din intervalul [0.2, 26.3295] pot fi reprezentate folosind piese din setul Ford-Johansson cu 81 de cale plan paralele?</p>
+<p><u>Observație:</u> Capetele de început și final, anume [0, 0.2] și [26.3295, 26.5295] le vom trata separat la final deoarece, conform 1.1.a, acolo avem o granulație mai mică.</p>
+<p><br></p>
+<section id="abordarea-naivă" class="level2">
+<h2 class="anchored" data-anchor-id="abordarea-naivă">2.1 Abordarea naivă</h2>
+<p>În orice problemă, este important să începem de undeva cu pași oricât de mici.</p>
+<p>Să luăm un număr x din intervalul [0.2, 26.3295], de exemplu <strong>8.2349</strong>. Vrem să calibrăm cuțitul de tăiere al unui utilaj astfel încât să rașcheteze precis la distanța de 8.2349 inch față de o placă suport.</p>
+<p>Vrem să scădem din acestă dimensiune mărimi din cele enumerate la punctul 1.3.1.c și să ajungem la 0.</p>
+<p>Un mod de a face acest lucru este:</p>
+<ol type="1">
+<li><p>Să plecăm de la mic la mare. Scăpăm de zecimale, scăpăm de ultima zecimală și tot așa, iterativ. Practic, facem 0 cifra din dreapta.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Scăpăm de partea fracționară</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8.2349</td>
+<td>|</td>
+<td>- .1009</td>
+</tr>
+<tr class="even">
+<td>8.134</td>
+<td>|</td>
+<td>- .134</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Odată ce nu mai avem zecimale, vom avea un număr natural și putem începe să scădem numerele mari în ordine descrescătoare (începând cu cele din Seria 4 de la punctul 1.3.1.c, apoi Seria 3 și tot așa).</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Scăpăm de partea întreagă</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8</td>
+<td>|</td>
+<td>- 4</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>|</td>
+<td>- 3</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>|</td>
+<td>- 1</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<p>Gata. Acum putem lua calele care corespund mărimilor de mai sus, să le calăm și să obținem dimensiunea 8.2349.</p>
+<p>4 + 3 + 1 + .1009 + .134 = 8.2349</p>
+<p>Am găsit mulțimea {.1009, .134, 1, 3, 4} a cărei sumă face 8.2349</p>
+<div id="0" class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+(0)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dar în [0.2, 26.3295] sunt 261 296 numere (mergând cu pasul de 0.0001)</p>
+</div>
+</div>
+<p>Ar dura prea mult să verificăm toate numerele manual. Neștiind dacă toate aceste numere pot fi obținute din cele 81 de piese, chiar și un script rulat pe calculator va avea probleme – ar putea rula la nesfârșit sau ar putea dura foarte mult până ce găsește combinația potrivită. Să luăm ca exemplu un număr ceva mai mare, <strong>19.3657</strong>.</p>
+<p>Vrem să verificăm dacă o piesă pe care urmează să o folosim într-un mecanism de mare finețe are lungimea unei laturi precis de 19.3657 inch. Ruleta ne arată 19.4 inch, șublerul ne zice 19.366 (cu toleranță de +/- 0.001 inch), dar noi vrem să fim mai preciși. Când depășim anumite limite de precizie, măsurarea directă nu mai este de mare folos. Asta se întâmplă din cauza toleranțelor implicite pe care instrumentele de măsură (rulete, șublere, micrometre) le au. În acestă situație vom recurge la măsurarea prin comparație. Prin urmare vom folosi un instrument care detectează schimbări cuprinse între 0 și 0.0004 inch (ceas comparator), vom construi dimensiunea respectivă cu cale plan paralele și o vom compara cu piesa noastră (prin glisare pe o suprafață plană).</p>
+<p>Pentru a obține numărul, vom folosi aceeași metodă ca mai sus:</p>
+<ol type="1">
+<li><table class="table">
+<thead>
+<tr class="header">
+<th>Scăpăm de partea fracționară</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>19.3657</td>
+<td>|</td>
+<td>- .1007</td>
+</tr>
+<tr class="even">
+<td>19.265</td>
+<td>|</td>
+<td>- .115</td>
+</tr>
+<tr class="odd">
+<td>19.15</td>
+<td>|</td>
+<td>- .15</td>
+</tr>
+<tr class="even">
+<td>19</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+<li><table class="table">
+<thead>
+<tr class="header">
+<th>Scăpăm de partea întreagă</th>
+<th></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>19</td>
+<td>|</td>
+<td style="text-align: center;">- 4</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>|</td>
+<td style="text-align: center;">- 3</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>|</td>
+<td style="text-align: center;">- 2</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>|</td>
+<td style="text-align: center;">- 1</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>|</td>
+<td style="text-align: center;">- .95</td>
+</tr>
+<tr class="even">
+<td>8.05</td>
+<td>|</td>
+<td style="text-align: center;">- .9</td>
+</tr>
+<tr class="odd">
+<td>7.15</td>
+<td>|</td>
+<td style="text-align: center;">- .85</td>
+</tr>
+<tr class="even">
+<td>6.3</td>
+<td>|</td>
+<td style="text-align: center;">- .8</td>
+</tr>
+<tr class="odd">
+<td>5.5</td>
+<td>|</td>
+<td style="text-align: center;">- .75</td>
+</tr>
+<tr class="even">
+<td>4.75</td>
+<td>|</td>
+<td style="text-align: center;">- .7</td>
+</tr>
+<tr class="odd">
+<td>4.05</td>
+<td>|</td>
+<td style="text-align: center;">- .65</td>
+</tr>
+<tr class="even">
+<td>3.4</td>
+<td>|</td>
+<td style="text-align: center;">- .6</td>
+</tr>
+<tr class="odd">
+<td>2.8</td>
+<td>|</td>
+<td style="text-align: center;">- .55</td>
+</tr>
+<tr class="even">
+<td>2.25</td>
+<td>|</td>
+<td style="text-align: center;">- .5</td>
+</tr>
+<tr class="odd">
+<td>1.75</td>
+<td>|</td>
+<td style="text-align: center;">- .45</td>
+</tr>
+<tr class="even">
+<td>1.3</td>
+<td>|</td>
+<td style="text-align: center;">- .4</td>
+</tr>
+<tr class="odd">
+<td>0.9</td>
+<td>|</td>
+<td style="text-align: center;">- .35</td>
+</tr>
+<tr class="even">
+<td>0.55</td>
+<td>|</td>
+<td style="text-align: center;">- .3</td>
+</tr>
+<tr class="odd">
+<td>0.25</td>
+<td>|</td>
+<td style="text-align: center;">- .25</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<p><br></p>
+<p>Vedem că în acest caz am fost norocoși iar calele s-au aliniat bine, chiar în ordine descrescătoare. Față de primul exemplu unde am folosit 5 cale pentru a obține dimensiunea dorită, aici am avut nevoie să folosim <strong>22</strong> de cale!</p>
+<div id="1" class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Remarcăm și reținem: Dacă am folosit <strong>n</strong> cale ca să obținem un număr <strong>x</strong>, atunci calele rămase vor suma la numărul 26.5295 – <strong>x</strong> . <span id="eq-b"><span class="math display">\[   \tag{1}\]</span></span></p>
+</div>
+</div>
+</div>
+<p>Această simetrie va fi importantă în continuare.</p>
+<p><br></p>
+</section>
+<section id="formulare-matematică" class="level2">
+<h2 class="anchored" data-anchor-id="formulare-matematică">2.2 Formulare matematică</h2>
+<p>Definim seriile de mărimi Si conform celor de la punctul 1.3.1.c.</p>
+<p><span class="math display">\[Fie\ \mathcal{S}_\mathcal{i},\ i=\overline{1,4},\ multimi\ discrete\ definite\ astfel:\]</span> <span class="math display">\[\qquad\mathcal{S}_1=\overline{1,9}\cdot\left(0.0001\right)+\left(0.1\right),\ |\mathcal{S}_1|=9\]</span><br>
+<span class="math display">\[\qquad\mathcal{S}_2=\overline{1,49}\cdot\left(0.001\right)+\left(0.1\right),\ |\mathcal{S}_2|=49\]</span><br>
+<span class="math display">\[\qquad\mathcal{S}_3=\overline{1,19}\cdot\left(0.05\right),\ |\mathcal{S}_3|=19\]</span><br>
+<span class="math display">\[\qquad\mathcal{S}_4=\overline{1,4},\ |\mathcal{S}_4|=4\]</span><br></p>
+<p><span class="math display">\[Fie\ \mathcal{S}=\bigcup_{i=1}^{4}S_i,\ |\mathcal{S}|=81,\ \ \ \ \ \ \ \ \ Observatie:\sum\mathcal{S}=\sum_{x\in\mathcal{S}}x=26.5295\]</span></p>
+<p><span class="math display">\[Clarificare: Multimea\ \mathcal{S}\ este\ reprezentarea\ setului\ Ford-Johansson\ cu\ 81\ de\ piese\]</span><br></p>
+<p><span id="eq-2"><span class="math display">\[Fie\ \mathrm{\mathrm{X}}=\{x:x\in\left[0.2,\ 26.3295\right],\ x\cdot{10}^4\in\mathbb{N}\} \tag{2}\]</span></span></p>
+<p><span class="math display">\[Aratati\ ca\ \forall\ {x}\in\mathrm{X},\ \exists\ \mathrm{S}_x=\{s_1, s_2,...,s_n\}\subseteq\mathcal{S},\ 0\leq{n}\leq81,\ a.i. \]</span> <span class="math display">\[\sum\mathrm{S}_x=\sum_{i=1}^{n}s_i=x\]</span></p>
+<p><br></p>
+</section>
+<section id="reducere" class="level2">
+<h2 class="anchored" data-anchor-id="reducere">2.3 Reducere</h2>
+<p>Din <a href="#1">(1)</a> avem că:</p>
+<p><span id="eq-3"><span class="math display">\[\displaylines{\forall\ {x}\in\mathrm{X},\ daca\ \exists\ \mathrm{S}_x\subseteq\mathcal{S}\ a.i. \sum\mathrm{S}_x=x\ si\ y:=26.5295-x, \\ atunci\ \exists\ \mathrm{S}_{y}=\mathcal{S}\setminus\mathrm{S}_x\ \ a.i.\ \sum\mathrm{S}_{y}=26.5295-x=y} \tag{3}\]</span></span></p>
+<p>Exemplu:</p>
+<p><span class="math display">\[x=4.5,\ \mathrm{S}_x=\{4, .5\},\ \sum\mathrm{S}_x=4.5=x\]</span></p>
+<p><span class="math display">\[y=26.5295-x=26.5295-4.5=22.0295\]</span></p>
+<p><span class="math display">\[\mathrm{S}_{y}=\mathcal{S}\setminus\mathrm{S}_x,\  \sum\mathrm{S}_{y}=\sum\mathcal{S}-\sum\mathrm{S}_x=26.5295-4.5=22.0295=y\]</span></p>
+<p>Asta înseamnă că putem folosi simetria pentru a reduce la jumătate problema. Această simetrie poate fi văzută ca simetria dintre adunare și scădere. Pentru a obține o dimensiune din prima jumătate a intervalului, pornim de la 0 (nu avem nici o cală) și adunăm cale, iar pentru a obține simetricul acelei dimensiuni, pornim de la maxim (avem toate calele lipite) și scădem aceleași cale pe care le adunasem inițial.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2009.jpg" class="lightbox img-fluid figure-img"></p>
+<figcaption class="figure-caption">Fig.8a C.E. Johansson ținând în mână un „baton” de cale</figcaption>
+</figure>
+</div>
+<p><br></p>
+</section>
+<section id="ajustarea-intuiției-inițiale" class="level2">
+<h2 class="anchored" data-anchor-id="ajustarea-intuiției-inițiale">2.4 Ajustarea intuiției inițiale</h2>
+<p>Reamintindu-ne intuiția inițială (punctul <a href="#1.3.3">1.3.3</a>) și descrierea realizată în <a href="#fig7">Fig.7</a>, ne dăm seama că acum, cu informația de la punctul anterior, lucrurile vor sta altfel.</p>
+<p>Prin urmare, îmbogățim și ajustăm intuiția astfel: poate că după 10″ distribuția dimensiunilor va scădea (trebuie demonstrat acest lucru), dar cu siguranță structura distribuției, per ansamblu, este simetrică față de mijlocul intervalului [0, 26.5295].</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2010.jpg" class="lightbox img-fluid figure-img"></p>
+<figcaption class="figure-caption">Fig.8a C.E. Johansson ținând în mână un „baton” de cale</figcaption>
+</figure>
+</div>
+<p>Acest lucru ne ușurează sarcina. Considerând adevărată afirmația din alegerea temei (1.1.a), ne rămâne să extindem afirmația 1.1.a de la 10″ până la 13.2647″ și, prin simetrie, va rezulta că toate numerele cu până la 4 zecimale din intervalul [0.2, 26.3295] pot fi obținute cu piese din acest set.</p>
+<p><br></p>
+</section>
+<section id="reformulare-și-rezolvare" class="level2">
+<h2 class="anchored" data-anchor-id="reformulare-și-rezolvare">2.5 Reformulare și rezolvare</h2>
+<p><a href="#eq-2">(2)</a> devine:</p>
+<p><span class="math display">\[Fie\ \hat{\mathrm{X}}=\{x:x\in\left[0.2,\ 13.2647\right],\ x\cdot{10}^4\in\mathbb{N}\}\]</span></p>
+<p><span id="eq-4"><span class="math display">\[\displaylines{Aratati\ ca\ \forall\ {x}\in\hat{\mathrm{X}},\ \exists\ \mathrm{S}_x=\{s_1, s_2,...,s_n\}\subseteq\mathcal{S},\ 0\leq{n}\leq81,\ a.i. \\ \sum\mathrm{S}_x=\sum_{i=1}^{n}s_i=x} \tag{4}\]</span></span></p>
+<p><u><strong>Rezolvare:</strong></u></p>
+<p>Idee:</p>
+<ol type="i">
+<li><p>Arătăm că putem obține un inch complet (aici prin „complet” înțelegem că putem merge „continuu” cu pas de 0.0001).Vom arăta acest lucru pentru intervalul [0.2, 1.1999].</p></li>
+<li><p>Arătăm că putem obține orice număr natural între 1 și 13 folosind piesele rămase după ce am scos cele pe care le-am folosit la punctul i).</p></li>
+</ol>
+<p>Din i) și ii) rezultă că putem acoperi tot intervalul <strong>X</strong>.</p>
+<p><br></p>
+<p>i.</p>
+<p><span class="math inline">\(a)\ Aratam\ ca\ (4)\ este\ valabil\ pentru\ intervalul\ [0.2, 0.9999]:\)</span><br><br></p>
+<p><span class="math display">\[Fie\ x:=\overline{0.abcd},\ b,c,d\in\overline{0,9},\ a\in\overline{2,9}\]</span><br></p>
+<p><span class="math inline">\(\qquad a.1)\ daca\ d=0,\ continua\ la\ pasul\ a.2),\ altfel:\)</span></p>
+<p><span class="math display">\[\forall\ d\in\overline{1,9},\ \exists\ s_1\in\mathcal{S}_1\ a.i.\]</span></p>
+<p><span class="math display">\[ x_1:=x-s_1=\overline{0.(a-1)bc},\ (a-1)\in\overline{1,8}\]</span></p>
+<p><span class="math inline">\(\qquad a.2)\ daca\ \overline{bc}\equiv0\ (mod\ 50),\ continua\ la\ pasul\ a.3),\ altfel:\)</span></p>
+<p><span class="math display">\[\forall\ \overline{bc}\in\overline{1,49},\ \exists\ s_2\in\mathcal{S}_2\ a.i.\]</span></p>
+<p><span class="math display">\[x_2:=x_1-s_2=\begin{cases} \overline{0.(a-2)5}\quad \\ \quad sau \\ \overline{0.(a-2)} \end{cases},\ (a-2)\in\overline{0,7}\]</span></p>
+<p><span class="math inline">\(\qquad a.3)\ daca\ x_2=0,\ gata, altfel:\)</span></p>
+<p><span class="math display">\[\forall\ (a-2)\in\overline{0,7},\ \exists\ s_3\in \mathcal{S}_3\ a.i.\]</span> <span class="math display">\[x_2-s_3=0\]</span></p>
+<p><span class="math inline">\(\qquad Prin\ urmare,\ putem\ construi\ \mathrm{S}_x=\{s_1\in\mathcal{S}_1, s_2\in\mathcal{S}_2, s_3\in\mathcal{S}_3\}\ a.i.\)</span><br><br> <span class="math display">\[ \sum\mathrm{S}_x=x,\ \forall\ x\in[0.2, 0.9999]\]</span> <br></p>
+<p><span class="math inline">\(\qquad\underline{Observatie}:\ \mathrm{S}_x\ are\ cel\ mult\ 3\ elemente,\ cate\ unul\ din\ \mathcal{S}_1,\ \mathcal{S}_2\ respectiv\ \mathcal{S}_3.\)</span></p>
+<p><br></p>
+<p><span class="math inline">\(b)\ Aratam\ ca\ (4)\ este\ valabil\ pentru\ intervalul\ [1, 1.199]:\)</span><br><br></p>
+<p><span class="math display">\[Fie\ x:=\overline{1.abcd},\ b,c,d\in\overline{0,9},\ a\in\{0,1\}\]</span><br></p>
+<p><span class="math inline">\(\qquad b.1)\ daca\ d=0,\ continua\ la\ pasul\ b.2),\ altfel:\)</span></p>
+<p><span class="math display">\[\forall\ d\in\overline{1,9},\ \exists\ s_1\in\mathcal{S}_1\ a.i.\]</span></p>
+<p><span class="math display">\[ x_1:=x-s_1=\begin{cases} \overline{0.9bc}\\ \ sau\\ \overline{1.0bc}\end{cases}\]</span></p>
+<p><span class="math inline">\(\qquad b.2)\ daca\ \overline{bc}\equiv0\ (mod\ 50),\ continua\ la\ pasul\ b.3),\ altfel:\)</span></p>
+<p><span class="math display">\[\forall\ \overline{bc}\in\overline{1,49},\ \exists\ s_2\in\mathcal{S}_2\ a.i.\]</span></p>
+<p><span class="math display">\[x_2:=x_1-s_2=\begin{cases} \begin{cases}0.85\\sau\\0.8\end{cases}\quad \\ \quad sau \\\begin{cases}0.95\\sau\\0.9\end{cases}\end{cases}\]</span></p>
+<p><span class="math inline">\(\qquad b.3)\ \exists\ s_3\in\{.8, .85, .9, .95, 1\}\ a.i.\ x_2-s_3=0\)</span><br><br></p>
+<p><span class="math inline">\(\qquad Prin\ urmare,\ putem\ construi\ \mathrm{S}_x=\{s_1, s_2, s_3\}\ a.i.\)</span><br><br> <span class="math display">\[\sum\mathrm{S}_x=x,\ \forall\ x\in[1, 1.1999]\]</span></p>
+<p>Din a) și b) rezultă că putem construi fiecare număr cu până la 4 zecimale în intervalul [0.2, 1.1999]. <br><br></p>
+<p>ii.</p>
+<p>Pentru punctul i) folosim cel mult 3 cale, câte una din Seria 1, Seria 2 sau Seria 3. Asta înseamnă că putem folosi complet Seria 4 = {1, 2, 3, 4} cu care putem genera numerele naturale de la 1 la 10 inclusiv.</p>
+<p>Vrem să generăm pe 11, 12 și 13. Facem observația că din Seria 3 folosim doar 1 singură cală la punctul i), prin urmare ne rămân 18 cale în Seria 3 pe care le putem folosi. Remarcăm că putem aranja calele din Seria 3 astfel:</p>
+<table class="table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 18%">
+<col style="width: 21%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Gruparea calelor din Seria 3</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>.05 + .95 = 1</td>
+<td>.1 + .9 = 1</td>
+<td>.15 + .85 = 1</td>
+<td>.2 + .8 = 1</td>
+</tr>
+<tr class="even">
+<td>.25 + .75 = 1</td>
+<td>.3 + .7 = 1</td>
+<td>.35 + .65 = 1</td>
+<td>.4 + .6 = 1</td>
+</tr>
+<tr class="odd">
+<td>.45 + .55 = 1</td>
+<td>.5</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Prin urmare, vom putea oricând lua 3 astfel de perechi pe care să le adunăm la calele din Seria 4 astfel încât să generăm toate numerele naturale de la 1 la 13.</p>
+<p>Acum vom spune că:</p>
+<p><span class="math display">\[\ \forall\ x\in\hat{\mathrm{X}}=\{x:x\in\left[0.2,\ 13.2647\right],\ x\cdot{10}^4\in\mathbb{N}\},\]</span></p>
+<p><span class="math display">\[\exists!\ (a,b)\ cu\ a\in\overline{1,13}\ \cup \{0\}\ si\ b\in\{x:x\in[0.2, 1.1999],\ x\cdot10^4\in\mathbb{N}\}\ a.i.\]</span></p>
+<p><span class="math display">\[\begin{cases}a+b=x \\ din\ i):\quad \forall\ b,\ \exists\ \mathrm{S}_b\subseteq\mathcal{S}\ a.i.\ \sum\mathrm{S}_b=b \\ din\ ii):\quad \forall\ a,\ \exists\ \mathrm{S}_a\subseteq\mathcal{S},\ \mathrm{S}_a\cap\mathrm{S}_b=∅\ a.i.\ \sum\mathrm{S}_a=a \end{cases}\quad \Rightarrow\]</span></p>
+<p><br></p>
+<p><span class="math display">\[⇒\ \forall\ x\in\hat{\mathrm{X}},\ \exists\ \mathrm{S}_x=(\mathrm{S}_a\cup\mathrm{S}_b)\subseteq\mathcal{S},\ a.i. \\ \]</span> <span id="eq-5"><span class="math display">\[\sum\mathrm{S}_x=\sum\mathrm{S}_a+\sum\mathrm{S}_b=a+b=x \tag{5}\]</span></span></p>
+<p><br></p>
+<p>Final:</p>
+<p><span class="math display">\[\forall\ x\in\hat{\mathrm{X}},\ putem\ construi\ y:=26.5295-x,\ y\in\mathrm{Y}=26.5295-\mathrm{X},\]</span></p>
+<p><span class="math display">\[\mathrm{Y}=\{y:y\in\left[13.2648,\ 26.3295\right],\ y\cdot{10}^4\in\mathbb{N}\}.\]</span></p>
+<p><span id="eq-6"><span class="math display">\[din\ (3):\ \forall\ y\in\mathrm{Y},\ \exists\ \mathrm{S}_y\subseteq\mathcal{S},\ a.i.\ \sum\mathrm{S}_y=y. \tag{6}\]</span></span></p>
+<p><span class="math display">\[Observam\ ca\ \ \mathrm{Y}\ \cup\ \hat{\mathrm{X}}=\mathrm{X}.\]</span><br></p>
+<p><span class="math display">\[\displaylines{Din\ (5),\ (6),\ (7)\ ⇒ \forall\ {x}\in\mathrm{X}=\{x:\ x\in[0.2, 26.3295],\ x\cdot10^4\in\mathbb{N}\},\\ \exists\ \mathrm{S}_x=\{s_1, s_2,...,s_n\}\subseteq\mathcal{S},\ 0\leq{n}\leq81,\ a.i. }\]</span> <span class="math display">\[\sum\mathrm{S}_x=\sum_{i=1}^{n}s_i=x\]</span></p>
+<p>Ceea ce trebuia demonstrat.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Francis, W. (2017, Noiembrie 22). <em>Origins of precision</em>. Machine Thinking.<br> <a href="https://www.youtube.com/watch?v=gNRnrn5DE58" class="uri">https://www.youtube.com/watch?v=gNRnrn5DE58</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Doiron, T. and Beers, J. (1995), <em>The Gage Block Handbook</em>, Monograph (NIST MN), National Institute of Standards and Technology, Gaithersburg, MD, [online], p.10<br> <a href="https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735" class="uri">https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Webber, S. (2003, November 21). <em>Wringing Gage Blocks. Starret-Webber</em>.<br> <a href="http://www.starrett-webber.com/gb46.html" class="uri">http://www.starrett-webber.com/gb46.html</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Muelaner, J. (2017a, November 1). <em>Key principles in metrology and Measurement Systems Analysis (MSA).</em><br> <a href="https://www.muelaner.com/metrology/" class="uri">https://www.muelaner.com/metrology/</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>A&amp;E Television Networks. (n.d.). <em>Interchangeable parts</em>. History.com.<br> <a href="https://www.history.com/topics/inventions/interchangeable-parts" class="uri">https://www.history.com/topics/inventions/interchangeable-parts</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Doiron, T. and Beers, J. (1995), <em>The Gage Block Handbook</em>, Monograph (NIST MN), National Institute of Standards and Technology, Gaithersburg, MD, [online], p.8<br> <a href="https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735" class="uri">https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><em>The history of gauge blocks.</em> (n.d.), p.8.<br><a href="https://www.mitutoyo.com/webfoo/wp-content/uploads/E12016-Historyof-The-Gage-Block.pdf" class="uri">https://www.mitutoyo.com/webfoo/wp-content/uploads/E12016-Historyof-The-Gage-Block.pdf</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
