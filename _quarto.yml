@@ -6,7 +6,7 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: EN
       - href: RO.qmd
         text: RO
       - gaugefinder.qmd

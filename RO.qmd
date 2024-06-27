@@ -4,12 +4,22 @@ subtitle: "Lucrare de licență - Facultatea de Matematică și Informatică, Un
 abstract: "O incursiune matematică în fascinanta lume a preciziei și metrologiei. Pornind de la aspectele combinatorice ale unui set de cale plan paralele, această lucrare studiază intervalul de măsuri realizabile, numărul lor și criteriile obținerii unei combinații optime. Subliniază importanța selectării clasei de precizie adecvate pentru a asigura acuratețea optimă a măsurătorilor și aduce în discuție echilibrul complicat de planeitate, paralelism și exactitate pe care o cale plan paralela trebuie să-l îndeplinească. Pe lângă eleganța și simplitatea matematică a acestor instrumente, lucrarea evidențiază rolul critic pe care acestea îl au (și l-au avut) în menținerea avansării tehnologiei."
 
 editor: visual
-author: "Vlad Marianciuc"
+author: 
+  - name: Vlad Marianciuc
+    affiliation: University of Bucharest
+  - name: "Îndrumător: Conf.dr. Iulian Cîmpean"
+    url: https://sites.google.com/site/iulianncimpean/home
+    affiliation: University of Bucharest
 date: "16 June 2024"
 theme: flatly
 smooth-scroll: true
 code-fold: show
 lightbox: true
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-title: "Cuprins"
 ---
 
 # 1. Introducere
@@ -286,7 +296,7 @@ Pentru a obține numărul, vom folosi aceeași metodă ca mai sus:
 Vedem că în acest caz am fost norocoși iar calele s-au aliniat bine, chiar în ordine descrescătoare. Față de primul exemplu unde am folosit 5 cale pentru a obține dimensiunea dorită, aici am avut nevoie să folosim **22** de cale!
 
 ::: {#1 .callout-note appearance="minimal"}
-Remarcăm și reținem: Dacă am folosit **n** cale ca să obținem un număr **x**, atunci calele rămase vor suma la numărul 26.5295 – **x** . $$  $$ {#eq-b}
+Remarcăm și reținem: Dacă am folosit **n** cale ca să obținem un număr **x**, atunci calele rămase vor suma la numărul 26.5295 – **x** . $$    $$ {#eq-b}
 :::
 
 Această simetrie va fi importantă în continuare.
@@ -328,7 +338,7 @@ $$\mathrm{S}_{y}=\mathcal{S}\setminus\mathrm{S}_x,\  \sum\mathrm{S}_{y}=\sum\mat
 
 Asta înseamnă că putem folosi simetria pentru a reduce la jumătate problema. Această simetrie poate fi văzută ca simetria dintre adunare și scădere. Pentru a obține o dimensiune din prima jumătate a intervalului, pornim de la 0 (nu avem nici o cală) și adunăm cale, iar pentru a obține simetricul acelei dimensiuni, pornim de la maxim (avem toate calele lipite) și scădem aceleași cale pe care le adunasem inițial.
 
-![Fig.8a C.E. Johansson ținând în mână un „baton” de cale](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2009.jpg){.lightbox}
+![Fig.9 Schema structurii simetrice a intervalului studiat.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2009.jpg){.lightbox}
 
 <br>
 
@@ -338,7 +348,7 @@ Reamintindu-ne intuiția inițială (punctul [1.3.3](#1.3.3)) și descrierea rea
 
 Prin urmare, îmbogățim și ajustăm intuiția astfel: poate că după 10″ distribuția dimensiunilor va scădea (trebuie demonstrat acest lucru), dar cu siguranță structura distribuției, per ansamblu, este simetrică față de mijlocul intervalului \[0, 26.5295\].
 
-![Fig.8a C.E. Johansson ținând în mână un „baton” de cale](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2010.jpg){.lightbox}
+![Fig.10 Descriere schematică a intuiției ajustate.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2010.jpg){.lightbox}
 
 Acest lucru ne ușurează sarcina. Considerând adevărată afirmația din alegerea temei (1.1.a), ne rămâne să extindem afirmația 1.1.a de la 10″ până la 13.2647″ și, prin simetrie, va rezulta că toate numerele cu până la 4 zecimale din intervalul \[0.2, 26.3295\] pot fi obținute cu piese din acest set.
 
@@ -356,12 +366,9 @@ $$\displaylines{Aratati\ ca\ \forall\ {x}\in\hat{\mathrm{X}},\ \exists\ \mathrm{
 
 Idee:
 
-i.  Arătăm că putem obține un inch complet (aici prin „complet”
-    înțelegem că putem merge „continuu” cu pas de 0.0001).Vom arăta acest lucru
-    pentru intervalul \[0.2, 1.1999\].
+i.  Arătăm că putem obține un inch complet (aici prin „complet” înțelegem că putem merge „continuu” cu pas de 0.0001).Vom arăta acest lucru pentru intervalul \[0.2, 1.1999\].
 
-ii. Arătăm că putem obține orice număr natural între 1 și 13 folosind
-    piesele rămase după ce am scos cele pe care le-am folosit la punctul i).
+ii. Arătăm că putem obține orice număr natural între 1 și 13 folosind piesele rămase după ce am scos cele pe care le-am folosit la punctul i).
 
 Din i) și ii) rezultă că putem acoperi tot intervalul **X**.
 
@@ -415,8 +422,7 @@ $\qquad b.3)\ \exists\ s_3\in\{.8, .85, .9, .95, 1\}\ a.i.\ x_2-s_3=0$<br><br>
 
 $\qquad Prin\ urmare,\ putem\ construi\ \mathrm{S}_x=\{s_1, s_2, s_3\}\ a.i.$<br><br> $$\sum\mathrm{S}_x=x,\ \forall\ x\in[1, 1.1999]$$
 
-Din a) și b) rezultă că putem construi fiecare număr cu până la 4 zecimale în intervalul \[0.2, 1.1999\].
-<br><br>
+Din a) și b) rezultă că putem construi fiecare număr cu până la 4 zecimale în intervalul \[0.2, 1.1999\]. <br><br>
 
 ii\.
 
@@ -424,11 +430,11 @@ Pentru punctul i) folosim cel mult 3 cale, câte una din Seria 1, Seria 2 sau Se
 
 Vrem să generăm pe 11, 12 și 13. Facem observația că din Seria 3 folosim doar 1 singură cală la punctul i), prin urmare ne rămân 18 cale în Seria 3 pe care le putem folosi. Remarcăm că putem aranja calele din Seria 3 astfel:
 
-| Gruparea calelor din Seria 3  |              |                |             |
-|-------------------------------|--------------|----------------|-------------|
-| .05 + .95 = 1                 | .1 + .9 = 1  | .15 + .85 = 1  | .2 + .8 = 1 |
-| .25 + .75 = 1                 | .3 + .7 = 1  | .35 + .65 = 1  | .4 + .6 = 1 |
-| .45 + .55 = 1                 | .5           |                |             |
+| Gruparea calelor din Seria 3 |             |               |             |
+|------------------------------|-------------|---------------|-------------|
+| .05 + .95 = 1                | .1 + .9 = 1 | .15 + .85 = 1 | .2 + .8 = 1 |
+| .25 + .75 = 1                | .3 + .7 = 1 | .35 + .65 = 1 | .4 + .6 = 1 |
+| .45 + .55 = 1                | .5          |               |             |
 
 Prin urmare, vom putea oricând lua 3 astfel de perechi pe care să le adunăm la calele din Seria 4 astfel încât să generăm toate numerele naturale de la 1 la 13.
 
@@ -454,8 +460,995 @@ $$\mathrm{Y}=\{y:y\in\left[13.2648,\ 26.3295\right],\ y\cdot{10}^4\in\mathbb{N}\
 
 $$din\ (3):\ \forall\ y\in\mathrm{Y},\ \exists\ \mathrm{S}_y\subseteq\mathcal{S},\ a.i.\ \sum\mathrm{S}_y=y.$$ {#eq-6}
 
-$$Observam\ ca\ \ \mathrm{Y}\ \cup\ \hat{\mathrm{X}}=\mathrm{X}.$$<br>
+$$Observam\ ca\ \ \mathrm{Y}\ \cup\ \hat{\mathrm{X}}=\mathrm{X}.$$ {#eq-7}<br>
 
 $$\displaylines{Din\ (5),\ (6),\ (7)\ ⇒ \forall\ {x}\in\mathrm{X}=\{x:\ x\in[0.2, 26.3295],\ x\cdot10^4\in\mathbb{N}\},\\ \exists\ \mathrm{S}_x=\{s_1, s_2,...,s_n\}\subseteq\mathcal{S},\ 0\leq{n}\leq81,\ a.i. }$$ $$\sum\mathrm{S}_x=\sum_{i=1}^{n}s_i=x$$
 
 Ceea ce trebuia demonstrat.
+
+<br>
+
+## 2.6 Capete
+
+Ca să acoperim complet intervalul \[0, 26.5295\], mai trebuie să vedem ce se întâmplă pe capete (intervalele \[0, 0.2) și (26.3295, 26.5295\] ).
+
+Acolo lucrurile sunt mai simple deoarece nu avem o granulație așa de fină. Este în continuare valabilă observația cu simetria.
+
+\[0, 0.1) – avem 2 mărimi: 0 și cala de .05 (considerăm 0 ca fiind o mărime valabilă)
+
+\[0.1, 0.2) – avem 118 mărimi:
+
+-   100 de mărimi fiind cele obținute cu calele din Seria 2 și cala de .05:
+
+    -   .100, .101, .102, .103, .... , .198, .199
+
+-   18 mărimi fiind cele obținute cu calele din Seria 1 și cala de .05:
+
+    -   .1001, .1002, ... , .1009, .1051, .1052, ... , .1059
+
+::: {.callout-note appearance="minimal"}
+Prin urmare, în fiecare capăt putem obține 120 de măsuri, deci 240 în total.$$    $$ {#eq-8}
+:::
+
+<br>
+
+## 2.7 Concluzii
+
+Am plecat de la aceste 2 afirmații:
+
+a.  „ Folosind piesele acestui set, se pot obține măsuri între 0.1″ și 0.2″ cu pas de 0.001″ și între 0.2″ și 10″ cu pas de 0.0001″ ” (traducere personală din Fig 2.)
+
+b.  „ Mai mult de 100 000 de combinații sunt posibile folosind acest set cu 81 de piese ” (traducere personală din Fig 2.)
+
+Și ne-am propus să le dăm o formă completă. Acum putem spune:
+
+a.  Folosind piesele acestui set, se pot obține:
+
+    1.   Măsuri între 0.1″ și 0.2″ cu pas de 0.001″
+
+    2.  Măsuri între 0.2″ și 26.3295″ cu pas de 0.0001″
+
+    3.  Măsuri între 26.3295″ și 26.5295″ cu pas de 0.001″
+
+    Din (0) și (8) putem obține numărul total de mărimi pe care le putem construi cu acest set cu 81 de cale, iar afirmația b) devine:
+
+b.  Cu acest set pot fi construite exact **261 536** mărimi diferite (incluzând mărimea 0)
+
+Pentru a arăta acest lucru a fost foarte importantă vizualizarea problemei și înțelegerea naturii ei simetrice. Putem vedea cum intuiția a evoluat și, pe măsură ce noi observații au fost făcute, intuiția s-a adaptat, a descoperit mai multe unghiuri de a vedea problema.
+
+![Fig.11 Evoluția intuiție pe parcursul realizării acestei lucrări.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2011.jpg){.lightbox}
+
+<br>
+
+Remarcăm faptul că oamenii consulați în timpul redactării acestei lucrări aveau același „feeling”, anume că anumite mărimi nu pot fi obținute. Mai mult, videoclipul de la care a plecat această lucrare și care își punea aceleași întrebări, oferă în final său un răspuns legat de numărul total de mărimi ce pot fi obținute cu acest set – 230 682[^8], număr ce este contrazis de lucrarea mea.`
+<br>`{=html}
+
+[^8]: Francis, W. (2017, Noiembrie 22). *Origins of precision.* Machine Thinking, min. 29:55<br>
+    <https://youtu.be/gNRnrn5DE58?si=bz9xrtXgltSV4QQR&t=1795>
+
+# 3. Optimizare și algoritm
+
+Observăm că demonstrația de mai sus oferă o metodă explicită de a obține o măsură. Spunem că putem obține măsurile din prima jumătate iar cele din jumătatea rămasă sunt, pentru fiecare, totalul minus măsura corespondentă din prima jumătate.
+
+![Fig.12 Când construim o măsura X, rămâne măsura Total – X](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2012.png){.lightbox}
+
+Totuși, acest mod, deși corect, nu oferă tot timpul combinația optimă prin care putem obține o măsură. Prin optim înțelegem combinația care are numărul minim de cale.
+
+<br>
+
+De exemplu:
+
+Folosind algoritmul folosit în demonstrația problemei la punctul 2.5, putem obține ultimul număr din prima jumătate, anume 13.2647, în felul următor:
+
+| .       |     |          |
+|---------|-----|----------|
+| 13.2647 | \|  | \- .1007 |
+| 13.164  | \|  | \- .114  |
+| 13.05   | \|  | \- .05   |
+| 13      | \|  | \- 4     |
+| 9       | \|  | \- 3     |
+| 6       | \|  | \- 2     |
+| 4       | \|  | \- 1     |
+| 3       | \|  | \- .95   |
+| 2.05    | \|  | \- .9    |
+| 1.15    | \|  | \- .85   |
+| 0.3     | \|  | \- .3    |
+| 0       |     |          |
+
+Obținem 13.2647 folosind cele 11 cale de mai sus. Din [(3)](#eq-3) conform simetriei, numărul 13.2648 = 26.5295 – 13.2647 este obținut de cele 70 de cale rămase nefolosite din setul de 81. Dar acest număr este chiar următorul și putem vedea că poate fi obținut, defapt, tot cu 11 cale, înlocuind cala .1007 cu .1008.
+
+Prin urmare, este legitimă întrebarea:
+
+**Cum putem obține combinațiile optime pentru fiecare număr?**
+
+<br>
+
+## 3.1 Optimizare
+
+Vrem ca atunci când construim o măsura, să folosim combinația care are cele mai puține cale în compoziție. Acest lucru este de dorit mai ales din motive practice. Este mai ușor să calăm un număr mai mic de piese decât unul mai mare. De asemenea, aceste piese de mare precizie, calele plan paralele, au totuși niște toleranțe. În funcție de gradul de precizie din care fac parte, calarea mai multor cale va scădea gradul de încredere al acurateței combinației.
+
+Din nou, este important să simplificăm problema. Uitându-ne la seria cu cele mai mari cale, Seria 4, are calele: 1, 2, 3, 4. Ce este o combinație optimă pentru acest set?
+
+<br>
+
+[De exemplu:]{.underline}
+
+Cu piesele din {1, 2, 3, 4} putem obține mulțimea {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}.
+
+Să spunem că vrem să-l construim pe 8.
+
+1.  8 nu se află în S4 = {1, 2, 3, 4}, mergem mai departe
+
+2.  Facem combinații de câte două elemente și verificăm la cât sumează. Cu mențiunea că nu ne interesează valorile pe care le-am verificat deja la pasul anterior.
+
+    {1,2} = 3, {1,3} = 4, {1,4} = 5, {2,3} = 5, {2,4} = 6, {3,4} = 7
+
+    Tot nu îl găsim pe 8. Mergem mai departe
+
+3.  Facem combinații de câte trei elemente și verificăm la cât sumează.
+
+    {1,3,4} = 8, {2, 3, 4} = 9
+
+    Gata, l-am găsit pe 8, poate fi construit cu {1,3,4}
+
+![Fig.13 Vizualizare schematică a modului de căutare a combinației optime.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2013.jpg){#fig13 .lightbox}
+
+<br>
+
+[Observație:]{.underline}
+
+Această metodă de parcurgere implică, defapt, parcurgerea pe nivele a „power-setului” lui S4, în acest caz o mulțime cu 2^S4^ = 2^\|S4\|^ = 2^4^ = 16 submulțimi.
+
+Generalizând acest raționament, pentru un număr construibil x, combinația optimă va fi primul nivel din arborele generat de 𝒫(S) (unde S este setul de 81 de piese) în care găsim mulțimea care sumează la x. „Etajul” la care ne vom afla va fi numărul de cale pe care le va avea combinația, iar acest număr va fi minim, prin urmare combinația va fi optimă.
+
+<br>
+
+Ca să găsim combinația optimă a unui nr construibil x, pașii pe care îi vom face vor fi:
+
+1.  Caută-l pe x în mulțimea inițială. Dacă existră – stop, altfel continuă:
+
+2.  Caută-l pe x în mulțimea sumelor submulțimilor de 2 elemente.
+
+3.  Caută-l pe x în mulțimea sumelor submulțimilor de 3 elemente.
+
+4.  Tot așa, continuă până îl găsești pe x.
+
+Dar în cazul setului nostru ar însemnă să trecem prin până la 2^81^ mulțimi, ceea ce este mult.
+
+<br>
+
+Întorcându-ne la demonstrație, la punctul [2.5](#reformulare-și-rezolvare) am arătat că putem construi 1 inch complet din maxim 3 piese.
+
+Deci un număr va fi construit din: (maxim 3 piese) + piesele cu care construim partea întreagă.
+<br>
+
+Din nou, vorbim despre o abordare în 2 pași:
+
+i.  Construim partea fracționară cu maxim 3 piese
+
+ii. Construim partea întreagă
+
+Înainte de a scrie pseudocodul va trebui să clarificăm faptul că este necesar ca cele 4 serii de mărimi să fie definite ca 4 liste/vectori și să fie ordonate crescător. Primul element din listă are indicele 0.
+
+<br>
+
+Definim s1, s2, s3, s4 conform [1.3.1](#definirea-datelor-problemei) punctul c) (aici s1 \~ set1, șamd).
+
+``` python
+set1 = [x/10000 for x in range(1001, 1010)]
+set2 = [x/10000 for x in range(1010, 1491, 10)]
+set3 = [x/10000 for x in range(500, 9501, 500)]
+set4 = [1, 2, 3, 4]
+ss = set1 + set2 + set3 + set4
+```
+
+i.  Folosim pașii pe care i-am folosit în demonstrație :
+
+    1\. **def** funcție(nr, s1, s2, s3, s4):
+
+    2\.         comb = listă goală
+
+    3\.         n1 = (ultima cifra a lui nr) - 1
+
+    4\.         **daca** n1 != -1:
+
+    5\.                 **scade** piesa s1\[n1\] **din** nr
+
+    6\.                 **adaugă** s1\[n1\] **în** comb
+
+    7\.                 **elimina** s1\[n1\] **din** s1
+
+    8\.         n2 = ((ultimele 2 cifre ale lui nr) modulo 50) – 1
+
+    9\.         **daca** n2 != -1:
+
+    10\.                **scade** piesa s2\[n2\] **din** nr
+
+    11\.                **adaugă** s2\[n2\] **în** comb
+
+    12\.                **elimina** s2\[n2\] **din** s2
+
+    13\.        n3 = ((ultimele 2 cifre ale lui nr)/5) – 1
+
+    14\.        **daca** n3 != -1:
+
+    15\.                **scade** piesa s3\[n3\] **din** nr
+
+    16\.                **adaugă** s3\[n3\] **în** comb
+
+    17\.                **elimina** s3\[n3\] **din** s3
+
+    În acest moment variabila **nr** va fi sigur un număr întreg.
+
+    ``` python
+    # functia are parametrii numarul tinta si cele 4 serii de cale
+
+    def func(nr, s1, s2, s3, s4):
+
+     # aici 23.4 este limita obtinuta empiric de unde este mai
+     # eficient (ca timp) sa construiesti numarul prin
+     # construirea diferentei 26.5295-nr
+      if nr<23.4:
+
+        comb = []
+
+        n1 = round(nr*10000)%10-1
+        if n1!=-1:
+          nr = round(nr-s1[n1], 5)
+          comb.append(s1[n1])
+          del s1[n1]
+
+        n2 = round(nr*1000)%50-1
+        if n2!=-1:
+          nr = round(nr-s2[n2], 5)
+          comb.append(s2[n2])
+          del s2[n2]
+
+        n3 = round((round(nr*100)%100)/5)-1
+        if n3!=-1 and n3<20:
+          nr = round(nr-s3[n3], 5)
+          comb.append(s3[n3])
+          del s3[n3]
+
+    # Pana aici am scapat de numerele de dupa virgula
+    ```
+
+    <br>
+
+ii. Pentru partea întreagă:
+
+    Vom merge pe cazuri:
+
+    a.  Partea întreagă =\< 10. Folosim Seria 4 = S4 = {1, 2, 3, 4}
+
+        Conform [Fig.13](#fig13) am putea începe cu piese mari și să facem power setul Seriei 4. Va fi o metodă care va funcționa.
+
+        Dar în acest caz putem folosi o proprietate a Seriei 4:
+
+        ::: {.callout-note appearance="minimal"}
+        Seria 4 este o mulțime care poate fi generată prin adunări repetate ale unui singur element, anume **1**, care se află în seria 4.
+
+        $$  $$ {#eq-9}
+        :::
+
+        Această proprietate este importantă pentru că ne dă posibilitatea să construim direct mulțimea unui număr întreg, fără a mai fi nevoie să căutăm acea mulțime în arborele descris mai sus.
+
+        [Exemplu:]{.underline}
+
+        Avem S4 = {1,2,3,4} – vrem să-l căutăm pe 8:
+
+        1.  Care este prima piesă din S4 = {1, 2, 3, 4} care este =\< 8 ?
+
+            Răspuns: **4**. Scădem pe 4 din 8 și eliminăm 4 din S4.
+
+        2.  Care este prima piesă din S4 = {1,2,3} care este =\< 4 ?
+
+            Răspuns: **3**. Scădem pe 3 din 4 și eliminăm pe 3 din S4.
+
+        3.  Care este prima piesă din S4 = {1,2} care este =\< 1 ?
+
+            Răspuns: **1**. Scădem pe 1 din 1 și am ajuns la 0.
+
+        Această metodă va funcționa tot timpul și este mai eficientă din punctul de vedere al timpului de execuție.
+
+        [Obs.:]{.underline} Dacă partea întreagă este mai mare decât 10, folosim complet Seria 4.
+
+        1\. **dacă** nr \>= 10:
+
+        2\.         **scade** 10 **din** nr
+
+        3\.         **adauga** s4 **în** comb
+
+        4\. **altfel**:
+
+        5\.         **pentru** i **în** \[0, 1, 2, 3\]:
+
+        6\.                 **dacă** nr \> s4\[3-i\]:
+
+        7\.                         **scade** piesa s4\[3-i\] **din** nr
+
+        8\.                         **adaugă** s4\[3-i\] **în** comb
+
+        ``` python
+        if nr>=10 or 10-nr<10**(-5):
+              comb.extend(s4)
+              nr = round(nr-10, 5)
+            else:
+              for i in [0, 1, 2, 3]:
+                if nr>=s4[3-i] or s4[3-i]-nr<10**(-5):
+                  nr = round(nr-s4[3-i], 5)
+                  comb.append(s4[3-i])
+
+            if nr==0:
+              return(comb)
+        ```
+
+        <br>
+
+    b.  Partea întreagă =\< \~ 19.5.
+
+        După ce epuizăm Seria 4, trecem la:
+
+        **Seria 3** = {.050, .100, .150, .200, .250, .300, .350, .400, .450, .500, .550, .600, .650, .700, .750, .800, .850, .900, .950}
+
+        Această serie are mai multe cale decât Seria 4, dar structura este asemănătoare. Dacă dăm factor comun .05, Seria 3 devine:
+
+        **Seria 3** = .05\*{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}
+
+        Pentru că această mulțime are proprietatea [(9)](#eq-9), vom proceda asemănător.
+
+        ``` python
+        if nr>=sum(s3) or sum(s3)-nr<10**(-5):
+              comb.extend(s3)
+              nr = round(nr-sum(s3), 5)
+              s3=[]
+            else:
+              while nr>10**(-5) and len(s3)!=0:
+                m3 = list(filter(lambda i: s3[i] <= nr+10**(-5), range(len(s3))))[-1]
+                nr = round(nr-s3[m3], 5)
+        ```
+
+        [Obs.:]{.underline} Este probabil ca în acest moment Seria 3 să nu fie completă și o piesă să fi fost folosită la punctul i) anterior. Acest lucru poate da naștere unor cazuri particulare precum:
+
+        -   Am scăzând descrescător piese din S3 până am ajuns la piesa .35 iar nr = .4
+
+            Dacă voi scădea .35 din .4 voi rămâne cu .05. Dacă am folosit .05 în prima parte (punctul i ), atunci nu voi avea cum să obțin acel .05 cu nimic altceva (este cea mai mică piesă). Ideea e să te întorci și să continui cu .3 în loc de .35 și apoi cu .1
+
+            ``` python
+            if round(nr-s3[0], 3)<0 and nr>10**(-5):
+                      nr = round(nr + s3[m3], 5)
+                      m3 -= 1
+                      nr = round(nr- s3[m3], 5)
+                    comb.append(s3[m3])
+                    del s3[m3]
+            ```
+
+        <br>
+
+        Cu punctele ii.a) și ii.b) descrise până acum putem construi eficient și optim numere până la aprox. \~ 19.5.
+
+        Pentru numere mai mari, metodele pe care le-am folosit nu vor mai funcționa.
+
+        <br>
+
+    c.  Partea întreagă \>= \~ 19.5
+
+        În acest punct, putem recurge la metoda recursivă descrisă în [Fig.13](#fig13)
+
+        Natura recursivă a acestei probleme împreună cu posibilitatea de a împărți problema în subprobleme ne indică să căutăm în direcția algoritmilor dinamici.
+
+        Căutând informații despre acest tip de probleme, aflăm următorul lucru:
+
+        -   Problema noastră, obținerea unei submulțimi care sumează la un număr dat, este un caz particular al problemei **Knapsack**[^9]
+
+            Pe scurt, problema Knapsack spune:
+
+            Având o mulțime de obiecte, fiecare cu o greutate și o valoare, ce combinație va umple un ghiozdan ce poate suporta o greutate maximă (knapsack), maximizând greutatea și valoarea?
+
+        -   Acest caz particular se numește **Subset Sum Problem**[^10] și spune, pe scurt:
+
+            Dată o mulțime de numere și un număr țintă T, răspunde la întrebarea:
+
+            Există o submulțime a cărei sumă este exact T ?
+
+        Mai precis, Subset Sum este o problemă Knapsack în care greutatea și valoarea sunt egale.
+
+        Acest probleme fac parte din clasa problemelor NP-complete. Ele sunt dintre cele mai dificil de rezolvat (la modul general, algoritmic) deoarece timpul de rulare crește exponențial.
+
+        <br>
+
+        Căutând online, găsim diverși algoritmi pentru Knapsack Problem. Lucrarea folosește un astfel de algoritm care este adaptat la problema în cauză.
+
+        <br>
+
+        Strategia va fi:
+
+        -   Dacă numărul pe care vrem să-l obținem epuizează Seria 3 și trebuie să folosească piese din Seria 2, atunci vom folosi algoritmul dinamic pentru a găsi combinația potrivită.
+
+        -   Trecerea va fi o punte între algoritmul prezentat până acum și cel dinamic. Puntea tratează cazurile particulare care apar la limite.
+
+        ``` python
+        # de aici incolo , pentru numere mai mari de aprox 19.7 va fi nevoie sa folosim blocuri din
+        # Seria 2, serie care are cele mai multe blocuri iar faptul ca elementele ei nu sunt multipli unul fata
+        # de celalalt, nu merge sa folosim tot o metoda Greedy optimizata.
+        # Din acest motiv voi folosi un algoritm dinamic pe care l-am gasit pe internet si l-am adaptat problemei mele.
+        # Algoritmul in cauza este folosit pentru a rezolva o problema de tip Knapsack.
+        # Problema pe care o descriu eu aici este similara cu o problema de tip Subset Sum, care
+        # este un caz particular al problemei Knapsack.
+
+            if nr<10**(-5):
+              return comb
+            else:
+              # aici o heuristica care regleaza cazurile limita
+              # de la trecerea dintre Seria 3 si Seria 2
+              if round(nr, 4)<0.25:
+                k = round(.25-nr, 5)
+                nr = round(nr+ k, 5)
+                comb.remove(k)
+              elif abs(nr-.3)<10**(-5):
+                k = round(.35-nr, 5)
+                nr = round(nr+k, 5)
+                comb.remove(k)
+
+            s1 = [int(round(x*10000, 5)) for x in s1][::-1]
+            s2 = [int(round(x*10000, 5)) for x in s2][::-1]
+            s3 = [int(round(x*10000, 5)) for x in s3][::-1]
+            s = s3+s2+s1
+            nr = int(round(nr*10000))
+
+            comb.extend([x/10000 for x in printknapSack(nr, s, s, len(s))])
+
+            return comb
+        ```
+
+        Partea de mai sus reprezintă puntea dintre algoritmul meu și cel dinamic. Algoritmul dinamic este apelat în penultimul rând prin funcția printkanpSack().
+
+        ``` python
+        # The next part of the code is contributed by Aryan Garg
+
+        # Python3 code for Dynamic Programming
+        # based solution for 0-1 Knapsack problem
+
+        # Prints the items which are put in a
+        # knapsack of capacity W
+
+        def printknapSack(W, wt, val, n):
+            K = [[0 for w in range(W + 1)]
+                    for i in range(n + 1)]
+
+            # Build table K[][] in bottom
+            # up manner
+            for i in range(n + 1):
+                for w in range(W + 1):
+                    if i == 0 or w == 0:
+                        K[i][w] = 0
+                    elif wt[i - 1] <= w:
+                        K[i][w] = max(val[i - 1]
+                          + K[i - 1][w - wt[i - 1]],
+                                       K[i - 1][w])
+                    else:
+                        K[i][w] = K[i - 1][w]
+
+            # stores the result of Knapsack
+            res = K[n][W]
+
+            w = W
+            lst = []
+            for i in range(n, 0, -1):
+                if res <= 0:
+                    break
+                # either the result comes from the
+                # top (K[i-1][w]) or from (val[i-1]
+                # + K[i-1] [w-wt[i-1]]) as in Knapsack
+                # table. If it comes from the latter
+                # one/ it means the item is included.
+                if res == K[i - 1][w]:
+                    continue
+                else:
+                    # This item is included.
+                    #print(wt[i - 1])
+                    lst.append(wt[i-1])
+
+                    # Since this weight is included
+                    # its value is deducted
+                    res = res - val[i - 1]
+                    w = w - wt[i - 1]
+            return lst
+        ```
+
+        Partea de mai sus este algoritmul dinamic luat de pe geeksforgeeks[^11].
+
+        <br>
+
+[^9]: Wikimedia Foundation. (2024a, May 13). *Knapsack problem*. Wikipedia.
+    <https://en.wikipedia.org/wiki/Knapsack_problem>
+
+[^10]: Wikimedia Foundation. (2024, June 9). *Subset sum problem.* Wikipedia.
+    <https://en.wikipedia.org/wiki/Subset_sum_problem>
+
+[^11]: Garg, A. (2022, June 23). *Printing items in 0/1 Knapsack*. GeeksforGeeks.
+    <https://www.geeksforgeeks.org/printing-items-01-knapsack/>
+
+## 3.2 Algoritm
+
+Algoritmul poate fi consultat și testat aici.
+
+[https://colab.research.google.com/drive/1UwWaqUNZ_lxWgTIHWWyp83AD7eGe1tR#scrollTo=Q9zq9xZAVJCp](https://colab.research.google.com/drive/1UwWaq-UNZ_lxWgTIHWWyp83AD7eGe1tR?usp=sharing)
+
+![Fig.14 QR-code către Notebook-ul Colab care conține codul prezentat mai sus, poate fi rulat direct din browser.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2014.png){.lightbox}
+
+<br>
+
+Am aplicat acest algoritm pe un fișier .csv în care am pus, în ordine crescătoare, toate cele 261536 de măsuri ce pot fi construite folosind setul cu 81 de cale plan paralele.
+
+Folosind acest fișier, am creat o aplicație interactivă ShinyLive prin care oricine poate introduce un număr și, dacă el este valid, va primi combinația optimă. O puteți găsi pe această pagină în tabul [GaugeBlock Finder](https://vladmarianciuc.github.io/gauge-block-study/gaugefinder.html).
+
+<https://vladmarianciuc.github.io/gauge-block-study/>
+
+![Fig.15 QR-code către aplicația interactivă construită folosind rezultatele acestei lucrări, poate fi deschisă direct în browser.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2015.png){.lightbox}
+
+<br>
+
+![Fig.16 Distributia combinatiilor, in functie de marimea pe care vrem sa o construim.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2016.png){.lightbox}
+
+<br>
+
+![Fig. 17 Evidențierea naturii liniare pe intervale a acestei distribuții.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2017.jpg){.lightbox}
+
+<br>
+
+Se observă natură liniară pe intervale a acestei distribuții. Mai precis, exact pe intervalele care coincid cu Seriile de cale pe care le folosim. Pentru fiecare interval putem construi un model de regresie liniară simplă și să unim rezultatele într-o funcție generală de interpolare.
+
+Acest lucru corespunde cu intuiția. Este normal ca distribuția să arate astfel întrucât folosim treptat cale din cele 4 serii până ce epuizăm fiecare serie. Mai mult, pantele interpolărilor pe intervale corespund granulației seriilor.
+
+Vedem o pantă lină pentru seria 4: adică putem obține o plajă largă de numere (pentru că avem calele de dimensiuni mari: 1, 2, 3, 4). O pantă mai abruptă pe intervalul 10-19.5, ce corespunde Seriei 3 și o pantă foarte abruptă după 19.5 – lucru ce se datorează granulației semnificativ mai mici a calelor din Seria 2.
+
+<br>
+
+# 4. Incertitudinea unei măsurători
+
+Știința care se ocupă cu măsurători se numește metrologie. Ea are un rol semnificativ în domenii medicale, de cercetare, în producție și design. Un aspect cheie în metrologie este stabilirea acurateței unei măsurători, definirea unor grade de precizie și crearea unor metode și standarde internaționale. Faimosul Sistem Internațional a fost unul din acestea iar astăzi avem standardele ISO (dar și altele).[^12]
+
+[^12]: Wikimedia Foundation. (2024b, June 1). *Metrology*. Wikipedia.
+    <https://en.wikipedia.org/wiki/Metrology>
+
+Este important să înțelegem că nici o măsură nu este exactă sau precisă. Acest lucru este, defapt, un alt fel de a spune că probabilitatea de a alege un număr rațional este 0 și că probabilitatea de a alege un număr irațional este 1.
+
+De exemplu: Uitându-ne la Fig.18 vedem că avem un creion lângă o linie gradată cu cm și fiecare cm este împărțit în alte 10 gradații (mm). Putem spune rapid că acel creion are cam 4 cm. Putem să mijim mai mult ochii și să spunem că are cam 4.2. Putem fi puțin pedanți și să spunem chiar 4.25! Dar chiar și așa, afirmația noastră tot va conține acel cam. Corect este să spunem 4.25 +/- o toleranță.
+
+Toleranța este o caracteristică a instrumentului cu care este realizată măsurătoarea iar în funcție de precizia la care dorim să lucrăm, ne alegem instrumentele de măsură care au toleranțe acceptabile. De exemplu, dacă realizez un gard de împrejmuire s-ar putea să fie bună o ruletă mare cu diviziuni din cm în cm și care are toleranța de +/- .5 cm. Dar dacă vreau să chertez 2 grinzi din lemn și doresc o îmbinare perfectă, voi avea nevoie de o ruletă mai mică cu diviziuni din mm în mm și cu toleranță mai mică de +/- .5 mm.
+
+De aici vine incertitudinea unei măsurători. Iar legat de incertitudine este conceptul de încredere. Gândindu-ne din nou la creionul din Fig.18, putem spune că are 4.2 cm +/- 0.5 mm. În felul acesta încadrăm incertitudinea în niște limite. Dar putem să spunem că creionul are 4.2 cm +/- 1 mm. Cu cât sunt mai mari limitele în care încadrăm incertitudinea, cu atât este mai mare încrederea noastră că acestea cuprind valoarea „adevărată”. Aș putea, deci, să mă uit la acel creion și să spun că sunt 75% sigur că are 4.2 cm +/- 0.5 mm sau aș putea spune că sunt 90% sigur că are 4.2 cm +/- 1 mm.[^13]
+
+[^13]: Muelaner, J. (2017a, November 1). *Key principles in metrology and Measurement Systems Analysis (MSA).*
+    <https://www.muelaner.com/metrology/#uncertainty>
+
+![Fig.18 Ce mărime are creionul?](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2018.png){.lightbox}
+
+<br>
+
+## 4.1 Cale plan paralele – caracteristici metrologice
+
+### 4.1.1 Condiții standard de referință
+
+Lungimea unei cale plan paralelă este definită în relație cu următoarele condiții de
+referință standard:[^14]
+
+[^14]: Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN), National Institute of
+    Standards and Technology, Gaithersburg, MD, \[online\], p.10
+    <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735>
+
+-   temperatura = 20 ºC (68 ºF)
+
+-   presiune barometrică = 101.325 Pa (1 atmosferă)
+
+-   presiunea vaporilor de apă = 1.333 Pa (10 mm de mercur)
+
+-   Conținutul de CO2 al aerului = 0.03%
+
+Dintre aceste condiții doar temperatura are un efect măsurabil asupra lungimii fizice a blocului. Celelalte condiții sunt necesare deoarece măsurarea primară a lungimii blocului de măsurare este o comparație cu lungimea de undă a luminii.
+
+<br>
+
+### 4.1.2 Stratul de calare
+
+Capacitatea de calare a calelor este o mărturie privind integritatea stării suprafeței lor.
+
+Dacă niște cale plan paralele nu pot fi calate cu ușurință, atunci ele pot da rezultate neregulate pe care nu te poți baza.
+
+Grosimea stratului de calare dintre 2 cale este de 25 nanometri \~ 0.98 μin[^15]. Iar această dimensiune este incorporată în lungimea calei în sine. Valoarea nominală a unei cale este definită în condițiile de la 4.1.1 prin măsurare interferometrică atunci când blocul este deja calat pe o placă plană de referință. Prin urmare, grosimea stratului de calare este inclusă în valoarea nominală a calei![^16]
+
+[^15]: Wikimedia Foundation. *Gauge block.* Wikipedia.
+    [http://www.starrett-webber.com/gb46.htm](https://en.wikipedia.org/wiki/Gauge_block)
+
+[^16]: Webber, S. (2003, November 21). *Wringing Gage Blocks*. Starret-Webber.
+    <http://www.starrett-webber.com/gb46.html>
+
+![Fig.19a Valoarea nominală a unei cale plan paralele include stratul de calare.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2019a.png){.lightbox}
+
+Această definiție este foarte utilă, deoarece atunci când calele sunt asamblate în diferite combinații, nu trebuie adăugat niciun factor de corecție suplimentar pentru grosimile straturilor de calare.
+<br>
+
+### 4.1.3 Grade de toleranță
+
+Conform NIST (National Institude of Standards and Technology)[^17], există 4 grade de toleranță:
+
+[^17]: Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN), National Institute of
+    Standards and Technology, Gaithersburg, MD, \[online\], p.13
+    <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735>
+
+-   Gradul 0.5
+
+-   Gradul 1
+
+-   Gradul 2
+
+-   Gradul 3
+
+Calele din gradele 0.5 și 1 au lungimi foarte apropiate de valorile lor nominale. Acestea sunt utilizate de obicei ca referință pentru a calibra alte cale de grade mai mici. Clasele 2 și 3 sunt de calitate inferioară și sunt utilizate în scopuri de măsurare, ateliere mecanice, mașinisti șamd.
+
+![Fig.19 Grade de toleranță pentru cale sistem imperial (exprimat in µin = 10-6 in).[^18]](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2019.png){.lightbox alt="Fig.19a Valoarea nominală a unei cale plan paralele include stratul de calare."}
+
+[^18]: Ibidem
+
+[^19]: Ibidem
+
+<br>
+
+Citind acest tabel aflăm despre calele de grad 0.5:
+
+-   calele mai mici de 1 inch au lungimea reală în interval de +/- 1 µin față de cea nominală
+
+-   cala de 2 inch are lungimea reală în interval de +/-1 µin față de cea nominală, șamd.
+
+[De exemplu:]{.underline}
+
+1.  O cală de grad 0.5 care are lungimea nominală de 0.1008 inch are lungimea reală cuprinsă în intervalul: \[0.100801, 0.100799\]
+
+2.  Aceeași cală, dar de grad 3, va avea lungimea reală cuprinsă în intervalul: \[0.100808, 0.100796\]
+
+<br>
+
+[Observație:]{.underline}
+
+-   Calele de gradul 0.5 și 1 au toleranță simetrică, pe când cele de grad 2 și 3 au toleranță asimetrică. Acest lucru este datorat destinației lor: cele de grad 0.5 și 1 sunt pentru a fi folosite în laborator (de ex. pentru calibrarea altor cale), pe când cele de grad 2 și 3 sunt folosite în ateliere, linii de producție unde (de obicei) se dorește ca media erorii să fie mai degrabă pozitivă.
+
+<br>
+
+## 4.2 Remarcă privind numărul de cale calate
+
+Considerând aspectele tehnice menționate mai sus, apare întrebarea:
+
+În funcție de gradul de toleranță, câte cale pot cala astfel încât să fiu rezonabil de sigur că valoarea nominală se află într-un interval de încredere satisfăcător?
+
+<br>
+
+[De exemplu:]{.underline}
+
+-   Avem nevoie de să setăm freza unei mașini de găurire la **17.2347** inch față de o placă plană de referință.
+
+    Folosind algoritmul prezentat mai sus, vedem că pentru a obține această măsură avem nevoie de **16** cale:
+
+    **\[0.1007, 0.134, 1, 2, 3, 4, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.25\]**
+
+    Avem un set de cale plan paralele de grad 1, unul de grad 2 și unul de grad 3. Vrem ca toleranța combinației pe care o vom folosi să fie mai mică de **+/- 0.00005**. Și vrem să fim 95% siguri că măsura reală se va situa în intervalul de sus.
+
+    Ce alegem? Sau cum?
+
+### 4.2.1 Modelarea incertitudinii
+
+Pentru a putea răspunde la întrebarea de mai sus va trebui să creăm un model.
+
+Incertitudinea unei măsurători poate fi modelată printr-o distribuție normală. Ea poate fi modelată și prin alte distribuții precum distribuția log-normală sau gamma.
+
+Avantajele distribuției normale sunt:
+
+1.  Este des întâlnită în natură. Sau mai precis, în multe scenarii din lumea reală, datele nu urmează o distribuție normală, iar comportamentul lor matematic poate fi destul de complex. Dar Teorema de Limită Centrală ne permite să tratăm distribuția eșantioanelor ca fiind aproximativ normală, făcând analiza statistică mult mai gestionabilă și fezabilă.
+
+2.  Este ușor de înțeles, este simetrică, potrivită pentru modelarea unor toleranțe centrate simetric.
+
+3.  Știm că pentru o deviație standard avem încredere de 67%, pentru două deviații standard avem încredere de 95%, pentru 3 deviații standard: încredere de 99,7%.
+
+![Fig.20 Populația unei distribuții normale în funcție de abaterea standard](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2020.png){.lightbox}
+
+<br>
+
+Pentru că ne dorim să știm că în 95% din cazuri lungimea reală se va afla în intervalul de toleranță din tabelul de la Fig.19, pentru fiecare cală în parte vom crea o variabilă aleatoare a cărei toleranță să corespundă cu două abateri standard.
+
+Vom considera fiecare cală dintr-o combinație ca pe o variabilă aleatoare i.i.d.
+
+Vom aduna fiecare variabilă i.i.d. și, pentru că toate sunt distribuite după o normală, suma lor va fi tot o distribuție normală. Mai mult, aceasta va reprezenta, defapt, „gradul de toleranță a acelei combinații specifice”.
+
+Ne rămâne să calculăm deviația standard a acestei noi distribuții și să generăm intervalul în care vom ști că, în 95% din cazuri, se află lungimea reală o combinației de cale pe care le vom cala.
+
+<br>
+
+### 4.2.2 Formulare matematică + algoritm
+
+$$fie\ \mathrm{S}_x⊆\mathcal{S}\ a.i.\ \sum\mathrm{S}_x=x,\ \mathrm{S}_x=\{s_1,s_2,...,s_n\},\ n\in\overline{1,81}$$
+
+Vom lua ca exemplu mărimea de mai sus, **17.2347**.
+
+```{r}
+comb <- c(0.1007, 0.134, 1, 2, 3, 4, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.25)
+```
+
+<br>
+
+Definim modele pentru fiecare grad de toleranță.
+
+Gradul 1:
+
+$$\mathrm{G}_1 = \Bigg\{\sum_{i=1}^{n}X_{1,\ s_i}:\ X_{1,\ s_i}\sim\begin{cases}\mathcal{N}(\mu=0,\ \sigma=1\cdot10^{-6}),\ s_i\le1\\\mathcal{N}(\mu=0,\ \sigma=2\cdot10^{-6}),\ s_i=2\\\mathcal{N}(\mu=0,\ \sigma=2.5\cdot10^{-6}),\ s_i=3\\\mathcal{N}(\mu=0,\ \sigma=3\cdot10^{-6}),\ s_i=4\end{cases},\ s_i\in\mathrm{S}_x\Bigg\}$$
+
+```{r}
+g1 <- numeric(10^5)
+
+for(i in seq(length(comb))){
+  if(comb[i]<1+10^(-5)){
+    g1 <- g1 + rnorm(10^5, 0, 10^(-6))
+  } 
+  if(abs(round(comb[i]-2))<10^(-5)){
+    g1 <- g1 + rnorm(10^5, 0, 2*10^(-6))
+  }
+  if(abs(round(comb[i]-3))<10^(-5)){
+    g1 <- g1 + rnorm(10^5, 0, (2.5)*10^(-6))
+  }
+  if(abs(round(comb[i]-4))<10^(-5)){
+    g1 <- g1 + rnorm(10^5, 0, 3*10^(-6))
+  }
+}
+```
+
+<br>
+
+Gradul 2:
+
+$$\mathrm{G}_2 = \Bigg\{\sum_{i=1}^{n}X_{2,\ s_i}:\ X_{2,\ s_i}\sim\begin{cases}\mathcal{N}(\mu=1\cdot10^{-6},\ \sigma=1.5\cdot10^{-6}),\ s_i\le1\\\mathcal{N}(\mu=2\cdot10^{-6},\ \sigma=3\cdot10^{-6}),\ s_i=2\\\mathcal{N}(\mu=2.5\cdot10^{-6},\ \sigma=3.75\cdot10^{-6}),\ s_i=3\\\mathcal{N}(\mu=3\cdot10^{-6},\ \sigma=4.5\cdot10^{-6}),\ s_i=4\end{cases},\ s_i\in\mathrm{S}_x\Bigg\}$$
+
+```{r}
+g2 <- numeric(10^5)
+
+for(i in seq(length(comb))){
+  if(comb[i]<1+10^(-5)){
+    g2 <- g2 + rnorm(10^5, 0.000001, 1.5*10^(-6))
+  } 
+  if(abs(round(comb[i]-2))<10^(-5)){
+    g2 <- g2 + rnorm(10^5, 0.000002, 3*10^(-6))
+  }
+  if(abs(round(comb[i]-3))<10^(-5)){
+    g2 <- g2 + rnorm(10^5, 0.0000025, (3.75)*10^(-6))
+  }
+  if(abs(round(comb[i]-4))<10^(-5)){
+    g2 <- g2 + rnorm(10^5, 0.000003, (4.5)*10^(-6))
+  }
+}
+```
+
+<br>
+
+Gradul 3:
+
+$$\mathrm{G}_3 = \Bigg\{\sum_{i=1}^{n}X_{3,\ s_i}:\ X_{3,\ s_i}\sim\begin{cases}\mathcal{N}(\mu=2\cdot10^{-6},\ \sigma=3\cdot10^{-6}),\ s_i\le1\\\mathcal{N}(\mu=4\cdot10^{-6},\ \sigma=6\cdot10^{-6}),\ s_i=2\\\mathcal{N}(\mu=5\cdot10^{-6},\ \sigma=7.5\cdot10^{-6}),\ s_i=3\\\mathcal{N}(\mu=6\cdot10^{-6},\ \sigma=9\cdot10^{-6}),\ s_i=4\end{cases},\ s_i\in\mathrm{S}_x\Bigg\}$$
+
+```{r}
+g3 <- numeric(10^5)
+
+for(i in seq(length(comb))){
+  if(comb[i]<1+10^(-5)){
+    g3 <- g3 + rnorm(10^5, 0.000002, 3*10^(-6))
+  } 
+  if(abs(round(comb[i]-2))<10^(-5)){
+    g3 <- g3 + rnorm(10^5, 0.000004, 6*10^(-6))
+  }
+  if(abs(round(comb[i]-3))<10^(-5)){
+    g3 <- g3 + rnorm(10^5, 0.000005, (7.5)*10^(-6))
+  }
+  if(abs(round(comb[i]-4))<10^(-5)){
+    g3 <- g3 + rnorm(10^5, 0.000006, (9)*10^(-6))
+  }
+}
+```
+
+<br>
+
+Folosind relația[^20]:
+
+[^20]: Wikimedia Foundation. (2023, August 12). *Sum of normally distributed random variables*. Wikipedia.
+    <https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables>
+
+$$X\sim\mathcal{N}(\mu_X,\ \sigma_X^2)$$\
+$$Y\sim\mathcal{N}(\mu_Y,\ \sigma_Y^2)$$\
+$$Z=X+Y$$<br> $$atunci\quad Z\sim\mathcal{N}(\mu_X+\mu_Y,\ \sigma_X^2+\sigma_Y^2)$$
+
+Rezultă că:
+
+$$G_j\sim\mathcal{N}\Bigg(\mu_{G_j}=\sum_{i=1}^n\mu_{X_{j,\ s_i}},\ \sigma_{G_j}=\sqrt{\sum_{i=1}^n\sigma_{X_{j,\ s_i}}^2}\Bigg),\ j = \overline{1,3}$$
+
+Notăm cu:
+
+$\overline{x} := lungimea\ reala\ a\ lui\ x$
+
+$\Delta:=\overline{x}-x,\ diferenta\ dintre\ lungimea\ reala\ si\ cea\ nominala$
+
+<br>
+
+**Propoziție:**
+
+$$\displaylines{Atunci\ \forall\ \mathrm{S}_x⊆\mathcal{S}\ a.i.\ \sum\mathrm{S}_x=x,\ \mathrm{S}_x=\{s_1,s_2,...,s_n\},\ n\in\overline{1,81},\\ \mathbb{P}(\Delta\in[\mu_{G_j}-2\cdot\sigma_{G_j};\ \mu_{G_j}+2\cdot\sigma_{G_j}])\ ≈\ 95\%}$$ {#eq-10}
+
+Unde j = {1, 2, 3} reprezintă gradul de toleranță al calelor folosite.
+
+<br>
+
+[Observație:]{.underline}
+
+-   Folosind [(10)](#eq-10) și variind numărul de cale dintr-o combinație putem găsi o formulă pentru intervalele de folosire rezonabilă a calelor cu diferite grade de precizie. Aici prin interval de folosire rezonabilă înțelegem acel interval în care se găsește limita maxim admis a toleranței de care avem nevoie pentru o anumită măsurătoare.
+
+<br>
+
+Revenind la punctul de la care am plecat:
+
+1.  Vrem să obținem măsura de **17.2347** inch
+
+2.  Folosind algoritmul de la capitolul [3](#optimizare-și-algoritm) obținem o combinație de **16** cale:
+
+    **\[0.1007, 0.134, 1, 2, 3, 4, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.25\]**
+
+3.  Având 3 seturi de cale plan paralele cu 81 de piese, ne întrebăm pe care ar trebui să îl folosim, considerând că vrem o toleranță a combinației mai mică de **+/- 0.00005**.
+
+Răspunsul este dat de blocul următor de cod care conține partea de afișare și calcul al algoritmului:
+
+```{r}
+options(scipen=999)
+cat("\n")
+hist(g1, xlab = "Abatere față de valoarea nominală", main="Distribuția incertitudinii pentru cale de Grad 1", breaks=100)
+sd_g1 = sd(g1)
+cat("Media combinației folosind g1 este 0 iar deviația standard este ", round(sd_g1, digits=7),".\n")
+cat("Combinația cu calele g1 oferă cu 95% încredere toleranța [",round(-2*sd_g1, digits=6), ", ", round(2*sd_g1, digits=6),"]\n")
+
+cat("\n")
+hist(g2, xlab = "Abatere față de valoarea nominală", main="Distribuția incertitudinii pentru cale de Grad 2",  breaks=100)
+sd_g2 = sd(g2)
+mean_g2 = mean(g2)
+cat("Media combinației folosind g2 este ",round(mean_g2, digits=7), " iar deviația standard este ", round(sd_g2, digits=7),".\n")
+cat("Combinația cu calele g2 oferă cu 95% încredere toleranța [",round(mean_g2-2*sd_g2, digits=6), ", ", round(mean_g2+2*sd_g2, digits=6), "]\n")
+
+cat("\n")
+hist(g3, xlab = "Abatere față de valoarea nominală", main="Distribuția incertitudinii pentru cale de Grad 3", breaks=100)
+sd_g3 = sd(g3)
+mean_g3 = mean(g3)
+cat("Media combinației folosind g3 este ",round(mean_g3, digits=7), " iar deviația standard este ", round(sd_g3, digits=7),".\n")
+cat("Combinația cu calele g3 oferă cu 95% încredere toleranța [",round(mean_g3-2*sd_g3, digits=6), ", ", round(mean_g3+2*sd_g3, digits=6), "]\n")
+```
+
+Prin urmare, putem folosi calele de grad 1 sau 2. Dacă am folosi calele de grad 1 ar fi cam multă precizie pentru ce avem nevoie, deci le putem folosi pe cele de grad 2, care ne oferă precizia de care avem nevoie!
+
+<br>
+
+[Observație:]{.underline} Acest algoritm poate fi aplicat pe setul de date generat cu algoritmul de la capitolul [3](#optimizare-și-algoritm) pentru a arăta vizual intervalele de folosire rezonabilă amintite mai sus.
+
+<br>
+Codul de la capitolul **3** a fost scris în limbajul Python, într-un notebook .ipynb Colab.
+
+Codul de la capitolul **4** a fost scris în limbajul R, în I.D.E.-ul RStudio, format Quarto.
+
+<br>
+
+<br>
+
+# 5. Mulțumesc:
+
+-   Prietenului Andrei Negoiță:
+
+    -   cu care am făcut un semnificativ ping-pong de idei prin care s-a conturat demonstrația problemei de numărare.
+
+    -   și care a rulat timp de 8 ore (folosind multi-thread) algoritmul de la cap.3) pe cele 261 536 de valori pentru a genera fișierul .csv cu combinațiile fiecărei măsuri.
+
+-   Prietenului Alec Avram, care m-a ajutat cu un proofreading al draftului lucrării în care mi-a semnalat câteva greșeli și mi-a dat recomandări pentru exprimare.
+
+-   Iubitei mele, Gabriela Doloiu, pentru suportul emoțional pe care mi l-a acordat în această perioadă foarte, foarte aglomerată.
+
+-   Domnilor Cătălin Coman, Fasie Ion-Alexandru și Mihai Iordache care au răspuns cererii mele de pe grupul public de facebook Scule și unelte de calitate, vechi și noi, și alte chestii interesante și mi-au împrumutat instrumente metrologice și seturi de cale plan paralele pentru a le folosi în timpul prezentării lucării.
+
+-   Dumneavoastră, pentru timpul acordat lecturii acestei lucrări.
+
+<br>
+
+# 6. Bibliografie
+
+1.  Moore, W. R. (1970). *Foundations of mechanical accuracy* (1st ed., 3rd Print).
+    <https://pearlhifi.com/06_Lit_Archive/15_Mfrs_Publications/Moore_Tools/Foundations_of_Mechanical_Accuracy.pdf>
+
+2.  Francis, W. (2017, Noiembrie 22). *Origins of precision*. Machine Thinking.
+    <https://www.youtube.com/watch?v=gNRnrn5DE58>
+    (ref. 1, 8)
+
+3.  Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN),
+    National Institute of Standards and Technology, Gaithersburg, MD, \[online\].
+    <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735>
+    (ref. 2, 6, 14)
+
+4.  Webber, S. (2003, November 21). *Wringing Gage Blocks.* Starret-Webber.
+    <http://www.starrett-webber.com/gb46.html>
+    (ref. 3, 16, 17, 18)
+
+5.  Muelaner, J. (2017a, November 1). *Key principles in metrology and Measurement Systems Analysis* <https://www.muelaner.com/metrology/>
+    (ref. 4, 13)
+
+6.  A&E Television Networks. (n.d.). *Interchangeable parts*. History.com.
+    <https://www.history.com/topics/inventions/interchangeable-parts>
+    (ref. 5)
+
+7.  *The history of gauge blocks.* (n.d.)
+    [https://www.mitutoyo.com/webfoo/wp-content/uploads/E12016-History-of-The-Gage-Block.pdf
+    ](https://www.mitutoyo.com/webfoo/wp-content/uploads/E12016-History-of-The-Gage-Block.pdf)(ref. 7)
+
+8.  Wikimedia Foundation. (n.d.). Wikipedia. <https://en.wikipedia.org/>
+    (ref. 9, 10, 12, 15, 19)
+
+9.  Garg, A. (2022, June 23). *Printing items in 0/1 Knapsack*. GeeksforGeeks.
+    <https://www.geeksforgeeks.org/printing-items-01-knapsack/>
+    (ref. 11)
+
+<br>
+
+# 7. Imagini
+
+1.  Fig.1 Foaia de prezentare al unui set cu 81 de cale plan paralele din 1944.
+    Francis, W. (2017, Noiembrie 22). *Origins of precision*. Machine Thinking, min. 16:58
+    <https://www.youtube.com/watch?v=gNRnrn5DE58>
+
+2.  Fig.2 Afirmațiile de la care a pornit lucrarea (zoom Fig.1, ibidem)
+
+3.  Fig.3 Cale plan paralele (sistem metric)
+    Stenström, E. (2021, Martie 23). *Gauge blocks – the foundation to all modern industrial
+    production.* Elastocon. <https://www.elastocon.com/learn-more/about-calibration/gauge-blocksthe-foundation-to-all-modern-industrial-production>
+
+4.  Fig.4 Procedeul de calare a 2 cale (ibidem referința 3)
+
+5.  Fig.5 Mai multe cale sunt calate pentru a obține o dimensiune. Se observă cum ele rămân lipite
+    sub acțiunea gravitației. Clarence Leon Goodrich & Frank Arthur Stanley (1907) *Accurate Tool
+    Work,* McGraw-Hill, New York, p.185, fig.196
+
+6.  Fig.6 Setul de 81 de piese realizat de C.E. Johansson pentru fabricile Ford pe care Ford însuși l-a
+    făcut cadou bunului său prieten, Thomas Edison. Acum acest set se află la Muzeul Preciziei din
+    Windsor, Vermont, Statele Unite ale Americii.
+    <https://americanprecision.org/wp-content/uploads/2020/06/IMG_1696.jpeg>
+
+7.  Descriere schematică a intuiției. Imagine proprie.
+
+8.  Fig.8 Toate măsurătorile au un grad de incertitudine iar cu cât marjele alese sunt mai mari, cu
+    atât crește încrederea. Muelaner, J. (2017, November 1). *Key principles in metrology and
+    Measurement Systems Analysis (MSA)*. <https://www.muelaner.com/metrology/#uncertainty>
+
+9.  Fig.8a C.E. Johansson ținând în mână un „baton” de cale
+    <https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdc0vJRCaT_eIscJyFuiR6VYli7lShAZo8bx5EJSdqqUxnSGiFXAoEanO3fPC1ab2_HbqPcgzSwyz6JXDqcQ4uBoTNg3ZTUSjywV8MsCmMOS3JOkimLh_vveardZHtOu78BtkzfUp6-I/s1600/CE+Johansson.jpg>
+
+10. Fig.9 Schema structurii simetrice a intervalului studiat. Imagine proprie.
+
+11. Fig.10 Descriere schematică a intuiției ajustate. Imagine proprie.
+
+12. Fig.11 Evoluția intuiție pe parcursul realizării acestei lucrări. Imagine proprie.
+
+13. Fig.12 Când construim o măsura X, rămâne măsura Total – X. Imagine proprie
+
+14. Fig.13 Vizualizare schematică a modului de căutare a combinației optime. Imagine proprie.
+
+15. Fig.14 QR-code către Notebook-ul Colab cu algoritmul din cap. 3).
+
+16. Fig.15 QR-code către aplicația interactivă Shinylive, poate fi deschisă direct în browser
+
+17. Fig.16 Distributia combinațiilor, în functie de mărimea pe care vrem sa o construim. Img. proprie.
+
+18. Fig. 17 Evidențierea naturii liniare pe intervale a acestei distribuții. Imagine proprie.
+
+19. Fig.18 Ce mărime are creionul?
+    <https://media.baamboozle.com/uploads/images/47624/1588733513_88858>
+
+20. Fig.19a Valoarea nominală a unei cale plan paralele include stratul de calare. (Ibidem (ref. 16))
+
+21. Fig.19 Grade de toleranță pentru cale sistem imperial (exprimat in µin = 10-6 in). (ref. 18)
+
+22. Fig.20 Populația unei distribuții normale în funcție de abaterea standard
+    <https://sphweb.bumc.bu.edu/otlt/MPH-Modules/PH717-QuantCore/PH717-Module6-RandomError/Normal%20Distribution%20deviations.png>
