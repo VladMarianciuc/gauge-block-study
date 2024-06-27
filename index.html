@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Vlad Marianciuc">
+<meta name="author" content="Coordinator: Conf.dr. Iulian Cîmpeanu">
 <meta name="dcterms.date" content="2024-06-16">
 
-<title>gauge-block-study - Cod pentru lucrare de licență</title>
+<title>gauge-block-study - Art of precision: a mathematical exploration of a gauge block set</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -101,7 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -120,7 +87,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Home</span></a>
+ <span class="menu-text">EN</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./RO.html" rel="" target="">
@@ -136,85 +103,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Cod pentru lucrare de licență</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
- <span class="menu-text">1. Introducere</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./RO.html#1.1" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1.1 Alegerea temei</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">2. Problema de numărare</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./RO.html#problema-de-numărare" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Problema de numărare</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a>
+  <ul class="collapse">
+  <li><a href="#choosing-the-theme" id="toc-choosing-the-theme" class="nav-link" data-scroll-target="#choosing-the-theme">1.1 Choosing the theme</a></li>
+  <li><a href="#nature-of-the-chosen-theme" id="toc-nature-of-the-chosen-theme" class="nav-link" data-scroll-target="#nature-of-the-chosen-theme">1.2 Nature of the chosen theme</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">1.3 Overview</a>
+  <ul class="collapse">
+  <li><a href="#defining-the-problem-data" id="toc-defining-the-problem-data" class="nav-link" data-scroll-target="#defining-the-problem-data">1.3.1 Defining the problem data</a></li>
+  <li><a href="#statement-of-the-problem" id="toc-statement-of-the-problem" class="nav-link" data-scroll-target="#statement-of-the-problem">1.3.2 Statement of the problem</a></li>
+  <li><a href="#initial-intuition" id="toc-initial-intuition" class="nav-link" data-scroll-target="#initial-intuition">1.3.3 Initial intuition</a></li>
+  <li><a href="#pragmatic-point-of-view" id="toc-pragmatic-point-of-view" class="nav-link" data-scroll-target="#pragmatic-point-of-view">1.3.4 Pragmatic point of view</a></li>
+  <li><a href="#historical-point-of-view" id="toc-historical-point-of-view" class="nav-link" data-scroll-target="#historical-point-of-view">1.3.5 Historical point of view</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#the-counting-problem" id="toc-the-counting-problem" class="nav-link" data-scroll-target="#the-counting-problem">2. The counting problem</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cod pentru lucrare de licență</h1>
-<p class="subtitle lead">Arta preciziei: o explorare matematică a unui set de cale plan paralele</p>
+<h1 class="title">Art of precision: a mathematical exploration of a gauge block set</h1>
+<p class="subtitle lead">Bachelor thesis - Faculty of Mathematics and Informatics, University of Bucharest</p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Vlad Marianciuc </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Bucharest
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://sites.google.com/site/iulianncimpean/home">Coordinator: Conf.dr. Iulian Cîmpeanu</a> </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Bucharest
+          </p>
+      </div>
+    </div>
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Vlad Marianciuc </p>
-          </div>
-  </div>
-    
+      
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
@@ -228,506 +181,193 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div>
   <div class="abstract">
     <div class="abstract-title">Abstract</div>
-    O incursiune matematică în fascinanta lume a preciziei și metrologiei. Pornind de la aspectele combinatorice ale unui set de cale plan paralele, această lucrare studiază intervalul de măsuri realizabile, numărul lor și criteriile obținerii unei combinații optime. Subliniază importanța selectării clasei de precizie adecvate pentru a asigura acuratețea optimă a măsurătorilor și aduce în discuție echilibrul complicat de planeitate, paralelism și exactitate pe care o cale plan paralela trebuie să-l îndeplinească. Pe lângă eleganța și simplitatea matematică a acestor instrumente, lucrarea evidențiază rolul critic pe care acestea îl au (și l-au avut) în menținerea avansării tehnologiei.
+    A mathematical journey into the fascinating world of precision and metrology. Starting from the combinatorial aspects of a gauge block set, this paper studies the range of feasible measures, their number and the criteria for obtaining an optimal combination. It emphasizes the importance of selecting the appropriate accuracy class to ensure optimum measurement accuracy and discusses the complicated balance of flatness, parallelism and accuracy that a plane parallel path must fulfil. In addition to the elegance and mathematical simplicity of these tools, the paper highlights the critical role they play in advancing technology.
   </div>
 </div>
 
 </header>
 
-<p>Work in progress!</p>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="fu">seq</span>(.<span class="dv">1001</span>, .<span class="dv">1009</span>, .<span class="dv">0001</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(.<span class="dv">101</span>, .<span class="dv">1491</span>, .<span class="dv">001</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>s3 <span class="ot">&lt;-</span> <span class="fu">seq</span>(.<span class="dv">050</span>, .<span class="dv">9501</span>, .<span class="dv">050</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>s4 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">4</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(s1,s2,s3,s4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<section id="introduction" class="level1">
+<h1>1. Introduction</h1>
+<section id="choosing-the-theme" class="level2">
+<h2 class="anchored" data-anchor-id="choosing-the-theme">1.1 Choosing the theme</h2>
+<p>The topic of the paper was chosen after watching the video “Origins of precision”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> by the user Machine Thinking on YouTube platform. The respective video briefly presents the development and increase of measurement precision throughout history. He ends with an open problem generated by some statements that are present on the presentation sheet of a Ford-Johansson 81-piece gauge block set.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://youtu.be/gNRnrn5DE58?feature=shared&amp;t=1018"><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2001.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig.1 Presentation sheet of the 81-piece Ford-Johansson gauge block set from 1944</figcaption>
+</figure>
 </div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nums <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">c</span>(.<span class="dv">05</span>, <span class="fu">sum</span>(s), <span class="fu">sum</span>(s)<span class="sc">-</span>.<span class="dv">05</span>, .<span class="dv">05</span><span class="sc">+</span>s1, s1, <span class="fu">sum</span>(s)<span class="sc">-</span>s1, <span class="fu">sum</span>(s)<span class="sc">-</span>(.<span class="dv">05</span><span class="sc">+</span>s1), <span class="fu">seq</span>(.<span class="dv">1</span>, .<span class="dv">2</span>, .<span class="dv">001</span>), <span class="fu">seq</span>(.<span class="dv">2001</span>, <span class="fu">sum</span>(s)<span class="sc">-</span>.<span class="dv">2001</span>, .<span class="dv">0001</span>), <span class="fu">seq</span>(<span class="fu">sum</span>(s)<span class="sc">-</span>.<span class="dv">2</span>, <span class="fu">sum</span>(s)<span class="sc">-</span>.<span class="dv">1</span>, .<span class="dv">001</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<p>Specifically, it is about the 2 statements made here:</p>
+<ol type="a">
+<li><p>Dimensions from 0.1″ to 0.2” can be obtained in increments of 0.001” and dimensions from 0.2” to over 10” in increments of 0.0001″</p></li>
+<li><p>Over 100,000 combinations are possible with this set of eighty-one blocks</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2002.png" class="lightbox img-fluid figure-img"></p>
+<figcaption class="figure-caption">Fig.2 Statements from which this paper started (zoom Fig.1)</figcaption>
+</figure>
 </div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">numar =</span> nums</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>combinatii <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>nr_comb <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>ok <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+</section>
+<section id="nature-of-the-chosen-theme" class="level2">
+<h2 class="anchored" data-anchor-id="nature-of-the-chosen-theme">1.2 Nature of the chosen theme</h2>
+<p>The topics discussed in this paper fall into 2 mathematical domains:</p>
+<ol type="a">
+<li><p>Combinatorics: Counting and optimization problems</p></li>
+<li><p>Statistics: Evaluation of measurement uncertainty</p></li>
+</ol>
+<p>In addition to these 2 areas, the work contains comments and clarifications of historical and practical nature.</p>
+</section>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">1.3 Overview</h2>
+<section id="defining-the-problem-data" class="level3">
+<h3 class="anchored" data-anchor-id="defining-the-problem-data">1.3.1 Defining the problem data</h3>
+<p><br></p>
+<ol type="a">
+<li><p><u>Gauge Blocks</u></p>
+<p>To understand the topic, it’s necessary a brief description of gauge blocks, what they are, what they are used for and how they work.</p>
+<p>According to NIST (National Institute of Standards and Technology)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, a gauge block is a piece used as a length standard that has 2 opposite flat and parallel sides.</p>
+<p>Gauges have nominal values ​​in the metric system (mm) and in the imperial system (1 inch = 25.4 mm).</p>
+<p>They are used to produce various very precise dimensions that are used to calibrate industrial machinery or to check precision instruments.</p>
+<p>The way these dimensions are obtained is called “wringing” and is one of the basic, defining properties of these instruments.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.elastocon.com/learn-more/about-calibration/gauge-blocks-the-foundation-to-all-modern-industrial-production"><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2003.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig.3 Gauge blocks (metric)</figcaption>
+</figure>
 </div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(data, "date_02.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<p><br></p></li>
+<li><p><u>Wringing gauge blocks</u></p>
+<p>The way in which various dimensions can be obtained with these gauges is called “wringing” and can be defined as the process by which two flat surfaces adhere tightly to each other in the absence of external means (they are not magnetized or glued together with an adhesive).</p>
+<p>Due to their extremely flat faces, when two gauges are laid together, they “stick”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="http://www.starrett-webber.com/gb46.html"><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2004.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig.4 Wringing 2 gauge blocks</figcaption>
+</figure>
 </div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data$combinatii[1]&lt;-0</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># which(data$numar==.1000)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<p>By repeating this process, several gauges can be laid consecutively, obtaining various sizes.</p>
+<p>For example, if we want to get the size of 1.8324″, we can stitch together the following blocks:</p>
+<p>1.8324 = .1004 + .132 + .6 + 1 (we get 1.8324 by wringing 4 gauge blocks).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://en.wikipedia.org/wiki/Gauge_block#/media/File:Gauge_block_adhesion.jpg"><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2005.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig.5 Several gauge blocks are wringed together. They remain stuck under the action of gravity.</figcaption>
+</figure>
 </div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gauge <span class="ot">&lt;-</span> <span class="cf">function</span>(nr){</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  comb <span class="ot">&lt;-</span> <span class="fu">vector</span>()</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  n1 <span class="ot">&lt;-</span> <span class="fu">round</span>(nr<span class="sc">*</span><span class="dv">10000</span>)<span class="sc">%%</span><span class="dv">10</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(n1<span class="sc">!=</span><span class="dv">0</span>){</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    nr <span class="ot">&lt;-</span> nr<span class="sc">-</span>s1[n1]</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    comb <span class="ot">&lt;-</span> <span class="fu">c</span>(comb, s1[n1])</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    s1 <span class="ot">&lt;-</span> s1[<span class="sc">-</span>n1]</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  n2 <span class="ot">&lt;-</span> <span class="fu">round</span>(nr<span class="sc">*</span><span class="dv">1000</span>)<span class="sc">%%</span><span class="dv">50</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(n2<span class="sc">!=</span><span class="dv">0</span>){</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    nr <span class="ot">&lt;-</span> nr<span class="sc">-</span>s2[<span class="fu">round</span>(n2)]</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    comb <span class="ot">&lt;-</span> <span class="fu">c</span>(comb, s2[n2])</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    s2 <span class="ot">&lt;-</span> s2[<span class="sc">-</span>n2]</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  n3 <span class="ot">&lt;-</span> <span class="fu">round</span>((<span class="fu">round</span>(nr<span class="sc">*</span><span class="dv">100</span>)<span class="sc">%%</span><span class="dv">100</span>)<span class="sc">/</span><span class="dv">5</span>)</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(n3<span class="sc">!=</span><span class="dv">0</span> <span class="sc">&amp;&amp;</span> n3<span class="sc">&lt;</span><span class="dv">20</span>){</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    nr <span class="ot">&lt;-</span> nr<span class="sc">-</span>s3[n3]</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    comb<span class="ot">&lt;-</span><span class="fu">c</span>(comb, s3[n3])</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    s3 <span class="ot">&lt;-</span> s3[<span class="sc">-</span>n3]</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(nr<span class="sc">&gt;=</span><span class="dv">10</span> <span class="sc">|</span> <span class="dv">10</span><span class="sc">-</span>nr<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    comb <span class="ot">&lt;-</span> <span class="fu">c</span>(comb,s4)</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    nr <span class="ot">&lt;-</span> nr<span class="dv">-10</span></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">4</span>)){</span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(nr<span class="sc">&gt;=</span>s4[<span class="dv">5</span><span class="sc">-</span>i] <span class="sc">|</span> s4[<span class="dv">5</span><span class="sc">-</span>i]<span class="sc">-</span>nr<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>        nr <span class="ot">&lt;-</span> nr<span class="sc">-</span>s4[<span class="dv">5</span><span class="sc">-</span>i]</span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>        comb <span class="ot">&lt;-</span> <span class="fu">c</span>(comb, s4[<span class="dv">5</span><span class="sc">-</span>i])</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">round</span>(nr, <span class="at">digits=</span><span class="dv">5</span>)<span class="sc">==</span><span class="dv">0</span>){</span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(comb)</span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(nr<span class="sc">&gt;=</span><span class="fu">sum</span>(s3) <span class="sc">|</span> <span class="fu">sum</span>(s3)<span class="sc">-</span>nr<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    comb <span class="ot">&lt;-</span> <span class="fu">c</span>(comb,s3)</span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    nr <span class="ot">&lt;-</span> nr<span class="sc">-</span><span class="fu">sum</span>(s3)</span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span>(nr<span class="sc">&gt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>) <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(s3)<span class="sc">!=</span><span class="dv">0</span>){</span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>      m3 <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">which</span>(s3<span class="sc">&lt;=</span>nr<span class="sc">+</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)))</span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>      nr <span class="ot">&lt;-</span> nr<span class="sc">-</span>s3[m3]</span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(nr<span class="sc">&lt;</span>s3[<span class="dv">1</span>] <span class="sc">&amp;&amp;</span> nr<span class="sc">&gt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>        nr <span class="ot">&lt;-</span> nr<span class="sc">+</span>s3[m3]</span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>        m3 <span class="ot">&lt;-</span> m3<span class="dv">-1</span></span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>        nr <span class="ot">&lt;-</span> nr<span class="sc">-</span>s3[m3]</span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>      comb <span class="ot">&lt;-</span> <span class="fu">c</span>(comb,s3[m3])</span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>      s3 <span class="ot">&lt;-</span> s3[<span class="sc">-</span>m3]</span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>  <span class="co"># if(round(nr, digits=5)==0){</span></span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   return(comb)</span></span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>  <span class="co"># }</span></span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # print(nr)</span></span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>  <span class="co"># if(nr&lt;.4){</span></span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   k = round(.4-nr, digits=5)</span></span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   nr &lt;- nr+k</span></span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   comb &lt;- comb[-which(comb==k)]</span></span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   while(nr&gt;10^(-5) &amp;&amp; length(s2)!=0){</span></span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     m2 &lt;- max(which(s2&lt;=nr+10^(-5)))</span></span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     # print(m2)</span></span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     nr &lt;- nr-s2[m2]</span></span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     # print(nr)</span></span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     if(any(abs(comb-nr)&lt;10^(-5))){</span></span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>  <span class="co">#       # print('d')</span></span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>  <span class="co">#       nr &lt;- nr+s2[m2]</span></span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>  <span class="co">#       m2 &lt;- m2-1</span></span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>  <span class="co">#       nr &lt;- nr-s2[m2]</span></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     }</span></span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     if(nr&lt;s2[1] &amp;&amp; nr&gt;10^(-5)){</span></span>
-<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a>  <span class="co">#       nr &lt;- nr+s2[m2]</span></span>
-<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a>  <span class="co">#       m2 &lt;- min(which(s2&lt;=nr+10^(-5)))</span></span>
-<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>  <span class="co">#       nr &lt;- nr-s2[m2]</span></span>
-<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     }</span></span>
-<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     # print(nr)</span></span>
-<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     comb &lt;- c(comb,s2[m2])</span></span>
-<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     s2 &lt;- s2[-m2]</span></span>
-<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   }</span></span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>  <span class="co"># } else {</span></span>
-<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   while(nr&gt;10^(-5) &amp;&amp; length(s2)!=0){</span></span>
-<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     m2 &lt;- max(which(s2&lt;=nr+10^(-5)))</span></span>
-<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     # print(m2)</span></span>
-<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     nr &lt;- nr-s2[m2]</span></span>
-<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     # print(nr)</span></span>
-<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     if(nr&lt;s2[1] &amp;&amp; nr&gt;10^(-5)){</span></span>
-<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>  <span class="co">#       nr &lt;- nr+s2[m2]</span></span>
-<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>  <span class="co">#       m2 &lt;- min(which(s2&lt;=nr+10^(-5)))</span></span>
-<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>  <span class="co">#       nr &lt;- nr-s2[m2]</span></span>
-<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     }</span></span>
-<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     # print(nr)</span></span>
-<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     comb &lt;- c(comb,s2[m2])</span></span>
-<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     s2 &lt;- s2[-m2]</span></span>
-<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   }</span></span>
-<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>  <span class="co"># }</span></span>
-<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print(nr)</span></span>
-<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">round</span>(nr, <span class="at">digits=</span><span class="dv">5</span>)<span class="sc">==</span><span class="dv">0</span>){</span>
-<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(comb)</span>
-<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a>  <span class="co"># for (i in seq(1,19)){</span></span>
-<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   if((nr&gt;=s3[20-i] | s3[20-i]-nr&lt;10^(-5)) &amp;&amp; any(s3[20-i]==comb)==FALSE){</span></span>
-<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     nr &lt;- nr-s3[20-i]</span></span>
-<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     comb &lt;- c(comb, s3[20-i])</span></span>
-<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   }</span></span>
-<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a>  <span class="co"># }</span></span>
-<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a>  <span class="co"># for (i in seq(1,24)){</span></span>
-<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   if(round(nr, digits=2)&gt;=.25 &amp;&amp; (any(s2[i]==comb)==FALSE &amp;&amp; any(s2[50-i]==comb)==FALSE)){</span></span>
-<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     nr &lt;- nr-.25</span></span>
-<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     comb &lt;- c(comb, s2[i], s2[50-i])</span></span>
-<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   } else if(nr&gt;0 &amp;&amp; nr&lt;=.25){</span></span>
-<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     comb &lt;- comb[!comb==round(.25-nr, digits=2)]</span></span>
-<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     nr &lt;- .25</span></span>
-<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   }</span></span>
-<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>  <span class="co"># }</span></span>
-<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(comb)</span>
-<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<p>The reason why this phenomenon occurs is not fully understood, some hypotheses being<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
+<ol type="1">
+<li><p>Ambient air pressure, as air is pressurized when the blocks are driven together.</p></li>
+<li><p>The surface tension of the oil or water vapors acts as a glue to hold them together.</p></li>
+<li><p>When two very flat surfaces are brought into such close contact with each other, this allows an exchange of electrons between their atoms, which creates an attractive molecular force (this force will remain even in a vacuum or if there is no oil or water on the two surfaces).</p>
+<p><br></p></li>
+</ol></li>
+<li><p><u>The Ford-Johansson 81-piece set</u></p>
+<p>The set analyzed in this paper is composed of 81 pieces, arranged in 4 size classes (series). The composition is as follows (all dimensions are in inches (I will proceed to ignore the ″ sign):</p>
+<p><br></p>
+<p><strong>Series 1 (9 blocks):</strong></p>
+<p>.1001, .1002, .1003, .1004, .1005, .1006, .1007, .1008, .1009</p>
+<p><br><br>
+<strong>Series 2 (49 blocks):</strong></p>
+<p>.101, .102, .103, .104, .105, .106, .107, .108, .109, .110, .111, .112, .113, .114, .115, .116, .117, .118, .119, .120, .121, .122, .123, .124, .125, .126, .127, .128, .129, .130, .131, .132, .133, .134, .135, .136, .137, .138, .139, .140, .141, .142, .143, .144, .145, .146, .147, .148, .149</p>
+<p><br><br>
+<strong>Series 3 (19 blocks):</strong></p>
+<p>.050, .100, .150, .200, .250, .300, .350, .400, .450, .500, .550, .600, .650, .700, .750, .800, .850, .900, .950</p>
+<p><br><br>
+<strong>Series 4 (4 blocks):</strong></p>
+<p>1, 2, 3, 4</p>
+<p><br></p>
+<p>There are 81 pieces in total, and if we wring them all together we get a (nominal) size of <strong>26.5295</strong>″. <em>This information will be important in this paper.</em></p>
+<img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2006.jpg" class="lightbox img-fluid" alt="Fig.6 The set of 81 pieces made by C.E. Johansson for the Ford factories that Ford himself gave as a gift to his good friend, Thomas Edison. This set is now at the Precision Museum in Windsor, Vermont, USA.">
+<p><br></p></li>
+</ol>
+</section>
+<section id="statement-of-the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="statement-of-the-problem">1.3.2 Statement of the problem</h3>
+<p>Starting from the statements made at <a href="#choosing-the-theme">1.1 Choosing the theme</a> , we ask the following questions:</p>
+<ol type="a">
+<li><p>Considering the observation at the end of point 1.3.1.c (namely that if we wring all 81 blocks we will nominally obtain the size of 26.5295″), <strong>what will the distribution of the dimensions that we can obtain in the range 0 – 26.5295 look like ?</strong></p>
+<p>Will we be able to obtain, with the same increment of 10<sup>-4</sup>, dimensions after we pass 10″?</p>
+<p>For example, can we get all the numbers with 10<sup>-4</sup> increment between 11″ and 20″? What about between 20” and 24”? <strong>Is there any dimension that we cannot obtain using a combination from this set?</strong></p></li>
+<li><p>Statement 1.1.b tells us that over 100,000 dimensions can be obtained using blocks from this set.</p>
+<p><strong>What is the exact number of unique dimensions we can get using blocks from this set?</strong></p></li>
+</ol>
+<p><br></p>
+</section>
+<section id="initial-intuition" class="level3">
+<h3 class="anchored" data-anchor-id="initial-intuition">1.3.3 Initial intuition</h3>
+<p>To answer these questions, it is important to have a starting point, an initial intuition. And starting from it, we shall rigorously demonstrate its veracity or untruthfulness.</p>
+<p>Regarding question 1.3.2.a, the expectation is that we will not be able to obtain every dimensions with the increment of 10<sup>-4</sup> inches all the way up to the maximum range (26.5295″).</p>
+<p>We have a finite number (81) of blocks and the dimensions we build are getting bigger and bigger, which means we will use more and more blocks. We sense that, at some point, we won’t have enough blocks to be able to represent, with the same increment (or fineness), the dimensions from higher ranges (for example 16″ - 22″). In other words, we expect there to be jumps between certain numbers and a decrease in their distribution.</p>
+<div id="fig7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2007en.jpg" class="lightbox img-fluid figure-img"></p>
+<figcaption class="figure-caption">Fig. 7 Schematic description of the intuition presented above. The rectangles represent the quantity of unique dimensions.</figcaption>
+</figure>
 </div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p &lt;- sort(date2$numar)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># rownames(date2) &lt;- NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<p><br></p>
+</section>
+<section id="pragmatic-point-of-view" class="level3">
+<h3 class="anchored" data-anchor-id="pragmatic-point-of-view">1.3.4 Pragmatic point of view</h3>
+<p>After satisfying the curiosities that arose from the combinatorial nature of these tools, the paper aims to deal with how the gauge blocks are used in practice.</p>
+<p>We will enter the realm of metrology and see how statistical tools such as the degree of confidence, the distribution of the tolerance of a measurement are used to determine the accuracy of a measurement.</p>
+<p>We will also discuss degrees of precision and how we can choose the right tools based on the precision needed for our measurements.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.muelaner.com/metrology/#uncertainty"><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2008.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig.8 All Measurements have Uncertainty and the Larger the Limits we Set the More Confident we are</figcaption>
+</figure>
 </div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p &lt;- sort(date2$numar)</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># rownames(date2) &lt;- NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<p>One very important thing that the gauge blocks ensured and still ensure is the traceability of a measurement.</p>
+<p>Just how in mathematics it is important to construct proofs based on the axioms of the algebraic system used, in metrology it is important to be able to trace the course of a measurement all the way from the factory to the laboratory where it was made.</p>
+<p>A traceable measurement is one that has an unbroken chain of calibrations back to the primary reference standard, with uncertainties calculated for each calibration. Measurement uncertainty is inherited along the chain of calibrations, so the uncertainty increases the farther we move away from the primary reference standard. Traceability from the primary reference through accredited metrology laboratories to industrial metrology departments ensures that everyone is working to common standards and knows the same uncertainty of a measurement.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p><br></p>
+</section>
+<section id="historical-point-of-view" class="level3">
+<h3 class="anchored" data-anchor-id="historical-point-of-view">1.3.5 Historical point of view</h3>
+<p>By the end of the 19th century, the idea of ​​interchangeable parts pioneered by Eli Whitney<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> was accepted by industrial nations as a model for industrial production.</p>
+<p>One of the disadvantages of this new system was that it required strict control of the size of many different parts. Numerous gauges were needed with which the various parts of industrial production were checked and calibrated. The number of such calibers has become very large. The complex nature of their production as well as their maintenance costs brought significant expenses to industrialists. The major step towards simplifying this situation was made by C.E. Johannson, a Swedish machinist.</p>
+<p>Johannson’s idea, first formulated in 1896, was to make a small number of gauges that you could combine together to form larger composite gauges of various sizes. For example, with four gauges of sizes 1 mm, 2 mm, 4 mm, and 8 mm, by using different combinations, all millimeter sizes from 1 mm to 15 mm could be obtained from these four gauges alone. Johannson also discovered that if two pieces of steel have very flat sides, they would stick when slid together (possibly helped by a very small amount of oil)<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. In the United States this idea was enthusiastically adopted by Henry Ford. So useful were these tools for the Ford factories that, when the opportunity arose, Henry Ford bought the factory of C.E. Johansson in which he made Gauge Blocks Sets. Ford and Johansson had a successful collaboration and the great industrialist had much respect for the Swedish inventor. So much that it is said that only 2 people could enter Ford’s personal office without an appointment: his son and C.E. Johansson. Through Ford’s influence, the use gauge blocks was popularized and eventually they were adopted as the industry standard for length transfer.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2008a.png" class="lightbox img-fluid figure-img"></p>
+<figcaption class="figure-caption">Fig.9 C.E. Johansson holding a “stick” of wringed gauge blocks</figcaption>
+</figure>
 </div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>date <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"date_01.csv"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>date<span class="sc">$</span>ok <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(date<span class="sc">$</span>ok)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># date2 &lt;- date[which(date$ok!=0),]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># test &lt;- data[1:20000,]</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for(i in seq(1, length(date3$numar))){</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   g = gauge(date3[i,2])</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   date3$combinatii[i] &lt;- list(g)</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   date3$nr_combinatii[i] &lt;- length(g)</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   date3[i, 4] &lt;- round(date3[i, 2]-sum(g), digits=4)</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># date2$ok &lt;- as.factor(date2$ok)</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># date3 &lt;- date2[which(date2$ok!=0),]</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># rownames(date3) &lt;- NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data_str &lt;- apply(data,2,as.character)</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(data_str, "date_01.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(date, <span class="fu">aes</span>(<span class="at">x =</span> numar, <span class="at">y =</span> nr_combinatii, <span class="at">col =</span> ok)) <span class="sc">+</span> </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>(<span class="at">size=</span>.<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Nr si cate cale e nevoie </span><span class="sc">\n</span><span class="st"> - colorare după precizie -"</span>,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">x =</span> <span class="st">"Nr"</span>,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> <span class="st">"Nr cale"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>date_t <span class="ot">&lt;-</span> date</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>date_t<span class="sc">$</span>ok[<span class="fu">as.numeric</span>(<span class="fu">as.character</span>(date_t<span class="sc">$</span>ok))<span class="sc">&gt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)] <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="dv">1</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(date_t, <span class="fu">aes</span>(<span class="at">x =</span> numar, <span class="at">y =</span> nr_combinatii, <span class="at">col =</span> ok)) <span class="sc">+</span> </span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_point</span>(<span class="at">size=</span>.<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>         <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Vizualizarea numărului necesar de cale pentru fiecare mărime </span><span class="sc">\n</span><span class="st"> - colorare după precizie -"</span>,</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">x =</span> <span class="st">"Mărimea pe care vrem să o construim"</span>,</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> <span class="st">"Nr. de cale necesar"</span>) <span class="sc">+</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">round</span>(<span class="fu">seq</span>(<span class="fu">min</span>(date_t<span class="sc">$</span>numar), <span class="fu">max</span>(date_t<span class="sc">$</span>numar), <span class="at">by =</span> <span class="dv">2</span>),<span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">round</span>(<span class="fu">seq</span>(<span class="fu">min</span>(date_t<span class="sc">$</span>nr_combinatii), <span class="fu">max</span>(date_t<span class="sc">$</span>nr_combinatii), <span class="at">by =</span> <span class="dv">5</span>),<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>, <span class="dv">0</span>, <span class="fl">0.5</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">20</span>)){</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  q <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>, <span class="dv">0</span>, <span class="fl">0.5</span>)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> p<span class="sc">+</span>q</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># datc &lt;- read.csv("data_complet!.csv")</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># datc$ok[datc$ok&gt;0] &lt;- 1</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># datc$ok[datc$ok&lt;0] &lt;- -1</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># datc$ok &lt;- as.factor(datc$ok)</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># datc1 &lt;- datc[which(datc$ok!=0),]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(datc, aes(x = numar, y = nr_comb, col = ok)) + </span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#          geom_point(size=.1) +</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#          labs(title = "Vizualizarea numărului necesar de cale pentru fiecare mărime \n - colorare după precizie -",</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#               x = "Mărimea pe care vrem să o construim",</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#               y = "Nr. de cale necesar") +</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">#         scale_x_continuous(breaks = round(seq(min(date_t$numar), max(date_t$numar), by = 2),10)) +</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co">#         scale_y_continuous(breaks = round(seq(min(date_t$nr_comb), max(date_t$nr_comb), by = 5),1))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>hist(p)</p>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>comb <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.128</span>, <span class="fl">0.103</span>, <span class="fl">0.129</span>, <span class="fl">0.104</span>, <span class="fl">1.0</span>, <span class="fl">0.13</span>, <span class="fl">0.105</span>, <span class="fl">0.95</span>, <span class="fl">0.131</span>, <span class="fl">2.0</span>, <span class="fl">0.106</span>, <span class="fl">0.132</span>, <span class="fl">0.9</span>, <span class="fl">0.107</span>, <span class="fl">3.0</span>, <span class="fl">0.133</span>, <span class="fl">0.85</span>, <span class="fl">0.108</span>, <span class="fl">0.134</span>, <span class="fl">4.0</span>, <span class="fl">0.8</span>, <span class="fl">0.109</span>, <span class="fl">0.135</span>, <span class="fl">0.11</span>, <span class="fl">0.75</span>, <span class="fl">0.136</span>, <span class="fl">0.111</span>, <span class="fl">0.7</span>, <span class="fl">0.137</span>, <span class="fl">0.112</span>, <span class="fl">0.138</span>, <span class="fl">0.65</span>, <span class="fl">0.113</span>, <span class="fl">0.139</span>, <span class="fl">0.6</span>, <span class="fl">0.14</span>, <span class="fl">0.55</span>, <span class="fl">0.141</span>, <span class="fl">0.5</span>, <span class="fl">0.142</span>, <span class="fl">0.45</span>, <span class="fl">0.143</span>, <span class="fl">0.144</span>, <span class="fl">0.4</span>, <span class="fl">0.119</span>, <span class="fl">0.145</span>, <span class="fl">0.35</span>, <span class="fl">0.146</span>, <span class="fl">0.3</span>, <span class="fl">0.121</span>, <span class="fl">0.147</span>, <span class="fl">0.122</span>, <span class="fl">0.25</span>, <span class="fl">0.148</span>, <span class="fl">0.123</span>, <span class="fl">0.2</span>, <span class="fl">0.149</span>, <span class="fl">0.124</span>, <span class="fl">0.15</span>, <span class="fl">0.125</span>, <span class="fl">0.1</span>, <span class="fl">0.1001</span>, <span class="fl">0.1002</span>, <span class="fl">0.1003</span>, <span class="fl">0.126</span>, <span class="fl">0.1004</span>, <span class="fl">0.1006</span>, <span class="fl">0.1007</span>, <span class="fl">0.1008</span>, <span class="fl">0.1009</span>, <span class="fl">0.101</span>, <span class="fl">0.05</span>, <span class="fl">0.127</span>, <span class="fl">0.102</span>)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>comb1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1001</span>, <span class="fl">0.144</span>, <span class="fl">0.25</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>)</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq</span>(<span class="fu">length</span>(comb))){</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(comb[i]<span class="sc">&lt;</span><span class="dv">1</span><span class="sc">+</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    g1 <span class="ot">&lt;-</span> g1 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>  } </span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">abs</span>(<span class="fu">round</span>(comb[i]<span class="sc">-</span><span class="dv">2</span>))<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    g1 <span class="ot">&lt;-</span> g1 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">abs</span>(<span class="fu">round</span>(comb[i]<span class="sc">-</span><span class="dv">3</span>))<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>    g1 <span class="ot">&lt;-</span> g1 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="dv">0</span>, (<span class="fl">2.5</span>)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">abs</span>(<span class="fu">round</span>(comb[i]<span class="sc">-</span><span class="dv">4</span>))<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    g1 <span class="ot">&lt;-</span> g1 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">3</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>)</span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq</span>(<span class="fu">length</span>(comb))){</span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(comb[i]<span class="sc">&lt;</span><span class="dv">1</span><span class="sc">+</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>    g2 <span class="ot">&lt;-</span> g2 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="fl">0.000001</span>, <span class="fl">1.5</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>  } </span>
-<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">abs</span>(<span class="fu">round</span>(comb[i]<span class="sc">-</span><span class="dv">2</span>))<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>    g2 <span class="ot">&lt;-</span> g2 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="fl">0.000002</span>, <span class="dv">3</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">abs</span>(<span class="fu">round</span>(comb[i]<span class="sc">-</span><span class="dv">3</span>))<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>    g2 <span class="ot">&lt;-</span> g2 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="fl">0.0000025</span>, (<span class="fl">3.75</span>)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">abs</span>(<span class="fu">round</span>(comb[i]<span class="sc">-</span><span class="dv">4</span>))<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>    g2 <span class="ot">&lt;-</span> g2 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="fl">0.000003</span>, (<span class="fl">4.5</span>)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>)</span>
-<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq</span>(<span class="fu">length</span>(comb))){</span>
-<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(comb[i]<span class="sc">&lt;</span><span class="dv">1</span><span class="sc">+</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>    g3 <span class="ot">&lt;-</span> g3 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="fl">0.000002</span>, <span class="dv">3</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a>  } </span>
-<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">abs</span>(<span class="fu">round</span>(comb[i]<span class="sc">-</span><span class="dv">2</span>))<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a>    g3 <span class="ot">&lt;-</span> g3 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="fl">0.000004</span>, <span class="dv">6</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">abs</span>(<span class="fu">round</span>(comb[i]<span class="sc">-</span><span class="dv">3</span>))<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a>    g3 <span class="ot">&lt;-</span> g3 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="fl">0.000005</span>, (<span class="fl">7.5</span>)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-53"><a href="#cb22-53" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">abs</span>(<span class="fu">round</span>(comb[i]<span class="sc">-</span><span class="dv">4</span>))<span class="sc">&lt;</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">5</span>)){</span>
-<span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a>    g3 <span class="ot">&lt;-</span> g3 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="fl">0.000006</span>, (<span class="dv">9</span>)<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="dv">6</span>))</span>
-<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(g1, <span class="at">xlab =</span> <span class="st">"Abatere față de valoarea nominală"</span>, <span class="at">main=</span><span class="st">"Distribuția incertitudinii pentru cale de Grad 1"</span>, <span class="at">breaks=</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
-</div>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sd_g1 <span class="ot">=</span> <span class="fu">sd</span>(g1)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Media combinației folosind g1 este 0 iar deviația standard este "</span>, <span class="fu">round</span>(sd_g1, <span class="at">digits=</span><span class="dv">7</span>),<span class="st">".</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Media combinației folosind g1 este 0 iar deviația standard este  0.0000095 .</code></pre>
-</div>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Combinația cu calele g1 oferă cu 95% încredere toleranța ["</span>,<span class="fu">round</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>sd_g1, <span class="at">digits=</span><span class="dv">6</span>), <span class="st">", "</span>, <span class="fu">round</span>(<span class="dv">2</span><span class="sc">*</span>sd_g1, <span class="at">digits=</span><span class="dv">6</span>),<span class="st">"]</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Combinația cu calele g1 oferă cu 95% încredere toleranța [ -0.000019 ,  0.000019 ]</code></pre>
-</div>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(g2, <span class="at">xlab =</span> <span class="st">"Abatere față de valoarea nominală"</span>, <span class="at">main=</span><span class="st">"Distribuția incertitudinii pentru cale de Grad 2"</span>,  <span class="at">breaks=</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-21-2.png" class="img-fluid" width="672"></p>
-</div>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>sd_g2 <span class="ot">=</span> <span class="fu">sd</span>(g2)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>mean_g2 <span class="ot">=</span> <span class="fu">mean</span>(g2)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Media combinației folosind g2 este "</span>,<span class="fu">round</span>(mean_g2, <span class="at">digits=</span><span class="dv">7</span>), <span class="st">" iar deviația standard este "</span>, <span class="fu">round</span>(sd_g2, <span class="at">digits=</span><span class="dv">7</span>),<span class="st">".</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Media combinației folosind g2 este  0.0000784  iar deviația standard este  0.0000143 .</code></pre>
-</div>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Combinația cu calele g2 oferă cu 95% încredere toleranța ["</span>,<span class="fu">round</span>(mean_g2<span class="dv">-2</span><span class="sc">*</span>sd_g2, <span class="at">digits=</span><span class="dv">6</span>), <span class="st">", "</span>, <span class="fu">round</span>(mean_g2<span class="sc">+</span><span class="dv">2</span><span class="sc">*</span>sd_g2, <span class="at">digits=</span><span class="dv">6</span>), <span class="st">"]</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Combinația cu calele g2 oferă cu 95% încredere toleranța [ 0.00005 ,  0.000107 ]</code></pre>
-</div>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(g3, <span class="at">xlab =</span> <span class="st">"Abatere față de valoarea nominală"</span>, <span class="at">main=</span><span class="st">"Distribuția incertitudinii pentru cale de Grad 3"</span>, <span class="at">breaks=</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-21-3.png" class="img-fluid" width="672"></p>
-</div>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>sd_g3 <span class="ot">=</span> <span class="fu">sd</span>(g3)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>mean_g3 <span class="ot">=</span> <span class="fu">mean</span>(g3)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Media combinației folosind g3 este "</span>,<span class="fu">round</span>(mean_g3, <span class="at">digits=</span><span class="dv">7</span>), <span class="st">" iar deviația standard este "</span>, <span class="fu">round</span>(sd_g3, <span class="at">digits=</span><span class="dv">7</span>),<span class="st">".</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Media combinației folosind g3 este  0.0001569  iar deviația standard este  0.0000283 .</code></pre>
-</div>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Combinația cu calele g3 oferă cu 95% încredere toleranța ["</span>,<span class="fu">round</span>(mean_g3<span class="dv">-2</span><span class="sc">*</span>sd_g3, <span class="at">digits=</span><span class="dv">6</span>), <span class="st">", "</span>, <span class="fu">round</span>(mean_g3<span class="sc">+</span><span class="dv">2</span><span class="sc">*</span>sd_g3, <span class="at">digits=</span><span class="dv">6</span>), <span class="st">"]</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Combinația cu calele g3 oferă cu 95% încredere toleranța [ 0.0001 ,  0.000214 ]</code></pre>
-</div>
-</div>
-<div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq</span>(<span class="fu">length</span>(comb1))){</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(comb1[i]<span class="sc">&lt;</span><span class="dv">1</span>){</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">c</span>(p, <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span>{</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">c</span>(p, <span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>, <span class="dv">0</span>, comb1[i]<span class="sc">/</span><span class="dv">2</span>))</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(p, <span class="at">freq =</span> <span class="cn">TRUE</span>, <span class="at">breaks=</span><span class="dv">150</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
-</div>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">sd</span>(p))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.040501</code></pre>
-</div>
-</div>
+<p><br></p>
+<p><em>Fun fact:</em> At the time he created the gauge blocks, there were many different definitions of 1 inch and there was no universal consensus. It was the inch of the carpenter, of the shoemaker, of the cook and so on. And it is normal to be it this way, as the inch is the subdivision of a size defined by the human body (the foot), naturally there are differences from place to place. However, Johansson was the first<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> to establish (through his gauge blocks nominal values) that the size of an inch is exactly 25.4 mm. And he didn’t tell anyone that. At least not explicitly. Years later, probably in large part due to Johansson’s gauge blocks, after meetings held between 1950 and 1959, metrology laboratories in the United States, Canada, England, Australia and South Africa agreed to define the inch as 25.4 mm.</p>
+<p><br></p>
+<p><br></p>
+</section>
+</section>
+</section>
+<section id="the-counting-problem" class="level1">
+<h1>2. The counting problem</h1>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Francis, W. (2017, Noiembrie 22).&nbsp;<em>Origins of precision</em>. Machine Thinking.<br>
+<a href="https://www.youtube.com/watch?v=gNRnrn5DE58" class="uri">https://www.youtube.com/watch?v=gNRnrn5DE58</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Doiron, T. and Beers, J. (1995),&nbsp;<em>The Gage Block Handbook</em>, Monograph (NIST MN), National Institute of Standards and Technology, Gaithersburg, MD, [online], p.10<br>
+<a href="https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735" class="uri">https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Webber, S. (2003, November 21).&nbsp;<em>Wringing Gage Blocks.</em> Starret-Webber.<br>
+<a href="http://www.starrett-webber.com/gb46.html" class="uri">http://www.starrett-webber.com/gb46.html</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Muelaner, J. (2017a, November 1).&nbsp;<em>Key principles in metrology and Measurement Systems Analysis (MSA).</em><br>
+<a href="https://www.muelaner.com/metrology/" class="uri">https://www.muelaner.com/metrology/</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>A&amp;E Television Networks. (n.d.).&nbsp;<em>Interchangeable parts</em>. History.com.<br>
+<a href="https://www.history.com/topics/inventions/interchangeable-parts" class="uri">https://www.history.com/topics/inventions/interchangeable-parts</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Doiron, T. and Beers, J. (1995),&nbsp;<em>The Gage Block Handbook</em>, Monograph (NIST MN), National Institute of Standards and Technology, Gaithersburg, MD, [online], p.8<br>
+<a href="https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735" class="uri">https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><em>The history of gauge blocks.</em>&nbsp;(n.d.), p.8.<br>
+<a href="https://www.mitutoyo.com/webfoo/wp-content/uploads/E12016-Historyof-The-Gage-Block.pdf" class="uri">https://www.mitutoyo.com/webfoo/wp-content/uploads/E12016-Historyof-The-Gage-Block.pdf</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
