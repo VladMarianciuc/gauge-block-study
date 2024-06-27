@@ -52,7 +52,7 @@ Pe lângă aceste 2 domenii, lucrarea conține comentarii și precizări de natu
 
 ## 1.3 Prezentarea generală a temei
 
-### 1.3.1 Definirea datelor problemei
+### 1.3.1 Definirea datelor problemei {#definirea-datelor-problemei}
 
 <br>
 
@@ -190,7 +190,7 @@ Ideea lui Johannson, formulată pentru prima dată în 1896, a fost să facă un
 
 [^6]: Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN), National Institute of Standards and Technology, Gaithersburg, MD, \[online\], p.8<br> <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735>
 
-![Fig.8a C.E. Johansson ținând în mână un „baton” de cale](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2008a.png){.lightbox}
+![Fig.9 C.E. Johansson ținând în mână un „baton” de cale](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2008a.png){.lightbox}
 
 <br>
 
@@ -296,7 +296,7 @@ Pentru a obține numărul, vom folosi aceeași metodă ca mai sus:
 Vedem că în acest caz am fost norocoși iar calele s-au aliniat bine, chiar în ordine descrescătoare. Față de primul exemplu unde am folosit 5 cale pentru a obține dimensiunea dorită, aici am avut nevoie să folosim **22** de cale!
 
 ::: {#1 .callout-note appearance="minimal"}
-Remarcăm și reținem: Dacă am folosit **n** cale ca să obținem un număr **x**, atunci calele rămase vor suma la numărul 26.5295 – **x** . $$    $$ {#eq-b}
+Remarcăm și reținem: Dacă am folosit **n** cale ca să obținem un număr **x**, atunci calele rămase vor suma la numărul 26.5295 – **x** . $$        $$ {#eq-b}
 :::
 
 Această simetrie va fi importantă în continuare.
@@ -338,7 +338,7 @@ $$\mathrm{S}_{y}=\mathcal{S}\setminus\mathrm{S}_x,\  \sum\mathrm{S}_{y}=\sum\mat
 
 Asta înseamnă că putem folosi simetria pentru a reduce la jumătate problema. Această simetrie poate fi văzută ca simetria dintre adunare și scădere. Pentru a obține o dimensiune din prima jumătate a intervalului, pornim de la 0 (nu avem nici o cală) și adunăm cale, iar pentru a obține simetricul acelei dimensiuni, pornim de la maxim (avem toate calele lipite) și scădem aceleași cale pe care le adunasem inițial.
 
-![Fig.9 Schema structurii simetrice a intervalului studiat.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2009.jpg){.lightbox}
+![Fig.10 Schema structurii simetrice a intervalului studiat.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2009.jpg){.lightbox}
 
 <br>
 
@@ -348,13 +348,13 @@ Reamintindu-ne intuiția inițială (punctul [1.3.3](#1.3.3)) și descrierea rea
 
 Prin urmare, îmbogățim și ajustăm intuiția astfel: poate că după 10″ distribuția dimensiunilor va scădea (trebuie demonstrat acest lucru), dar cu siguranță structura distribuției, per ansamblu, este simetrică față de mijlocul intervalului \[0, 26.5295\].
 
-![Fig.10 Descriere schematică a intuiției ajustate.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2010.jpg){.lightbox}
+![Fig.11 Descriere schematică a intuiției ajustate.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2010.jpg){.lightbox}
 
 Acest lucru ne ușurează sarcina. Considerând adevărată afirmația din alegerea temei (1.1.a), ne rămâne să extindem afirmația 1.1.a de la 10″ până la 13.2647″ și, prin simetrie, va rezulta că toate numerele cu până la 4 zecimale din intervalul \[0.2, 26.3295\] pot fi obținute cu piese din acest set.
 
 <br>
 
-## 2.5 Reformulare și rezolvare
+## 2.5 Reformulare și rezolvare {#reformulare-și-rezolvare}
 
 [(2)](#eq-2) devine:
 
@@ -487,7 +487,7 @@ Acolo lucrurile sunt mai simple deoarece nu avem o granulație așa de fină. Es
     -   .1001, .1002, ... , .1009, .1051, .1052, ... , .1059
 
 ::: {.callout-note appearance="minimal"}
-Prin urmare, în fiecare capăt putem obține 120 de măsuri, deci 240 în total.$$    $$ {#eq-8}
+Prin urmare, în fiecare capăt putem obține 120 de măsuri, deci 240 în total.$$        $$ {#eq-8}
 :::
 
 <br>
@@ -504,7 +504,7 @@ b.  „ Mai mult de 100 000 de combinații sunt posibile folosind acest set cu 8
 
 a.  Folosind piesele acestui set, se pot obține:
 
-    1.   Măsuri între 0.1″ și 0.2″ cu pas de 0.001″
+    1.  Măsuri între 0.1″ și 0.2″ cu pas de 0.001″
 
     2.  Măsuri între 0.2″ și 26.3295″ cu pas de 0.0001″
 
@@ -516,21 +516,19 @@ b.  Cu acest set pot fi construite exact **261 536** mărimi diferite (incluzân
 
 Pentru a arăta acest lucru a fost foarte importantă vizualizarea problemei și înțelegerea naturii ei simetrice. Putem vedea cum intuiția a evoluat și, pe măsură ce noi observații au fost făcute, intuiția s-a adaptat, a descoperit mai multe unghiuri de a vedea problema.
 
-![Fig.11 Evoluția intuiție pe parcursul realizării acestei lucrări.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2011.jpg){.lightbox}
+![Fig.12 Evoluția intuiție pe parcursul realizării acestei lucrări.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2011.jpg){.lightbox}
 
 <br>
 
-Remarcăm faptul că oamenii consulați în timpul redactării acestei lucrări aveau același „feeling”, anume că anumite mărimi nu pot fi obținute. Mai mult, videoclipul de la care a plecat această lucrare și care își punea aceleași întrebări, oferă în final său un răspuns legat de numărul total de mărimi ce pot fi obținute cu acest set – 230 682[^8], număr ce este contrazis de lucrarea mea.`
-<br>`{=html}
+Remarcăm faptul că oamenii consulați în timpul redactării acestei lucrări aveau același „feeling”, anume că anumite mărimi nu pot fi obținute. Mai mult, videoclipul de la care a plecat această lucrare și care își punea aceleași întrebări, oferă în final său un răspuns legat de numărul total de mărimi ce pot fi obținute cu acest set – 230 682[^8], număr ce este contrazis de lucrarea mea.<br>
 
-[^8]: Francis, W. (2017, Noiembrie 22). *Origins of precision.* Machine Thinking, min. 29:55<br>
-    <https://youtu.be/gNRnrn5DE58?si=bz9xrtXgltSV4QQR&t=1795>
+[^8]: Francis, W. (2017, Noiembrie 22). *Origins of precision.* Machine Thinking, min. 29:55<br> <https://youtu.be/gNRnrn5DE58?si=bz9xrtXgltSV4QQR&t=1795>
 
-# 3. Optimizare și algoritm
+# 3. Optimizare și algoritm {#optimizare-și-algoritm}
 
 Observăm că demonstrația de mai sus oferă o metodă explicită de a obține o măsură. Spunem că putem obține măsurile din prima jumătate iar cele din jumătatea rămasă sunt, pentru fiecare, totalul minus măsura corespondentă din prima jumătate.
 
-![Fig.12 Când construim o măsura X, rămâne măsura Total – X](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2012.png){.lightbox}
+![Fig.13 Când construim o măsura X, rămâne măsura Total – X](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2012.png){.lightbox}
 
 Totuși, acest mod, deși corect, nu oferă tot timpul combinația optimă prin care putem obține o măsură. Prin optim înțelegem combinația care are numărul minim de cale.
 
@@ -591,7 +589,7 @@ Să spunem că vrem să-l construim pe 8.
 
     Gata, l-am găsit pe 8, poate fi construit cu {1,3,4}
 
-![Fig.13 Vizualizare schematică a modului de căutare a combinației optime.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2013.jpg){#fig13 .lightbox}
+![Fig.14 Vizualizare schematică a modului de căutare a combinației optime.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2013.jpg){#fig13 .lightbox}
 
 <br>
 
@@ -619,8 +617,7 @@ Dar în cazul setului nostru ar însemnă să trecem prin până la 2^81^ mulți
 
 Întorcându-ne la demonstrație, la punctul [2.5](#reformulare-și-rezolvare) am arătat că putem construi 1 inch complet din maxim 3 piese.
 
-Deci un număr va fi construit din: (maxim 3 piese) + piesele cu care construim partea întreagă.
-<br>
+Deci un număr va fi construit din: (maxim 3 piese) + piesele cu care construim partea întreagă. <br>
 
 Din nou, vorbim despre o abordare în 2 pași:
 
@@ -728,7 +725,7 @@ ii. Pentru partea întreagă:
         ::: {.callout-note appearance="minimal"}
         Seria 4 este o mulțime care poate fi generată prin adunări repetate ale unui singur element, anume **1**, care se află în seria 4.
 
-        $$  $$ {#eq-9}
+        $$    $$ {#eq-9}
         :::
 
         Această proprietate este importantă pentru că ne dă posibilitatea să construim direct mulțimea unui număr întreg, fără a mai fi nevoie să căutăm acea mulțime în arborele descris mai sus.
@@ -960,14 +957,11 @@ ii. Pentru partea întreagă:
 
         <br>
 
-[^9]: Wikimedia Foundation. (2024a, May 13). *Knapsack problem*. Wikipedia.
-    <https://en.wikipedia.org/wiki/Knapsack_problem>
+[^9]: Wikimedia Foundation. (2024a, May 13). *Knapsack problem*. Wikipedia. <https://en.wikipedia.org/wiki/Knapsack_problem>
 
-[^10]: Wikimedia Foundation. (2024, June 9). *Subset sum problem.* Wikipedia.
-    <https://en.wikipedia.org/wiki/Subset_sum_problem>
+[^10]: Wikimedia Foundation. (2024, June 9). *Subset sum problem.* Wikipedia. <https://en.wikipedia.org/wiki/Subset_sum_problem>
 
-[^11]: Garg, A. (2022, June 23). *Printing items in 0/1 Knapsack*. GeeksforGeeks.
-    <https://www.geeksforgeeks.org/printing-items-01-knapsack/>
+[^11]: Garg, A. (2022, June 23). *Printing items in 0/1 Knapsack*. GeeksforGeeks. <https://www.geeksforgeeks.org/printing-items-01-knapsack/>
 
 ## 3.2 Algoritm
 
@@ -975,7 +969,7 @@ Algoritmul poate fi consultat și testat aici.
 
 [https://colab.research.google.com/drive/1UwWaqUNZ_lxWgTIHWWyp83AD7eGe1tR#scrollTo=Q9zq9xZAVJCp](https://colab.research.google.com/drive/1UwWaq-UNZ_lxWgTIHWWyp83AD7eGe1tR?usp=sharing)
 
-![Fig.14 QR-code către Notebook-ul Colab care conține codul prezentat mai sus, poate fi rulat direct din browser.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2014.png){.lightbox}
+![Fig.15 QR-code către Notebook-ul Colab care conține codul prezentat mai sus, poate fi rulat direct din browser.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2014.png){.lightbox}
 
 <br>
 
@@ -985,15 +979,15 @@ Folosind acest fișier, am creat o aplicație interactivă ShinyLive prin care o
 
 <https://vladmarianciuc.github.io/gauge-block-study/>
 
-![Fig.15 QR-code către aplicația interactivă construită folosind rezultatele acestei lucrări, poate fi deschisă direct în browser.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2015.png){.lightbox}
+![Fig.16 QR-code către aplicația interactivă construită folosind rezultatele acestei lucrări, poate fi deschisă direct în browser.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2015.png){.lightbox}
 
 <br>
 
-![Fig.16 Distributia combinatiilor, in functie de marimea pe care vrem sa o construim.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2016.png){.lightbox}
+![Fig.17 Distributia combinatiilor, in functie de marimea pe care vrem sa o construim.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2016.png){.lightbox}
 
 <br>
 
-![Fig. 17 Evidențierea naturii liniare pe intervale a acestei distribuții.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2017.jpg){.lightbox}
+![Fig. 18 Evidențierea naturii liniare pe intervale a acestei distribuții.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2017.jpg){.lightbox}
 
 <br>
 
@@ -1009,8 +1003,7 @@ Vedem o pantă lină pentru seria 4: adică putem obține o plajă largă de num
 
 Știința care se ocupă cu măsurători se numește metrologie. Ea are un rol semnificativ în domenii medicale, de cercetare, în producție și design. Un aspect cheie în metrologie este stabilirea acurateței unei măsurători, definirea unor grade de precizie și crearea unor metode și standarde internaționale. Faimosul Sistem Internațional a fost unul din acestea iar astăzi avem standardele ISO (dar și altele).[^12]
 
-[^12]: Wikimedia Foundation. (2024b, June 1). *Metrology*. Wikipedia.
-    <https://en.wikipedia.org/wiki/Metrology>
+[^12]: Wikimedia Foundation. (2024b, June 1). *Metrology*. Wikipedia. <https://en.wikipedia.org/wiki/Metrology>
 
 Este important să înțelegem că nici o măsură nu este exactă sau precisă. Acest lucru este, defapt, un alt fel de a spune că probabilitatea de a alege un număr rațional este 0 și că probabilitatea de a alege un număr irațional este 1.
 
@@ -1020,10 +1013,9 @@ Toleranța este o caracteristică a instrumentului cu care este realizată măsu
 
 De aici vine incertitudinea unei măsurători. Iar legat de incertitudine este conceptul de încredere. Gândindu-ne din nou la creionul din Fig.18, putem spune că are 4.2 cm +/- 0.5 mm. În felul acesta încadrăm incertitudinea în niște limite. Dar putem să spunem că creionul are 4.2 cm +/- 1 mm. Cu cât sunt mai mari limitele în care încadrăm incertitudinea, cu atât este mai mare încrederea noastră că acestea cuprind valoarea „adevărată”. Aș putea, deci, să mă uit la acel creion și să spun că sunt 75% sigur că are 4.2 cm +/- 0.5 mm sau aș putea spune că sunt 90% sigur că are 4.2 cm +/- 1 mm.[^13]
 
-[^13]: Muelaner, J. (2017a, November 1). *Key principles in metrology and Measurement Systems Analysis (MSA).*
-    <https://www.muelaner.com/metrology/#uncertainty>
+[^13]: Muelaner, J. (2017a, November 1). *Key principles in metrology and Measurement Systems Analysis (MSA).* <https://www.muelaner.com/metrology/#uncertainty>
 
-![Fig.18 Ce mărime are creionul?](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2018.png){.lightbox}
+![Fig.19 Ce mărime are creionul?](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2018.png){.lightbox}
 
 <br>
 
@@ -1031,12 +1023,9 @@ De aici vine incertitudinea unei măsurători. Iar legat de incertitudine este c
 
 ### 4.1.1 Condiții standard de referință
 
-Lungimea unei cale plan paralelă este definită în relație cu următoarele condiții de
-referință standard:[^14]
+Lungimea unei cale plan paralelă este definită în relație cu următoarele condiții de referință standard:[^14]
 
-[^14]: Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN), National Institute of
-    Standards and Technology, Gaithersburg, MD, \[online\], p.10
-    <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735>
+[^14]: Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN), National Institute of Standards and Technology, Gaithersburg, MD, \[online\], p.10 <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735>
 
 -   temperatura = 20 ºC (68 ºF)
 
@@ -1058,24 +1047,19 @@ Dacă niște cale plan paralele nu pot fi calate cu ușurință, atunci ele pot 
 
 Grosimea stratului de calare dintre 2 cale este de 25 nanometri \~ 0.98 μin[^15]. Iar această dimensiune este incorporată în lungimea calei în sine. Valoarea nominală a unei cale este definită în condițiile de la 4.1.1 prin măsurare interferometrică atunci când blocul este deja calat pe o placă plană de referință. Prin urmare, grosimea stratului de calare este inclusă în valoarea nominală a calei![^16]
 
-[^15]: Wikimedia Foundation. *Gauge block.* Wikipedia.
-    [http://www.starrett-webber.com/gb46.htm](https://en.wikipedia.org/wiki/Gauge_block)
+[^15]: Wikimedia Foundation. *Gauge block.* Wikipedia. [http://www.starrett-webber.com/gb46.htm](https://en.wikipedia.org/wiki/Gauge_block)
 
-[^16]: Webber, S. (2003, November 21). *Wringing Gage Blocks*. Starret-Webber.
-    <http://www.starrett-webber.com/gb46.html>
+[^16]: Webber, S. (2003, November 21). *Wringing Gage Blocks*. Starret-Webber. <http://www.starrett-webber.com/gb46.html>
 
-![Fig.19a Valoarea nominală a unei cale plan paralele include stratul de calare.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2019a.png){.lightbox}
+![Fig.20 Valoarea nominală a unei cale plan paralele include stratul de calare.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2019a.png){.lightbox}
 
-Această definiție este foarte utilă, deoarece atunci când calele sunt asamblate în diferite combinații, nu trebuie adăugat niciun factor de corecție suplimentar pentru grosimile straturilor de calare.
-<br>
+Această definiție este foarte utilă, deoarece atunci când calele sunt asamblate în diferite combinații, nu trebuie adăugat niciun factor de corecție suplimentar pentru grosimile straturilor de calare. <br>
 
 ### 4.1.3 Grade de toleranță
 
 Conform NIST (National Institude of Standards and Technology)[^17], există 4 grade de toleranță:
 
-[^17]: Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN), National Institute of
-    Standards and Technology, Gaithersburg, MD, \[online\], p.13
-    <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735>
+[^17]: Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN), National Institute of Standards and Technology, Gaithersburg, MD, \[online\], p.13 <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735>
 
 -   Gradul 0.5
 
@@ -1087,11 +1071,7 @@ Conform NIST (National Institude of Standards and Technology)[^17], există 4 gr
 
 Calele din gradele 0.5 și 1 au lungimi foarte apropiate de valorile lor nominale. Acestea sunt utilizate de obicei ca referință pentru a calibra alte cale de grade mai mici. Clasele 2 și 3 sunt de calitate inferioară și sunt utilizate în scopuri de măsurare, ateliere mecanice, mașinisti șamd.
 
-![Fig.19 Grade de toleranță pentru cale sistem imperial (exprimat in µin = 10-6 in).[^18]](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2019.png){.lightbox alt="Fig.19a Valoarea nominală a unei cale plan paralele include stratul de calare."}
-
-[^18]: Ibidem
-
-[^19]: Ibidem
+![Fig.21 Valoarea nominală a unei cale plan paralele include stratul de calare.](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2019.png){.lightbox}
 
 <br>
 
@@ -1149,7 +1129,7 @@ Avantajele distribuției normale sunt:
 
 3.  Știm că pentru o deviație standard avem încredere de 67%, pentru două deviații standard avem încredere de 95%, pentru 3 deviații standard: încredere de 99,7%.
 
-![Fig.20 Populația unei distribuții normale în funcție de abaterea standard](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2020.png){.lightbox}
+![Fig.22 Populația unei distribuții normale în funcție de abaterea standard](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/Fig%20-%2020.png){.lightbox}
 
 <br>
 
@@ -1252,10 +1232,9 @@ for(i in seq(length(comb))){
 
 <br>
 
-Folosind relația[^20]:
+Folosind relația[^18]:
 
-[^20]: Wikimedia Foundation. (2023, August 12). *Sum of normally distributed random variables*. Wikipedia.
-    <https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables>
+[^18]: Wikimedia Foundation. (2023, August 12). *Sum of normally distributed random variables*. Wikipedia. <https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables>
 
 $$X\sim\mathcal{N}(\mu_X,\ \sigma_X^2)$$\
 $$Y\sim\mathcal{N}(\mu_Y,\ \sigma_Y^2)$$\
@@ -1328,8 +1307,7 @@ Prin urmare, putem folosi calele de grad 1 sau 2. Dacă am folosi calele de grad
 
 [Observație:]{.underline} Acest algoritm poate fi aplicat pe setul de date generat cu algoritmul de la capitolul [3](#optimizare-și-algoritm) pentru a arăta vizual intervalele de folosire rezonabilă amintite mai sus.
 
-<br>
-Codul de la capitolul **3** a fost scris în limbajul Python, într-un notebook .ipynb Colab.
+<br> Codul de la capitolul **3** a fost scris în limbajul Python, într-un notebook .ipynb Colab.
 
 Codul de la capitolul **4** a fost scris în limbajul R, în I.D.E.-ul RStudio, format Quarto.
 
@@ -1357,98 +1335,68 @@ Codul de la capitolul **4** a fost scris în limbajul R, în I.D.E.-ul RStudio, 
 
 # 6. Bibliografie
 
-1.  Moore, W. R. (1970). *Foundations of mechanical accuracy* (1st ed., 3rd Print).
-    <https://pearlhifi.com/06_Lit_Archive/15_Mfrs_Publications/Moore_Tools/Foundations_of_Mechanical_Accuracy.pdf>
+1.  Moore, W. R. (1970). *Foundations of mechanical accuracy* (1st ed., 3rd Print). <https://pearlhifi.com/06_Lit_Archive/15_Mfrs_Publications/Moore_Tools/Foundations_of_Mechanical_Accuracy.pdf>
 
-2.  Francis, W. (2017, Noiembrie 22). *Origins of precision*. Machine Thinking.
-    <https://www.youtube.com/watch?v=gNRnrn5DE58>
-    (ref. 1, 8)
+2.  Francis, W. (2017, Noiembrie 22). *Origins of precision*. Machine Thinking. <https://www.youtube.com/watch?v=gNRnrn5DE58> (ref. 1, 8)
 
-3.  Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN),
-    National Institute of Standards and Technology, Gaithersburg, MD, \[online\].
-    <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735>
-    (ref. 2, 6, 14)
+3.  Doiron, T. and Beers, J. (1995), *The Gage Block Handbook*, Monograph (NIST MN), National Institute of Standards and Technology, Gaithersburg, MD, \[online\]. <https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=820735> (ref. 2, 6, 14)
 
-4.  Webber, S. (2003, November 21). *Wringing Gage Blocks.* Starret-Webber.
-    <http://www.starrett-webber.com/gb46.html>
-    (ref. 3, 16, 17, 18)
+4.  Webber, S. (2003, November 21). *Wringing Gage Blocks.* Starret-Webber. <http://www.starrett-webber.com/gb46.html> (ref. 3, 16, 17, 18)
 
-5.  Muelaner, J. (2017a, November 1). *Key principles in metrology and Measurement Systems Analysis* <https://www.muelaner.com/metrology/>
-    (ref. 4, 13)
+5.  Muelaner, J. (2017a, November 1). *Key principles in metrology and Measurement Systems Analysis* <https://www.muelaner.com/metrology/> (ref. 4, 13)
 
-6.  A&E Television Networks. (n.d.). *Interchangeable parts*. History.com.
-    <https://www.history.com/topics/inventions/interchangeable-parts>
-    (ref. 5)
+6.  A&E Television Networks. (n.d.). *Interchangeable parts*. History.com. <https://www.history.com/topics/inventions/interchangeable-parts> (ref. 5)
 
-7.  *The history of gauge blocks.* (n.d.)
-    [https://www.mitutoyo.com/webfoo/wp-content/uploads/E12016-History-of-The-Gage-Block.pdf
-    ](https://www.mitutoyo.com/webfoo/wp-content/uploads/E12016-History-of-The-Gage-Block.pdf)(ref. 7)
+7.  *The history of gauge blocks.* (n.d.) <https://www.mitutoyo.com/webfoo/wp-content/uploads/E12016-History-of-The-Gage-Block.pdf>(ref. 7)
 
-8.  Wikimedia Foundation. (n.d.). Wikipedia. <https://en.wikipedia.org/>
-    (ref. 9, 10, 12, 15, 19)
+8.  Wikimedia Foundation. (n.d.). Wikipedia. <https://en.wikipedia.org/> (ref. 9, 10, 12, 15, 19)
 
-9.  Garg, A. (2022, June 23). *Printing items in 0/1 Knapsack*. GeeksforGeeks.
-    <https://www.geeksforgeeks.org/printing-items-01-knapsack/>
-    (ref. 11)
+9.  Garg, A. (2022, June 23). *Printing items in 0/1 Knapsack*. GeeksforGeeks. <https://www.geeksforgeeks.org/printing-items-01-knapsack/> (ref. 11)
 
 <br>
 
 # 7. Imagini
 
-1.  Fig.1 Foaia de prezentare al unui set cu 81 de cale plan paralele din 1944.
-    Francis, W. (2017, Noiembrie 22). *Origins of precision*. Machine Thinking, min. 16:58
-    <https://www.youtube.com/watch?v=gNRnrn5DE58>
+1.  Fig.1 Foaia de prezentare al unui set cu 81 de cale plan paralele din 1944. Francis, W. (2017, Noiembrie 22). *Origins of precision*. Machine Thinking, min. 16:58 <https://www.youtube.com/watch?v=gNRnrn5DE58>
 
 2.  Fig.2 Afirmațiile de la care a pornit lucrarea (zoom Fig.1, ibidem)
 
-3.  Fig.3 Cale plan paralele (sistem metric)
-    Stenström, E. (2021, Martie 23). *Gauge blocks – the foundation to all modern industrial
-    production.* Elastocon. <https://www.elastocon.com/learn-more/about-calibration/gauge-blocksthe-foundation-to-all-modern-industrial-production>
+3.  Fig.3 Cale plan paralele (sistem metric) Stenström, E. (2021, Martie 23). *Gauge blocks – the foundation to all modern industrial production.* Elastocon. <https://www.elastocon.com/learn-more/about-calibration/gauge-blocksthe-foundation-to-all-modern-industrial-production>
 
 4.  Fig.4 Procedeul de calare a 2 cale (ibidem referința 3)
 
-5.  Fig.5 Mai multe cale sunt calate pentru a obține o dimensiune. Se observă cum ele rămân lipite
-    sub acțiunea gravitației. Clarence Leon Goodrich & Frank Arthur Stanley (1907) *Accurate Tool
-    Work,* McGraw-Hill, New York, p.185, fig.196
+5.  Fig.5 Mai multe cale sunt calate pentru a obține o dimensiune. Se observă cum ele rămân lipite sub acțiunea gravitației. Clarence Leon Goodrich & Frank Arthur Stanley (1907) *Accurate Tool Work,* McGraw-Hill, New York, p.185, fig.196
 
-6.  Fig.6 Setul de 81 de piese realizat de C.E. Johansson pentru fabricile Ford pe care Ford însuși l-a
-    făcut cadou bunului său prieten, Thomas Edison. Acum acest set se află la Muzeul Preciziei din
-    Windsor, Vermont, Statele Unite ale Americii.
-    <https://americanprecision.org/wp-content/uploads/2020/06/IMG_1696.jpeg>
+6.  Fig.6 Setul de 81 de piese realizat de C.E. Johansson pentru fabricile Ford pe care Ford însuși l-a făcut cadou bunului său prieten, Thomas Edison. Acum acest set se află la Muzeul Preciziei din Windsor, Vermont, Statele Unite ale Americii. <https://americanprecision.org/wp-content/uploads/2020/06/IMG_1696.jpeg>
 
 7.  Descriere schematică a intuiției. Imagine proprie.
 
-8.  Fig.8 Toate măsurătorile au un grad de incertitudine iar cu cât marjele alese sunt mai mari, cu
-    atât crește încrederea. Muelaner, J. (2017, November 1). *Key principles in metrology and
-    Measurement Systems Analysis (MSA)*. <https://www.muelaner.com/metrology/#uncertainty>
+8.  Fig.8 Toate măsurătorile au un grad de incertitudine iar cu cât marjele alese sunt mai mari, cu atât crește încrederea. Muelaner, J. (2017, November 1). *Key principles in metrology and Measurement Systems Analysis (MSA)*. <https://www.muelaner.com/metrology/#uncertainty>
 
-9.  Fig.8a C.E. Johansson ținând în mână un „baton” de cale
-    <https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdc0vJRCaT_eIscJyFuiR6VYli7lShAZo8bx5EJSdqqUxnSGiFXAoEanO3fPC1ab2_HbqPcgzSwyz6JXDqcQ4uBoTNg3ZTUSjywV8MsCmMOS3JOkimLh_vveardZHtOu78BtkzfUp6-I/s1600/CE+Johansson.jpg>
+9.  Fig.9 C.E. Johansson ținând în mână un „baton” de cale <https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdc0vJRCaT_eIscJyFuiR6VYli7lShAZo8bx5EJSdqqUxnSGiFXAoEanO3fPC1ab2_HbqPcgzSwyz6JXDqcQ4uBoTNg3ZTUSjywV8MsCmMOS3JOkimLh_vveardZHtOu78BtkzfUp6-I/s1600/CE+Johansson.jpg>
 
-10. Fig.9 Schema structurii simetrice a intervalului studiat. Imagine proprie.
+10. Fig.10 Schema structurii simetrice a intervalului studiat. Imagine proprie.
 
-11. Fig.10 Descriere schematică a intuiției ajustate. Imagine proprie.
+11. Fig.11 Descriere schematică a intuiției ajustate. Imagine proprie.
 
-12. Fig.11 Evoluția intuiție pe parcursul realizării acestei lucrări. Imagine proprie.
+12. Fig.12 Evoluția intuiție pe parcursul realizării acestei lucrări. Imagine proprie.
 
-13. Fig.12 Când construim o măsura X, rămâne măsura Total – X. Imagine proprie
+13. Fig.13 Când construim o măsura X, rămâne măsura Total – X. Imagine proprie
 
-14. Fig.13 Vizualizare schematică a modului de căutare a combinației optime. Imagine proprie.
+14. Fig.14 Vizualizare schematică a modului de căutare a combinației optime. Imagine proprie.
 
-15. Fig.14 QR-code către Notebook-ul Colab cu algoritmul din cap. 3).
+15. Fig.15 QR-code către Notebook-ul Colab cu algoritmul din cap. 3).
 
-16. Fig.15 QR-code către aplicația interactivă Shinylive, poate fi deschisă direct în browser
+16. Fig.16 QR-code către aplicația interactivă Shinylive, poate fi deschisă direct în browser
 
-17. Fig.16 Distributia combinațiilor, în functie de mărimea pe care vrem sa o construim. Img. proprie.
+17. Fig.17 Distributia combinațiilor, în functie de mărimea pe care vrem sa o construim. Img. proprie.
 
-18. Fig. 17 Evidențierea naturii liniare pe intervale a acestei distribuții. Imagine proprie.
+18. Fig. 18 Evidențierea naturii liniare pe intervale a acestei distribuții. Imagine proprie.
 
-19. Fig.18 Ce mărime are creionul?
-    <https://media.baamboozle.com/uploads/images/47624/1588733513_88858>
+19. Fig.19 Ce mărime are creionul? <https://media.baamboozle.com/uploads/images/47624/1588733513_88858>
 
-20. Fig.19a Valoarea nominală a unei cale plan paralele include stratul de calare. (Ibidem (ref. 16))
+20. Fig.20 Valoarea nominală a unei cale plan paralele include stratul de calare. (Ibidem (ref. 16))
 
-21. Fig.19 Grade de toleranță pentru cale sistem imperial (exprimat in µin = 10-6 in). (ref. 18)
+21. Fig.21 Grade de toleranță pentru cale sistem imperial (exprimat in µin = 10-6 in). (ref. 18)
 
-22. Fig.20 Populația unei distribuții normale în funcție de abaterea standard
-    <https://sphweb.bumc.bu.edu/otlt/MPH-Modules/PH717-QuantCore/PH717-Module6-RandomError/Normal%20Distribution%20deviations.png>
+22. Fig.22 Populația unei distribuții normale în funcție de abaterea standard <https://sphweb.bumc.bu.edu/otlt/MPH-Modules/PH717-QuantCore/PH717-Module6-RandomError/Normal%20Distribution%20deviations.png>

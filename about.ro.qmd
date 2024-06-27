@@ -1,9 +1,0 @@
----
-title: "Aplic"
----
-
-Despre acest site
-
-```{r}
-1+1
-```

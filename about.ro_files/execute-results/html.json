@@ -1,0 +1,14 @@
+{
+  "hash": "d452acd8a9d61a1e94d76c89472b6596",
+  "result": {
+    "markdown": "---\ntitle: \"Aplic\"\n---\n\n\nDespre acest site\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1+1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
