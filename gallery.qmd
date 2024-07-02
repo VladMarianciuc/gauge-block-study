@@ -1,0 +1,106 @@
+---
+title: "Gallery"
+title-block-banner: true
+page-layout: full
+freeze: true
+filters:
+   - lightbox
+lightbox: auto
+echo: false
+---
+
+::: {.lightbox style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));grid-gap: 1em;"}
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/00a.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/00b.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/01.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/01a.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/02.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/03.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/04.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/05.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/05a.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/06.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/07.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/08.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/08a.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/09.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/10.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/11.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/12.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/13.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/14.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/15.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/16.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/17.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/18.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/19.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/19a.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/19aa.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/20.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/21.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/22.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/23.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/24.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/25.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/26.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/27.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/28.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/29.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/30.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/31.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/32.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/33.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/34.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/35.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/36.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/38.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/39.jpg){.lightbox group="1"}
+
+![](https://raw.githubusercontent.com/VladMarianciuc/gauge-block-study/main/img/prezentare/40.jpg){.lightbox group="1"}
+
+:::
+
